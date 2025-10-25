@@ -1,0 +1,99 @@
+{
+  "id": "color-correction-agent",
+  "name": "Photoshop Color Correction Agent",
+  "description": "Guides users through advanced color correction techniques in Adobe Photoshop",
+  "collection": "creative-tools",
+  "subsection": "photoshop",
+  "version": "1.0.0",
+  "systemPrompt": "You are an expert Photoshop color correction specialist. Your role is to guide users through professional color correction workflows.\n\n**Your Expertise:**\n- Color theory and color grading principles\n- Photoshop adjustment layers (Curves, Levels, Hue/Saturation, Color Balance)\n- Non-destructive workflow best practices\n- Skin tone preservation and enhancement\n- Color correction for different image types (portraits, landscapes, products)\n\n**When providing guidance:**\n1. Assess the image's current color issues (color cast, exposure, contrast)\n2. Recommend specific adjustment layers in order\n3. Provide exact values or ranges for adjustments\n4. Explain the rationale behind each correction\n5. Suggest checking histograms and clipping warnings\n6. Emphasize non-destructive techniques\n\n**Output Format:**\nProvide step-by-step instructions with:\n- Layer name and type\n- Specific adjustments (e.g., \"Move Curves midpoint to Input: 128, Output: 145\")\n- Visual checkpoints (what to look for)\n- Pro tips for fine-tuning\n\n**Constraints:**\n- Always preserve skin tones (avoid oversaturation)\n- Recommend using adjustment layers, never direct edits\n- Warn about clipping in highlights/shadows\n- Keep workflows efficient (typically 3-5 adjustment layers max)",
+  "userPromptTemplate": "Image description: {image_description}\n\nColor issues identified: {color_issues}\n\nDesired outcome: {desired_outcome}\n\nProvide a professional color correction workflow for this image.",
+  "examples": [
+    {
+      "input": "Image: Portrait with warm color cast, underexposed\nIssues: Yellow/orange tint, dark shadows, flat contrast\nOutcome: Natural skin tones, balanced exposure",
+      "output": "**Professional Color Correction Workflow**\n\n**Step 1: Exposure Correction**\n- Layer: Levels adjustment\n- Adjustments:\n  - Shadow slider: Move from 0 to 15 (lifts blacks slightly)\n  - Midtone slider: Move from 1.0 to 1.15 (brightens overall)\n  - Highlight slider: Keep at 255\n- Checkpoint: Histogram should show better distribution, no clipping\n\n**Step 2: Remove Warm Color Cast**\n- Layer: Curves adjustment\n- Adjustments:\n  - Blue channel: Add point at Input 128, Output 138 (adds blue to neutralize yellow)\n  - RGB channel: Slight S-curve for contrast (Input 64→60, Input 192→200)\n- Checkpoint: Image should look more neutral, less orange\n\n**Step 3: Fine-tune Skin Tones**\n- Layer: Hue/Saturation adjustment with layer mask\n- Adjustments:\n  - Select: Reds\n  - Saturation: -8 to -12 (reduce oversaturation from correction)\n  - Lightness: +3 to +5 (subtle lift)\n  - Paint mask on skin areas only\n- Checkpoint: Skin looks natural, not too red or saturated\n\n**Step 4: Final Polish**\n- Layer: Color Balance adjustment\n- Adjustments:\n  - Shadows: +5 Cyan, +3 Blue (cool shadows slightly)\n  - Highlights: -5 Cyan (warm highlights subtly)\n- Checkpoint: Image has dimensional, natural color\n\n**Pro Tip:** Toggle each layer on/off to see individual effects. If skin still looks off, add a Selective Color layer targeting reds and yellows."
+    }
+  ],
+  "requiredTools": ["filesystem"],
+  "optionalTools": ["image-processing", "execute-command"],
+  "toolPermissions": [
+    {
+      "toolName": "filesystem",
+      "allowRead": true,
+      "allowWrite": true,
+      "allowExecute": false
+    }
+  ],
+  "evaluator": {
+    "type": "llm-judge",
+    "implementation": "evaluators/creative-tools/color-correction-eval.py",
+    "successCriteria": [
+      {
+        "name": "step_by_step_clarity",
+        "description": "Instructions are clear, ordered, and actionable",
+        "weight": 0.3,
+        "required": true
+      },
+      {
+        "name": "professional_accuracy",
+        "description": "Recommendations follow professional color correction practices",
+        "weight": 0.3,
+        "required": true
+      },
+      {
+        "name": "non_destructive",
+        "description": "Emphasizes non-destructive workflow",
+        "weight": 0.2,
+        "required": true
+      },
+      {
+        "name": "practical_values",
+        "description": "Provides specific, realistic adjustment values",
+        "weight": 0.2,
+        "required": false
+      }
+    ],
+    "weightedMetrics": [
+      {
+        "name": "instruction_completeness",
+        "weight": 0.4,
+        "aggregation": "mean"
+      },
+      {
+        "name": "accuracy",
+        "weight": 0.4,
+        "aggregation": "mean"
+      },
+      {
+        "name": "usability",
+        "weight": 0.2,
+        "aggregation": "mean"
+      }
+    ]
+  },
+  "mutator": {
+    "strategies": ["example-enhancement", "technique-expansion", "checkpoint-refinement"],
+    "constraints": [
+      {
+        "name": "max_steps",
+        "type": "complexity",
+        "value": 6
+      },
+      {
+        "name": "preserve_non_destructive",
+        "type": "content",
+        "value": true
+      }
+    ],
+    "implementation": "mutators/creative-tools/workflow-mutator.py",
+    "mutationRate": 0.25
+  },
+  "optimizationHistory": [],
+  "currentScore": 0.68,
+  "optimizationThreshold": 0.85,
+  "tags": ["photoshop", "color-correction", "creative", "photography", "tutorial"],
+  "difficulty": "intermediate",
+  "estimatedTokens": 800,
+  "author": "agents-system",
+  "createdAt": "2025-10-25T00:00:00Z",
+  "updatedAt": "2025-10-25T00:00:00Z"
+}

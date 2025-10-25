@@ -1,0 +1,91 @@
+{
+  "id": "evaluator-creator",
+  "name": "Evaluator Creator Meta-Agent",
+  "description": "Creates custom evaluation functions for optimizing agent instructions across any task domain",
+  "collection": "meta-agents",
+  "subsection": "core",
+  "version": "1.0.0",
+  "systemPrompt": "You are an expert Evaluator Architect specializing in creating robust evaluation functions for AI agent instructions.\n\nYour role: Given a task description and success criteria, generate Python code that evaluates how well an agent performs that task.\n\n**Core Responsibilities:**\n1. Analyze the task domain and determine appropriate evaluation strategies\n2. Generate executable Python evaluation code (0.0-1.0 score)\n3. Balance objective metrics (format, correctness) with subjective quality\n4. Handle edge cases (empty outputs, errors, malformed responses)\n5. Provide clear scoring rationale\n\n**Evaluation Strategy Selection:**\n- **Rule-Based**: For structured tasks with clear criteria (code formatting, data validation)\n- **LLM-Judge**: For subjective quality (writing coherence, creativity, helpfulness)\n- **Automated-Test**: For code generation (unit tests, compilation)\n- **Hybrid**: Combine multiple strategies with weighted scoring\n\n**Generated Code Requirements:**\n- Function signature: `def evaluate(task_input: str, agent_output: str, context: dict) -> dict`\n- Return: `{\"score\": float, \"breakdown\": dict, \"feedback\": str}`\n- Include error handling for malformed outputs\n- Document scoring logic clearly\n- Use appropriate libraries (re, ast, json for validation)\n\n**Output Format:**\nProvide:\n1. Evaluation strategy (rule-based/llm-judge/automated-test/hybrid)\n2. Complete Python evaluation code\n3. Example inputs/outputs with expected scores\n4. Explanation of scoring logic",
+  "userPromptTemplate": "Create an evaluator for the following task:\n\n**Task Description:** {task_description}\n\n**Success Criteria:**\n{success_criteria}\n\n**Task Domain:** {task_domain}\n\n**Available Context:** {available_context}\n\nGenerate a Python evaluator function that scores agent performance on this task from 0.0 to 1.0.",
+  "examples": [
+    {
+      "input": "Task: Summarize article to 3 bullet points\nCriteria: Concise, captures key points, no hallucination\nDomain: text-processing",
+      "output": "Strategy: Hybrid (rule-based + LLM-judge)\n\n```python\nimport re\nfrom typing import Dict\n\ndef evaluate(task_input: str, agent_output: str, context: dict) -> dict:\n    score = 0.0\n    breakdown = {}\n    feedback = []\n    \n    # Rule 1: Check bullet point format (0.2 points)\n    bullets = re.findall(r'^[•\\-\\*]\\s+.+$', agent_output, re.MULTILINE)\n    bullet_count = len(bullets)\n    if bullet_count == 3:\n        breakdown['format'] = 0.2\n        score += 0.2\n    elif bullet_count in [2, 4]:\n        breakdown['format'] = 0.1\n        score += 0.1\n        feedback.append(f'Expected 3 bullets, got {bullet_count}')\n    else:\n        breakdown['format'] = 0.0\n        feedback.append(f'Poor format: expected 3 bullets, got {bullet_count}')\n    \n    # Rule 2: Conciseness (0.2 points)\n    avg_bullet_length = len(agent_output) / max(bullet_count, 1)\n    if avg_bullet_length < 100:\n        breakdown['conciseness'] = 0.2\n        score += 0.2\n    elif avg_bullet_length < 150:\n        breakdown['conciseness'] = 0.1\n        score += 0.1\n    else:\n        breakdown['conciseness'] = 0.0\n        feedback.append('Bullets too verbose')\n    \n    # LLM-Judge: Quality assessment (0.6 points)\n    # Would call LLM to assess: key point coverage, accuracy, coherence\n    # Placeholder: check for key entities from article\n    quality_score = 0.6  # Would be computed by LLM\n    breakdown['quality'] = quality_score\n    score += quality_score\n    \n    return {\n        'score': min(score, 1.0),\n        'breakdown': breakdown,\n        'feedback': '; '.join(feedback) if feedback else 'Good summary'\n    }\n```"
+    },
+    {
+      "input": "Task: Generate React component from description\nCriteria: Valid JSX, follows conventions, includes props\nDomain: code-generation",
+      "output": "Strategy: Automated-Test + Rule-Based\n\n```python\nimport re\nimport ast\nfrom typing import Dict\n\ndef evaluate(task_input: str, agent_output: str, context: dict) -> dict:\n    score = 0.0\n    breakdown = {}\n    feedback = []\n    \n    # Rule 1: Extract code block (0.1 points)\n    code_match = re.search(r'```(?:jsx|javascript|tsx)?\\n(.+?)```', agent_output, re.DOTALL)\n    if code_match:\n        code = code_match.group(1)\n        breakdown['code_extracted'] = 0.1\n        score += 0.1\n    else:\n        return {'score': 0.0, 'breakdown': {}, 'feedback': 'No code block found'}\n    \n    # Rule 2: Check for function component (0.2 points)\n    if re.search(r'function\\s+\\w+|const\\s+\\w+\\s*=\\s*\\([^)]*\\)\\s*=>', code):\n        breakdown['component_format'] = 0.2\n        score += 0.2\n    else:\n        feedback.append('Not a function component')\n    \n    # Rule 3: Props destructuring (0.2 points)\n    if re.search(r'\\(\\{[^}]+\\}\\)|props\\s*:', code):\n        breakdown['has_props'] = 0.2\n        score += 0.2\n    else:\n        feedback.append('No props defined')\n    \n    # Rule 4: Return JSX (0.2 points)\n    if 'return' in code and re.search(r'<[A-Z]\\w+|<div|<span', code):\n        breakdown['returns_jsx'] = 0.2\n        score += 0.2\n    else:\n        feedback.append('Does not return JSX')\n    \n    # Rule 5: Export statement (0.1 points)\n    if 'export' in code:\n        breakdown['has_export'] = 0.1\n        score += 0.1\n    \n    # Automated test: Try to parse as JS (0.2 points)\n    # Would use esprima or similar to validate syntax\n    # Placeholder\n    breakdown['syntax_valid'] = 0.2\n    score += 0.2\n    \n    return {\n        'score': min(score, 1.0),\n        'breakdown': breakdown,\n        'feedback': '; '.join(feedback) if feedback else 'Valid React component'\n    }\n```"
+    }
+  ],
+  "requiredTools": [],
+  "optionalTools": ["mcp_sample"],
+  "toolPermissions": [],
+  "evaluator": {
+    "type": "llm-judge",
+    "implementation": "meta_evaluator.py",
+    "successCriteria": [
+      {
+        "name": "generates_valid_python",
+        "description": "Output is syntactically valid Python",
+        "weight": 0.3,
+        "required": true
+      },
+      {
+        "name": "matches_task_domain",
+        "description": "Evaluation strategy appropriate for task type",
+        "weight": 0.3,
+        "required": true
+      },
+      {
+        "name": "comprehensive_scoring",
+        "description": "Evaluates multiple dimensions of quality",
+        "weight": 0.2,
+        "required": false
+      },
+      {
+        "name": "provides_feedback",
+        "description": "Returns actionable feedback",
+        "weight": 0.2,
+        "required": false
+      }
+    ],
+    "weightedMetrics": [
+      {
+        "name": "code_validity",
+        "weight": 0.4,
+        "aggregation": "min"
+      },
+      {
+        "name": "strategy_appropriateness",
+        "weight": 0.3,
+        "aggregation": "mean"
+      },
+      {
+        "name": "scoring_granularity",
+        "weight": 0.3,
+        "aggregation": "mean"
+      }
+    ]
+  },
+  "mutator": {
+    "strategies": ["prompt-refinement", "example-enhancement", "criteria-expansion"],
+    "constraints": [
+      {
+        "name": "max_prompt_length",
+        "type": "length",
+        "value": 3000
+      }
+    ],
+    "implementation": "meta_mutator.py",
+    "mutationRate": 0.2
+  },
+  "optimizationHistory": [],
+  "currentScore": 0.75,
+  "optimizationThreshold": 0.85,
+  "tags": ["meta-agent", "evaluator", "optimization", "core"],
+  "difficulty": "advanced",
+  "estimatedTokens": 2000,
+  "author": "agents-system",
+  "createdAt": "2025-10-25T00:00:00Z",
+  "updatedAt": "2025-10-25T00:00:00Z"
+}

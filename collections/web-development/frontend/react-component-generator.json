@@ -1,0 +1,104 @@
+{
+  "id": "react-component-generator",
+  "name": "React Component Generator",
+  "description": "Generates production-ready React components from natural language descriptions",
+  "collection": "web-development",
+  "subsection": "frontend",
+  "version": "1.0.0",
+  "systemPrompt": "You are an expert React developer specializing in creating clean, production-ready React components.\n\n**Your Expertise:**\n- Modern React patterns (hooks, functional components)\n- TypeScript integration and type safety\n- Component composition and prop design\n- Accessibility (ARIA attributes, semantic HTML)\n- CSS-in-JS and styled-components\n- Performance optimization (memo, useCallback, useMemo)\n\n**When generating components:**\n1. Use functional components with TypeScript\n2. Define clear, typed prop interfaces\n3. Include proper error handling and edge cases\n4. Add accessibility attributes\n5. Follow React best practices and naming conventions\n6. Include brief inline comments for complex logic\n7. Export components with proper naming\n\n**Code Quality Requirements:**\n- Type all props, state, and returns\n- Use semantic HTML elements\n- Handle loading and error states\n- Include PropTypes or TypeScript types\n- Follow single responsibility principle\n- Make components reusable and composable\n\n**Output Format:**\n```tsx\n// Component code with types\n// Include imports\n// Export statement\n```\n\nInclude brief usage example if complex.",
+  "userPromptTemplate": "Component description: {component_description}\n\nRequired props: {required_props}\n\nExpected behavior: {expected_behavior}\n\nGenerate a production-ready React component.",
+  "examples": [
+    {
+      "input": "Component: UserCard\nProps: user (name, avatar, role), onEdit callback\nBehavior: Display user info, show edit button that calls onEdit with user ID",
+      "output": "```tsx\nimport React from 'react';\nimport './UserCard.css';\n\ninterface User {\n  id: string;\n  name: string;\n  avatar: string;\n  role: string;\n}\n\ninterface UserCardProps {\n  user: User;\n  onEdit: (userId: string) => void;\n}\n\n/**\n * UserCard component displays user information with edit functionality\n */\nexport const UserCard: React.FC<UserCardProps> = ({ user, onEdit }) => {\n  const handleEdit = () => {\n    onEdit(user.id);\n  };\n\n  return (\n    <article className=\"user-card\" role=\"article\" aria-label={`User card for ${user.name}`}>\n      <img\n        src={user.avatar}\n        alt={`${user.name}'s avatar`}\n        className=\"user-card__avatar\"\n        loading=\"lazy\"\n      />\n      <div className=\"user-card__info\">\n        <h3 className=\"user-card__name\">{user.name}</h3>\n        <p className=\"user-card__role\" aria-label=\"User role\">\n          {user.role}\n        </p>\n      </div>\n      <button\n        onClick={handleEdit}\n        className=\"user-card__edit-btn\"\n        aria-label={`Edit ${user.name}'s profile`}\n      >\n        Edit\n      </button>\n    </article>\n  );\n};\n```\n\n**Usage:**\n```tsx\n<UserCard\n  user={{ id: '1', name: 'Jane Doe', avatar: '/avatars/jane.jpg', role: 'Developer' }}\n  onEdit={(userId) => console.log('Edit user:', userId)}\n/>\n```"
+    }
+  ],
+  "requiredTools": [],
+  "optionalTools": ["filesystem", "run_in_terminal"],
+  "toolPermissions": [],
+  "evaluator": {
+    "type": "automated-test",
+    "implementation": "evaluators/web-development/react-component-eval.py",
+    "successCriteria": [
+      {
+        "name": "valid_tsx",
+        "description": "Code is syntactically valid TypeScript/TSX",
+        "weight": 0.25,
+        "required": true
+      },
+      {
+        "name": "has_types",
+        "description": "Props and interfaces are properly typed",
+        "weight": 0.2,
+        "required": true
+      },
+      {
+        "name": "semantic_html",
+        "description": "Uses semantic HTML elements",
+        "weight": 0.15,
+        "required": false
+      },
+      {
+        "name": "accessibility",
+        "description": "Includes ARIA attributes and alt text",
+        "weight": 0.2,
+        "required": false
+      },
+      {
+        "name": "exported",
+        "description": "Component is properly exported",
+        "weight": 0.1,
+        "required": true
+      },
+      {
+        "name": "follows_conventions",
+        "description": "Follows React naming and structure conventions",
+        "weight": 0.1,
+        "required": false
+      }
+    ],
+    "weightedMetrics": [
+      {
+        "name": "code_quality",
+        "weight": 0.5,
+        "aggregation": "mean"
+      },
+      {
+        "name": "completeness",
+        "weight": 0.3,
+        "aggregation": "min"
+      },
+      {
+        "name": "best_practices",
+        "weight": 0.2,
+        "aggregation": "mean"
+      }
+    ]
+  },
+  "mutator": {
+    "strategies": ["type-enhancement", "accessibility-boost", "error-handling-addition"],
+    "constraints": [
+      {
+        "name": "preserve_typescript",
+        "type": "format",
+        "value": "tsx"
+      },
+      {
+        "name": "max_component_lines",
+        "type": "length",
+        "value": 150
+      }
+    ],
+    "implementation": "mutators/web-development/code-quality-mutator.py",
+    "mutationRate": 0.2
+  },
+  "optimizationHistory": [],
+  "currentScore": 0.74,
+  "optimizationThreshold": 0.88,
+  "tags": ["react", "typescript", "component", "frontend", "web-development"],
+  "difficulty": "intermediate",
+  "estimatedTokens": 600,
+  "author": "agents-system",
+  "createdAt": "2025-10-25T00:00:00Z",
+  "updatedAt": "2025-10-25T00:00:00Z"
+}

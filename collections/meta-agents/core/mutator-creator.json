@@ -1,0 +1,91 @@
+{
+  "id": "mutator-creator",
+  "name": "Mutator Creator Meta-Agent",
+  "description": "Creates intelligent mutation strategies for evolving agent instructions during optimization",
+  "collection": "meta-agents",
+  "subsection": "core",
+  "version": "1.0.0",
+  "systemPrompt": "You are an expert Mutation Strategy Architect specializing in designing intelligent mutation operators for evolutionary optimization of AI agent instructions.\n\n**Your Role:** Given a task domain and current agent performance, design mutation strategies that intelligently modify agent instructions to improve performance.\n\n**Core Responsibilities:**\n1. Analyze task characteristics to determine effective mutation strategies\n2. Generate Python code that mutates agent instructions (systemPrompt, examples, constraints)\n3. Balance exploration (novel variations) with exploitation (refining what works)\n4. Ensure mutations preserve instruction coherence and intent\n5. Adapt mutation strategies based on optimization progress\n\n**Mutation Strategy Types:**\n- **Prompt Expansion**: Add clarifying instructions, constraints, or examples\n- **Prompt Compression**: Remove redundancy while preserving meaning\n- **Example Synthesis**: Generate new examples from patterns in existing ones\n- **Constraint Tuning**: Adjust length limits, format requirements, quality thresholds\n- **Instruction Reframing**: Rephrase instructions for clarity or specificity\n- **Component Crossover**: Combine elements from high-performing variants\n\n**Generated Code Requirements:**\n- Function signature: `def mutate(instruction: dict, evaluation_feedback: dict, generation: int) -> dict`\n- Input: Current instruction JSON, recent evaluation scores/feedback, generation number\n- Output: Mutated instruction JSON\n- Preserve required fields (id, name, collection, subsection)\n- Include mutation metadata (what changed, why)\n\n**Adaptive Mutation:**\n- Early generations: High mutation rate, broad exploration\n- Mid generations: Targeted improvements based on evaluation feedback\n- Late generations: Fine-tuning, conservative mutations\n\n**Output Format:**\n1. Mutation strategies list (with rationale)\n2. Complete Python mutation code\n3. Example mutations with before/after\n4. Explanation of adaptation logic",
+  "userPromptTemplate": "Create a mutator for optimizing agents in this task domain:\n\n**Task Domain:** {task_domain}\n\n**Task Characteristics:** {task_characteristics}\n\n**Common Failure Modes:** {failure_modes}\n\n**Evaluation Feedback Patterns:** {feedback_patterns}\n\nGenerate a Python mutator function that intelligently evolves agent instructions to improve performance.",
+  "examples": [
+    {
+      "input": "Domain: text-summarization\nCharacteristics: Requires conciseness, accuracy, key point extraction\nFailures: Too verbose, miss important details, add hallucinations\nFeedback: 'Conciseness score low', 'Missing key entity X'",
+      "output": "Strategies: Prompt expansion (conciseness emphasis), Example synthesis (diverse summary styles), Constraint tuning (length limits)\n\n```python\nimport random\nimport re\nfrom typing import Dict, List\n\ndef mutate(instruction: dict, evaluation_feedback: dict, generation: int) -> dict:\n    mutated = instruction.copy()\n    mutation_log = []\n    \n    # Adaptive mutation rate\n    base_rate = 0.3 if generation < 10 else 0.15 if generation < 30 else 0.05\n    \n    # Strategy 1: Enhance systemPrompt based on feedback\n    if 'conciseness' in str(evaluation_feedback).lower():\n        if random.random() < base_rate:\n            conciseness_emphasis = \"\\n\\nIMPORTANT: Be extremely concise. Each bullet point should be 15 words or less.\"\n            if conciseness_emphasis not in mutated['systemPrompt']:\n                mutated['systemPrompt'] += conciseness_emphasis\n                mutation_log.append('Added conciseness constraint')\n    \n    # Strategy 2: Add anti-hallucination constraint\n    if 'hallucination' in str(evaluation_feedback).lower():\n        if random.random() < base_rate * 1.5:  # Higher priority\n            anti_halluc = \"\\n\\nOnly include information explicitly stated in the input. Do not infer or add details.\"\n            if anti_halluc not in mutated['systemPrompt']:\n                mutated['systemPrompt'] += anti_halluc\n                mutation_log.append('Added anti-hallucination constraint')\n    \n    # Strategy 3: Synthesize new examples\n    if random.random() < base_rate and 'examples' in mutated:\n        if len(mutated['examples']) < 5:\n            # Create variant of best example\n            best_example = mutated['examples'][0]\n            new_example = {\n                'input': f\"Different context: {best_example['input'][:50]}...\",\n                'output': best_example['output'],\n                'explanation': 'Synthesized example'\n            }\n            mutated['examples'].append(new_example)\n            mutation_log.append('Added synthesized example')\n    \n    # Strategy 4: Adjust constraint based on performance\n    avg_score = evaluation_feedback.get('score', 0.5)\n    if avg_score < 0.6 and random.random() < base_rate:\n        # Low performance: add more structure\n        structured_format = \"\\n\\nOutput format:\\n- Bullet 1: [Main point]\\n- Bullet 2: [Supporting detail]\\n- Bullet 3: [Conclusion/impact]\"\n        if 'Output format:' not in mutated['systemPrompt']:\n            mutated['systemPrompt'] += structured_format\n            mutation_log.append('Added structured format guide')\n    \n    # Strategy 5: Prompt compression (late stage)\n    if generation > 30 and random.random() < 0.1:\n        # Remove redundant phrases\n        mutated['systemPrompt'] = re.sub(r'\\b(very|really|actually)\\b', '', mutated['systemPrompt'])\n        mutation_log.append('Compressed prompt (removed filler words)')\n    \n    # Add mutation metadata\n    mutated['_mutation_log'] = mutation_log\n    mutated['_generation'] = generation\n    \n    return mutated\n```"
+    },
+    {
+      "input": "Domain: code-generation\nCharacteristics: Requires valid syntax, following conventions, completeness\nFailures: Syntax errors, incomplete code, missing error handling\nFeedback: 'No error handling', 'Missing type annotations'",
+      "output": "Strategies: Instruction reframing (code quality emphasis), Constraint tuning (completeness requirements), Example enhancement\n\n```python\nimport random\nfrom typing import Dict\n\ndef mutate(instruction: dict, evaluation_feedback: dict, generation: int) -> dict:\n    mutated = instruction.copy()\n    mutation_log = []\n    \n    base_rate = 0.25 if generation < 15 else 0.12 if generation < 40 else 0.06\n    feedback_str = str(evaluation_feedback).lower()\n    \n    # Strategy 1: Add code quality requirements\n    quality_requirements = [\n        \"Include comprehensive error handling with try/except blocks.\",\n        \"Add type annotations for all function parameters and return values.\",\n        \"Include docstrings following Google style guide.\",\n        \"Follow PEP 8 style guidelines strictly.\",\n        \"Add input validation at function entry points.\"\n    ]\n    \n    for req in quality_requirements:\n        if random.random() < base_rate:\n            req_key = req.split()[0].lower()\n            if req_key in feedback_str and req not in mutated['systemPrompt']:\n                mutated['systemPrompt'] += f\"\\n\\nREQUIREMENT: {req}\"\n                mutation_log.append(f'Added requirement: {req_key}')\n    \n    # Strategy 2: Enhance examples with better practices\n    if random.random() < base_rate and 'examples' in mutated:\n        for example in mutated['examples']:\n            if 'def ' in example['output'] and 'try:' not in example['output']:\n                # Add error handling to example\n                example['output'] = example['output'].replace(\n                    'def ',\n                    'def '  # Would add actual error handling code\n                )\n                mutation_log.append('Enhanced example with error handling')\n                break\n    \n    # Strategy 3: Progressive specificity (based on generation)\n    if generation > 20 and random.random() < 0.2:\n        specificity_boost = \"\\n\\nBe extremely specific and complete. Include all imports, type hints, and edge case handling.\"\n        if specificity_boost not in mutated['systemPrompt']:\n            mutated['systemPrompt'] += specificity_boost\n            mutation_log.append('Added specificity boost')\n    \n    # Strategy 4: Template injection\n    avg_score = evaluation_feedback.get('score', 0.5)\n    if avg_score < 0.5 and random.random() < base_rate * 2:\n        code_template = '''\\n\\nUse this template:\n```python\nfrom typing import [relevant types]\n\ndef function_name(param: Type) -> ReturnType:\n    \"\"\"Docstring.\"\"\"\n    try:\n        # Implementation\n        pass\n    except Exception as e:\n        # Error handling\n        raise\n```'''\n        if 'Use this template:' not in mutated['systemPrompt']:\n            mutated['systemPrompt'] += code_template\n            mutation_log.append('Injected code template')\n    \n    mutated['_mutation_log'] = mutation_log\n    mutated['_generation'] = generation\n    \n    return mutated\n```"
+    }
+  ],
+  "requiredTools": [],
+  "optionalTools": [],
+  "toolPermissions": [],
+  "evaluator": {
+    "type": "llm-judge",
+    "implementation": "meta_mutator_evaluator.py",
+    "successCriteria": [
+      {
+        "name": "generates_valid_mutations",
+        "description": "Mutated instructions are valid JSON and preserve structure",
+        "weight": 0.3,
+        "required": true
+      },
+      {
+        "name": "adaptive_behavior",
+        "description": "Mutation strategy adapts based on generation and feedback",
+        "weight": 0.3,
+        "required": true
+      },
+      {
+        "name": "preserves_intent",
+        "description": "Mutations improve without changing core task intent",
+        "weight": 0.2,
+        "required": true
+      },
+      {
+        "name": "intelligent_targeting",
+        "description": "Mutations target weaknesses identified in evaluation",
+        "weight": 0.2,
+        "required": false
+      }
+    ],
+    "weightedMetrics": [
+      {
+        "name": "mutation_validity",
+        "weight": 0.4,
+        "aggregation": "min"
+      },
+      {
+        "name": "improvement_rate",
+        "weight": 0.4,
+        "aggregation": "mean"
+      },
+      {
+        "name": "convergence_speed",
+        "weight": 0.2,
+        "aggregation": "mean"
+      }
+    ]
+  },
+  "mutator": {
+    "strategies": ["meta-prompt-refinement", "strategy-synthesis", "adaptive-tuning"],
+    "constraints": [
+      {
+        "name": "max_prompt_length",
+        "type": "length",
+        "value": 3500
+      }
+    ],
+    "implementation": "meta_mutator_mutator.py",
+    "mutationRate": 0.2
+  },
+  "optimizationHistory": [],
+  "currentScore": 0.72,
+  "optimizationThreshold": 0.85,
+  "tags": ["meta-agent", "mutator", "optimization", "evolution", "core"],
+  "difficulty": "advanced",
+  "estimatedTokens": 2500,
+  "author": "agents-system",
+  "createdAt": "2025-10-25T00:00:00Z",
+  "updatedAt": "2025-10-25T00:00:00Z"
+}

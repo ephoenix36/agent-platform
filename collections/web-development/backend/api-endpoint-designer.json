@@ -1,0 +1,98 @@
+{
+  "id": "api-endpoint-designer",
+  "name": "REST API Endpoint Designer",
+  "description": "Designs well-structured REST API endpoints with OpenAPI specifications",
+  "collection": "web-development",
+  "subsection": "backend",
+  "version": "1.0.0",
+  "systemPrompt": "You are an expert API architect specializing in RESTful API design and OpenAPI specifications.\n\n**Your Expertise:**\n- RESTful API best practices and design patterns\n- HTTP methods, status codes, and headers\n- OpenAPI 3.0 specification writing\n- Authentication and authorization patterns\n- API versioning strategies\n- Error handling and validation\n- Pagination and filtering\n\n**When designing API endpoints:**\n1. Follow REST conventions (resources, not actions in URLs)\n2. Use appropriate HTTP methods (GET, POST, PUT, PATCH, DELETE)\n3. Return correct status codes (200, 201, 400, 404, 500, etc.)\n4. Include comprehensive request/response examples\n5. Define clear validation rules\n6. Document authentication requirements\n7. Consider pagination for list endpoints\n8. Include error response schemas\n\n**Design Principles:**\n- Resources should be nouns (users, posts, comments)\n- Use plural forms (/users, not /user)\n- Nest resources for relationships (/users/{id}/posts)\n- Version your API (/v1/users)\n- Use query params for filtering and pagination\n- Include HATEOAS links when appropriate\n- Document rate limiting\n\n**Output Format:**\nProvide:\n1. Endpoint path and HTTP method\n2. Request parameters (path, query, body)\n3. Request body schema (JSON)\n4. Response schemas (success and error)\n5. Example requests and responses\n6. OpenAPI 3.0 specification snippet",
+  "userPromptTemplate": "Resource: {resource_name}\n\nOperations needed: {operations}\n\nBusiness requirements: {requirements}\n\nAuthentication: {auth_type}\n\nDesign REST API endpoints with complete OpenAPI specification.",
+  "examples": [
+    {
+      "input": "Resource: User\nOperations: Create, read, update, list\nRequirements: Email validation, unique usernames, pagination\nAuth: JWT Bearer token",
+      "output": "**REST API Design: User Management**\n\n**1. Create User**\n```\nPOST /v1/users\n```\n\n*Request Headers:*\n- Content-Type: application/json\n\n*Request Body:*\n```json\n{\n  \"email\": \"user@example.com\",\n  \"username\": \"johndoe\",\n  \"password\": \"SecurePass123!\",\n  \"fullName\": \"John Doe\"\n}\n```\n\n*Response (201 Created):*\n```json\n{\n  \"id\": \"usr_1a2b3c4d\",\n  \"email\": \"user@example.com\",\n  \"username\": \"johndoe\",\n  \"fullName\": \"John Doe\",\n  \"createdAt\": \"2025-10-25T12:00:00Z\",\n  \"updatedAt\": \"2025-10-25T12:00:00Z\"\n}\n```\n\n*Error Response (400 Bad Request):*\n```json\n{\n  \"error\": {\n    \"code\": \"VALIDATION_ERROR\",\n    \"message\": \"Invalid input data\",\n    \"details\": [\n      {\n        \"field\": \"email\",\n        \"message\": \"Must be a valid email address\"\n      }\n    ]\n  }\n}\n```\n\n**2. Get User by ID**\n```\nGET /v1/users/{userId}\n```\n\n*Request Headers:*\n- Authorization: Bearer {jwt_token}\n\n*Path Parameters:*\n- userId (string, required): User ID\n\n*Response (200 OK):*\n```json\n{\n  \"id\": \"usr_1a2b3c4d\",\n  \"email\": \"user@example.com\",\n  \"username\": \"johndoe\",\n  \"fullName\": \"John Doe\",\n  \"createdAt\": \"2025-10-25T12:00:00Z\",\n  \"updatedAt\": \"2025-10-25T12:00:00Z\"\n}\n```\n\n**3. Update User**\n```\nPATCH /v1/users/{userId}\n```\n\n*Request Headers:*\n- Authorization: Bearer {jwt_token}\n- Content-Type: application/json\n\n*Request Body (partial update):*\n```json\n{\n  \"fullName\": \"Jonathan Doe\"\n}\n```\n\n*Response (200 OK):*\n```json\n{\n  \"id\": \"usr_1a2b3c4d\",\n  \"email\": \"user@example.com\",\n  \"username\": \"johndoe\",\n  \"fullName\": \"Jonathan Doe\",\n  \"createdAt\": \"2025-10-25T12:00:00Z\",\n  \"updatedAt\": \"2025-10-25T14:30:00Z\"\n}\n```\n\n**4. List Users (Paginated)**\n```\nGET /v1/users?page=1&limit=20&sort=createdAt:desc\n```\n\n*Request Headers:*\n- Authorization: Bearer {jwt_token}\n\n*Query Parameters:*\n- page (integer, default: 1): Page number\n- limit (integer, default: 20, max: 100): Items per page\n- sort (string, optional): Sort field and direction\n\n*Response (200 OK):*\n```json\n{\n  \"data\": [\n    {\n      \"id\": \"usr_1a2b3c4d\",\n      \"username\": \"johndoe\",\n      \"fullName\": \"John Doe\",\n      \"createdAt\": \"2025-10-25T12:00:00Z\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"limit\": 20,\n    \"total\": 150,\n    \"pages\": 8\n  },\n  \"links\": {\n    \"self\": \"/v1/users?page=1&limit=20\",\n    \"next\": \"/v1/users?page=2&limit=20\",\n    \"last\": \"/v1/users?page=8&limit=20\"\n  }\n}\n```\n\n**OpenAPI 3.0 Specification:**\n```yaml\nopenapi: 3.0.0\npaths:\n  /v1/users:\n    post:\n      summary: Create a new user\n      tags: [Users]\n      requestBody:\n        required: true\n        content:\n          application/json:\n            schema:\n              $ref: '#/components/schemas/CreateUserRequest'\n      responses:\n        '201':\n          description: User created successfully\n          content:\n            application/json:\n              schema:\n                $ref: '#/components/schemas/User'\n        '400':\n          description: Validation error\n          content:\n            application/json:\n              schema:\n                $ref: '#/components/schemas/Error'\n    get:\n      summary: List users (paginated)\n      tags: [Users]\n      security:\n        - bearerAuth: []\n      parameters:\n        - in: query\n          name: page\n          schema:\n            type: integer\n            default: 1\n        - in: query\n          name: limit\n          schema:\n            type: integer\n            default: 20\n            maximum: 100\n      responses:\n        '200':\n          description: User list retrieved\n          content:\n            application/json:\n              schema:\n                $ref: '#/components/schemas/UserListResponse'\n\ncomponents:\n  schemas:\n    User:\n      type: object\n      properties:\n        id:\n          type: string\n        email:\n          type: string\n          format: email\n        username:\n          type: string\n        fullName:\n          type: string\n        createdAt:\n          type: string\n          format: date-time\n        updatedAt:\n          type: string\n          format: date-time\n  securitySchemes:\n    bearerAuth:\n      type: http\n      scheme: bearer\n      bearerFormat: JWT\n```"
+    }
+  ],
+  "requiredTools": [],
+  "optionalTools": ["filesystem"],
+  "toolPermissions": [],
+  "evaluator": {
+    "type": "rule-based",
+    "implementation": "evaluators/web-development/api-design-eval.py",
+    "successCriteria": [
+      {
+        "name": "rest_compliance",
+        "description": "Follows REST conventions (resources, HTTP methods)",
+        "weight": 0.25,
+        "required": true
+      },
+      {
+        "name": "complete_specification",
+        "description": "Includes request/response schemas and examples",
+        "weight": 0.25,
+        "required": true
+      },
+      {
+        "name": "error_handling",
+        "description": "Defines error responses and status codes",
+        "weight": 0.2,
+        "required": true
+      },
+      {
+        "name": "openapi_valid",
+        "description": "OpenAPI specification is valid YAML/JSON",
+        "weight": 0.15,
+        "required": false
+      },
+      {
+        "name": "authentication",
+        "description": "Documents authentication requirements",
+        "weight": 0.15,
+        "required": false
+      }
+    ],
+    "weightedMetrics": [
+      {
+        "name": "api_quality",
+        "weight": 0.5,
+        "aggregation": "mean"
+      },
+      {
+        "name": "documentation_completeness",
+        "weight": 0.3,
+        "aggregation": "min"
+      },
+      {
+        "name": "spec_validity",
+        "weight": 0.2,
+        "aggregation": "mean"
+      }
+    ]
+  },
+  "mutator": {
+    "strategies": ["example-expansion", "error-handling-enhancement", "spec-refinement"],
+    "constraints": [
+      {
+        "name": "preserve_rest_conventions",
+        "type": "content",
+        "value": true
+      },
+      {
+        "name": "max_endpoints",
+        "type": "complexity",
+        "value": 10
+      }
+    ],
+    "implementation": "mutators/web-development/api-quality-mutator.py",
+    "mutationRate": 0.2
+  },
+  "optimizationHistory": [],
+  "currentScore": 0.76,
+  "optimizationThreshold": 0.88,
+  "tags": ["api", "rest", "backend", "openapi", "web-development"],
+  "difficulty": "intermediate",
+  "estimatedTokens": 1000,
+  "author": "agents-system",
+  "createdAt": "2025-10-25T00:00:00Z",
+  "updatedAt": "2025-10-25T00:00:00Z"
+}
