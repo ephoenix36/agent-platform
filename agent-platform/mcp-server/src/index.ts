@@ -8,6 +8,7 @@ import { registerAgentTools } from "./tools/agent-tools.js";
 import { registerAPITools } from "./tools/api-tools.js";
 import { registerWorkflowTools } from "./tools/workflow-tools.js";
 import { registerModelTools } from "./tools/model-tools.js";
+import { registerTaskTools } from "./tools/task-tools.js";
 import { setupLogging } from "./utils/logging.js";
 
 // Load environment variables
@@ -52,6 +53,10 @@ async function initializeServer() {
     // Register API integration tools (Zapier-like)
     await registerAPITools(server, logger);
     logger.info("✓ API integration tools registered");
+
+    // Register task management tools with timer integration
+    await registerTaskTools(server, logger);
+    logger.info("✓ Task management tools registered");
 
     logger.info("All tools registered successfully");
   } catch (error) {
