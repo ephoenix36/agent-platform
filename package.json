@@ -5,12 +5,14 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "agents": "dist/cli.js"
+    "agents": "dist/cli.js",
+    "agents-mcp": "dist/mcp/server.js"
   },
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/cli.ts",
     "start": "node dist/cli.js",
+    "mcp-server": "node dist/mcp/server.js",
     "test": "vitest",
     "optimize": "python optimization/runner.py"
   },

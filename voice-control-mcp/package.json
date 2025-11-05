@@ -1,0 +1,44 @@
+{
+  "name": "voice-control-mcp",
+  "version": "1.0.0",
+  "description": "Voice-controlled computer automation MCP server with intelligent command parsing",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "voice-control-mcp": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "watch": "tsc --watch",
+    "inspect": "mcp-inspector ./build/index.js",
+    "start": "node ./build/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "voice-control",
+    "automation",
+    "computer-control",
+    "ai-assistant",
+    "grok"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "zod": "^3.22.4",
+    "dotenv": "^16.4.5"
+  },
+  "optionalDependencies": {
+    "robotjs": "^0.6.0",
+    "node-window-manager": "^2.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3",
+    "tsx": "^4.7.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

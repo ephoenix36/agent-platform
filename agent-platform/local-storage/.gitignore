@@ -1,0 +1,25 @@
+# Local Storage - User Data
+# Keep user-downloaded agents, workflows, and tools private
+
+# Downloaded items
+agents/*/
+workflows/*/
+tools/*/
+
+# Cache and runtime data
+cache/
+index.json
+
+# User templates (custom creations)
+templates/agent-templates/*
+templates/workflow-templates/*
+templates/tool-templates/*
+
+# Keep directory structure
+!agents/.gitkeep
+!workflows/.gitkeep
+!tools/.gitkeep
+!templates/agent-templates/.gitkeep
+!templates/workflow-templates/.gitkeep
+!templates/tool-templates/.gitkeep
+!cache/.gitkeep

@@ -1,0 +1,18 @@
+# Core dependencies
+asyncio-python>=0.1.0
+dataclasses-json>=0.6.0
+pydantic>=2.0.0
+
+# Optional MCP integration (when available)
+# mcp-python>=0.1.0
+
+# Development dependencies
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+black>=23.0.0
+mypy>=1.5.0
+flake8>=6.1.0
+
+# Type stubs
+types-dataclasses>=0.6.0

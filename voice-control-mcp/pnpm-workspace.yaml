@@ -1,0 +1,5 @@
+ignoredBuiltDependencies:
+  - esbuild
+  - extract-file-icon
+  - node-window-manager
+  - robotjs

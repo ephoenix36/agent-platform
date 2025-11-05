@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .env
+.env/stripe
 *.log
 .DS_Store
 coverage/
@@ -13,3 +14,4 @@ venv/
 *.egg-info/
 optimizations/runs/*
 !optimizations/runs/.gitkeep
+user_docs/

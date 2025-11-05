@@ -1,0 +1,128 @@
+{
+  "agent": {
+    "name": "voice-control-assistant",
+    "version": "1.0.0",
+    "type": "mcp-server",
+    "description": "Voice-controlled computer automation with intelligent command parsing",
+    "category": "automation",
+    "tags": ["voice-control", "automation", "computer-control", "mcp", "grok"],
+    
+    "capabilities": [
+      "mouse_control",
+      "keyboard_control",
+      "window_management",
+      "file_operations",
+      "system_commands",
+      "voice_parsing",
+      "mcp_sampling",
+      "intelligent_command_parsing"
+    ],
+    
+    "model_config": {
+      "default_model": "grok-4-fast",
+      "fallback_models": ["gpt-4o-mini", "claude-3-5-haiku"],
+      "model_routing": {
+        "simple_commands": "grok-4-fast",
+        "complex_parsing": "grok-4",
+        "safety_critical": "claude-3-5-sonnet",
+        "code_generation": "claude-3-5-sonnet"
+      },
+      "sampling_config": {
+        "temperature": 0.3,
+        "max_tokens": 500,
+        "timeout_seconds": 10,
+        "retry_attempts": 2
+      }
+    },
+    
+    "optimization_targets": [
+      {
+        "name": "command_accuracy",
+        "description": "Percentage of commands executed correctly",
+        "target_value": 0.95,
+        "weight": 0.4
+      },
+      {
+        "name": "parsing_speed",
+        "description": "Average response time in milliseconds",
+        "target_value": 250,
+        "weight": 0.2
+      },
+      {
+        "name": "cost_per_command",
+        "description": "Average API cost per command in USD",
+        "target_value": 0.0001,
+        "weight": 0.2
+      },
+      {
+        "name": "user_satisfaction",
+        "description": "User feedback score (0-1)",
+        "target_value": 0.9,
+        "weight": 0.2
+      }
+    ],
+    
+    "evolution_config": {
+      "template": "mcp-server",
+      "parallel": false,
+      "profile": "deterministic_single",
+      "cache": true,
+      "fitness_weights": {
+        "accuracy": 0.4,
+        "speed": 0.2,
+        "cost": 0.2,
+        "safety": 0.2
+      },
+      "mutation_strategies": [
+        "adjust_temperature",
+        "change_model",
+        "modify_timeout",
+        "update_safety_thresholds"
+      ]
+    },
+    
+    "safety_config": {
+      "require_confirmation": true,
+      "dangerous_commands_blacklist": [
+        "format", "del /s", "rm -rf", "rmdir /s",
+        "reg delete", "shutdown /s", "poweroff"
+      ],
+      "max_file_size_mb": 100,
+      "rate_limit_seconds": 1,
+      "max_concurrent_commands": 3
+    },
+    
+    "monitoring": {
+      "log_level": "info",
+      "metrics_enabled": true,
+      "metrics_endpoint": null,
+      "alert_on_errors": true,
+      "performance_tracking": true
+    },
+    
+    "mcp_server_config": {
+      "transport": "stdio",
+      "tools_count": 14,
+      "supports_resources": false,
+      "supports_prompts": false,
+      "supports_sampling": true
+    },
+    
+    "integration": {
+      "platform_endpoint": "http://localhost:3000/api/agents",
+      "webhook_url": null,
+      "auth_method": "token",
+      "sync_interval_minutes": 5
+    },
+    
+    "metadata": {
+      "author": "",
+      "license": "MIT",
+      "repository": "https://github.com/yourusername/voice-control-mcp",
+      "documentation": "README.md",
+      "created_at": "2025-01-01T00:00:00Z",
+      "last_optimized_at": null,
+      "optimization_count": 0
+    }
+  }
+}
