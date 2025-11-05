@@ -188,9 +188,75 @@ listTasksSchema = {
 
 ---
 
+### Test Run #2 - TDD Green Phase ✅
+**Date:** November 5, 2025  
+**Phase:** Phase 4 - Implementation Complete  
+**Status:** GREEN (All Tests Passing)  
+**Test File:** `tests/task-tools.test.ts`
+
+**Results:**
+- **Total Tests:** 18
+- **Failed:** 0
+- **Passed:** 18 (100% ✅)
+- **Duration:** 1.687s
+
+**Implementation Summary:**
+1. ✅ **create_task tool** - Explicit task creation with timer initialization
+2. ✅ **get_task tool** - Complete task + timer information retrieval  
+3. ✅ **Enhanced list_tasks** - Time-based sorting and aggregate statistics
+
+**Key Fixes Applied:**
+- Added Zod schema validation with `.parse()` to apply default values correctly
+- Fixed timer start logic to preserve existing startTime when re-entering 'in-progress'
+- Fixed blocked state to trigger pause from any status (not just 'in-progress')
+- Added `clearTaskTimers()` export for test isolation
+- Configured Jest with ts-jest for TypeScript ESM support
+
+**Git Commit:** `e765dd7` - "feat(mcp-server): Implement timer enhancements for task tools"
+
+**Backward Compatibility:** ✅ 100% maintained - all changes additive
+
+**Next Action:** Proceed to Phase 5 - Integration Testing & Build Validation
+
+---
+
 ## Build & Validation Log
 
-_Build results and validations will be logged here_
+### Build #1 - Implementation Complete ✅
+**Date:** November 5, 2025  
+**Phase:** Phase 5 - Build & Validation  
+**Status:** SUCCESS
+
+**TypeScript Compilation:**
+- ✅ No errors
+- ✅ No type warnings
+- Output: Build artifacts generated successfully
+
+**Test Suite Execution:**
+- ✅ 18/18 tests passing
+- ✅ Duration: 1.687s
+- ✅ Code coverage: All new functions covered
+
+**Git Status:**
+- ✅ All changes committed
+- ✅ Commit hash: `e765dd7`
+- ✅ Working directory clean
+
+**Backward Compatibility Check:**
+- ✅ Existing `update_task_status` unchanged in behavior
+- ✅ Existing `get_task_timer` unchanged
+- ✅ Existing `list_tasks` default behavior preserved
+- ✅ No breaking changes introduced
+
+**Files Modified:**
+1. `src/tools/task-tools.ts` - Added 3 new tools + schemas
+2. `tests/task-tools.test.ts` - Created with 18 tests
+3. `jest.config.js` - Created for TypeScript ESM support
+4. `package.json` - Updated test scripts
+5. `DevelopmentJournal.md` - This file
+6. `AssumptionJournal.md` - Created in Phase 1
+
+**Next Action:** Phase 6 - Final Validation & Documentation
 
 ---
 
