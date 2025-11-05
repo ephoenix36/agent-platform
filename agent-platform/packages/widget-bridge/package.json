@@ -1,0 +1,38 @@
+{
+  "name": "@agent-platform/widget-bridge",
+  "version": "1.0.0",
+  "description": "PostMessage-based communication protocol for extension-widget integration",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "widget",
+    "iframe",
+    "postmessage",
+    "communication",
+    "bridge"
+  ],
+  "author": "Agent Platform",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  }
+}
