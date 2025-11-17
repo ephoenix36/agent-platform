@@ -14,7 +14,13 @@
     "start": "node dist/cli.js",
     "mcp-server": "node dist/mcp/server.js",
     "test": "vitest",
-    "optimize": "python optimization/runner.py"
+    "optimize": "python optimization/runner.py",
+    "setup:storage": "pwsh ./scripts/setup-persistent-storage.ps1",
+    "setup:storage-force": "pwsh ./scripts/setup-persistent-storage.ps1 -Force",
+    "migrate:storage": "tsx scripts/migrate-to-persistent-storage.ts",
+    "migrate:comprehensive": "npx tsx scripts/migrate-comprehensive.ts",
+    "storage:stats": "tsx -e \"import { PersistentStorageManager } from './src/core/persistent-storage.js'; const s = new PersistentStorageManager(); await s.initialize(); console.log(JSON.stringify(await s.getStats(), null, 2));\"",
+    "storage:backup": "tsx -e \"import { PersistentStorageManager } from './src/core/persistent-storage.js'; const s = new PersistentStorageManager(); await s.initialize(); const path = await s.createBackup(); console.log('Backup created:', path);\""
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.2",

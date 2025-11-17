@@ -26,6 +26,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@evosuite/sdk": "link:../../../AlphaEvolve/evosuite-sdk-ts",
     "@modelcontextprotocol/sdk": "^1.0.0",
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
@@ -35,6 +36,7 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^20.14.0",
     "jest": "^30.2.0",
+    "shadcn": "^3.5.0",
     "ts-jest": "^29.4.5",
     "tsx": "^4.19.0",
     "typescript": "^5.5.0"
