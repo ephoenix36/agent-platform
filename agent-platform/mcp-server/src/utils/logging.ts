@@ -23,17 +23,17 @@ export function setupLogging(): Logger {
   return {
     info: (...args: any[]) => {
       if (currentLevel >= levels.info) {
-        console.log('[INFO]', ...args);
+        console.error('[INFO]', ...args);  // Use stderr for MCP compatibility
       }
     },
     debug: (...args: any[]) => {
       if (currentLevel >= levels.debug) {
-        console.log('[DEBUG]', ...args);
+        console.error('[DEBUG]', ...args);  // Use stderr for MCP compatibility
       }
     },
     warn: (...args: any[]) => {
       if (currentLevel >= levels.warn) {
-        console.warn('[WARN]', ...args);
+        console.error('[WARN]', ...args);  // Use stderr for MCP compatibility
       }
     },
     error: (...args: any[]) => {

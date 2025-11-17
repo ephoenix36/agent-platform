@@ -18,6 +18,7 @@ import { AgentManager } from "../core/agent-manager.js";
 import { ConversationManager } from "./conversation-manager.js";
 import { TaskManager } from "./task-manager.js";
 import { SamplingManager } from "./sampling-manager.js";
+import { registerPersistentStorageTools } from "./persistent-storage-tools.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -37,8 +38,8 @@ const samplingManager = new SamplingManager();
 // Create MCP server
 const server = new McpServer({
   name: "agents-collaboration-platform",
-  version: "1.0.0",
-  description: "Collaborative AI Agent Platform with search, conversations, tasks, and optimization"
+  version: "2.0.0",
+  description: "Collaborative AI Agent Platform with persistent storage, search, conversations, tasks, and optimization"
 });
 
 // ============================================================================
@@ -737,11 +738,15 @@ server.tool(
 
 async function main() {
   try {
+    // Register persistent storage tools
+    registerPersistentStorageTools(server);
+    
     const transport = new StdioServerTransport();
     await server.connect(transport);
     
     console.error("Agents MCP Server started successfully");
     console.error(`Collections path: ${collectionsPath}`);
+    console.error("Persistent storage: Enabled");
   } catch (error) {
     console.error("Server error:", error);
     process.exit(1);

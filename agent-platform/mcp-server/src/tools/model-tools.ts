@@ -2,6 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { getAvailableModels } from "../services/sampling-service.js";
 import { Logger } from "../utils/logging.js";
+import { withHooks } from "../utils/hooked-registry.js";
 
 /**
  * Intelligent model selection based on task requirements
@@ -65,7 +66,7 @@ export async function registerModelTools(server: McpServer, logger: Logger) {
     "list_models",
     "List all available AI models with their capabilities and specifications",
     {},
-    async () => {
+    withHooks("list_models", async () => {
       try {
         const models = await getAvailableModels();
         
@@ -94,7 +95,7 @@ export async function registerModelTools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
 
   // ===== INTELLIGENT MODEL SELECTION =====
@@ -102,12 +103,12 @@ export async function registerModelTools(server: McpServer, logger: Logger) {
     "select_model",
     "Intelligently select the best model for a specific task based on requirements",
     selectModelSchema.shape,
-    async (input) => {
+    withHooks("select_model", async (input) => {
       try {
         logger.info(`Selecting model for ${input.taskType} task`);
         
         const models = await getAvailableModels();
-        let recommendedModel = "gpt-4-turbo-preview";
+        let recommendedModel = "claude-sonnet-4.5-haiku";
         let reasoning = "";
 
         // Selection logic based on task type and requirements
@@ -117,28 +118,28 @@ export async function registerModelTools(server: McpServer, logger: Logger) {
             recommendedModel = "claude-3-opus-20240229";
             reasoning = "Claude 3 Opus excels at creative writing with nuanced understanding";
           } else {
-            recommendedModel = "gpt-4-turbo-preview";
-            reasoning = "GPT-4 Turbo provides excellent creative output at good speed";
+            recommendedModel = "gpt-5";
+            reasoning = "GPT-5 provides excellent creative output with advanced reasoning";
           }
         } else if (input.taskType === "code_generation") {
           // Precise, structured output
           if (input.speed === "fast") {
-            recommendedModel = "gpt-3.5-turbo";
-            reasoning = "GPT-3.5 Turbo offers fast code generation for standard tasks";
+            recommendedModel = "grok-code-fast";
+            reasoning = "Grok Code Fast offers rapid code generation optimized for speed";
           } else {
-            recommendedModel = "gpt-4-turbo-preview";
-            reasoning = "GPT-4 Turbo provides superior code generation with better accuracy";
+            recommendedModel = "claude-4.5-sonnet";
+            reasoning = "Claude 4.5 Sonnet provides superior code generation with exceptional accuracy";
           }
         } else if (input.taskType === "reasoning") {
-          recommendedModel = "o1-preview";
-          reasoning = "o1-preview is optimized for complex reasoning tasks";
+          recommendedModel = "gpt-5";
+          reasoning = "GPT-5 is optimized for complex reasoning tasks";
         } else if (input.taskType === "research" || input.taskType === "data_analysis") {
           if (input.contextLength && input.contextLength > 100000) {
-            recommendedModel = "claude-3-opus-20240229";
-            reasoning = "Claude 3 Opus has 200K context window ideal for analyzing large documents";
+            recommendedModel = "gemini-2.5-pro";
+            reasoning = "Gemini 2.5 Pro has 2M context window ideal for analyzing extremely large documents";
           } else {
-            recommendedModel = "gpt-4-turbo-preview";
-            reasoning = "GPT-4 Turbo balances analytical capability with efficiency";
+            recommendedModel = "gpt-5";
+            reasoning = "GPT-5 balances analytical capability with efficiency";
           }
         } else if (input.taskType === "vision") {
           recommendedModel = "gpt-4-vision-preview";
@@ -146,8 +147,8 @@ export async function registerModelTools(server: McpServer, logger: Logger) {
         }
 
         // Adjust for budget if specified
-        if (input.budget === "low" && recommendedModel.includes("4")) {
-          recommendedModel = "gpt-3.5-turbo";
+        if (input.budget === "low" && (recommendedModel.includes("5") || recommendedModel.includes("opus"))) {
+          recommendedModel = "gpt-5-mini";
           reasoning += " (adjusted for budget constraints)";
         }
 
@@ -191,7 +192,7 @@ export async function registerModelTools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
 
   // ===== OPTIMIZE PARAMETERS =====
@@ -199,7 +200,7 @@ export async function registerModelTools(server: McpServer, logger: Logger) {
     "optimize_parameters",
     "Get optimal temperature, top_p, and other parameters for a specific model and use case",
     optimizeParametersSchema.shape,
-    async (input) => {
+    withHooks("optimize_parameters", async (input) => {
       try {
         let config: any = {
           model: input.model,
@@ -306,7 +307,7 @@ export async function registerModelTools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
 
   logger.info("Model tools registered successfully");

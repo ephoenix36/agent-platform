@@ -2,6 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import axios from "axios";
 import { Logger } from "../utils/logging.js";
+import { withHooks } from "../utils/hooked-registry.js";
 
 /**
  * Generic API call
@@ -72,7 +73,7 @@ export async function registerAPITools(server: McpServer, logger: Logger) {
     "api_call",
     "Make a generic HTTP API call to any endpoint. Supports all HTTP methods and authentication types.",
     apiCallSchema.shape,
-    async (input) => {
+    withHooks("api_call", async (input) => {
       try {
         logger.info(`API call: ${input.method} ${input.url}`);
         
@@ -119,7 +120,7 @@ export async function registerAPITools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
 
   // ===== STRIPE INTEGRATION =====
@@ -127,7 +128,7 @@ export async function registerAPITools(server: McpServer, logger: Logger) {
     "stripe_action",
     "Execute Stripe payment operations: create customers, process payments, manage subscriptions",
     stripeSchema.shape,
-    async (input) => {
+    withHooks("stripe_action", async (input) => {
       try {
         const apiKey = process.env.STRIPE_SECRET_KEY;
         if (!apiKey) {
@@ -191,7 +192,7 @@ export async function registerAPITools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
 
   // ===== GITHUB INTEGRATION =====
@@ -199,7 +200,7 @@ export async function registerAPITools(server: McpServer, logger: Logger) {
     "github_action",
     "Interact with GitHub: create issues, PRs, manage repositories, read/write files",
     githubSchema.shape,
-    async (input) => {
+    withHooks("github_action", async (input) => {
       try {
         const token = process.env.GITHUB_TOKEN;
         if (!token) {
@@ -271,7 +272,7 @@ export async function registerAPITools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
 
   // ===== SLACK INTEGRATION =====
@@ -279,7 +280,7 @@ export async function registerAPITools(server: McpServer, logger: Logger) {
     "slack_action",
     "Interact with Slack: send messages, create channels, upload files",
     slackSchema.shape,
-    async (input) => {
+    withHooks("slack_action", async (input) => {
       try {
         const token = process.env.SLACK_BOT_TOKEN;
         if (!token) {
@@ -342,7 +343,7 @@ export async function registerAPITools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
 
   // ===== WEBHOOK TRIGGER =====
@@ -354,7 +355,7 @@ export async function registerAPITools(server: McpServer, logger: Logger) {
       payload: z.any(),
       headers: z.record(z.string()).optional()
     }).shape,
-    async (input) => {
+    withHooks("trigger_webhook", async (input) => {
       try {
         logger.info(`Triggering webhook: ${input.url}`);
         
@@ -387,7 +388,7 @@ export async function registerAPITools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
 
   logger.info("API integration tools registered successfully");

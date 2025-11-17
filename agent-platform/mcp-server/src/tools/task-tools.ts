@@ -1,6 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { Logger } from "../utils/logging.js";
+import { withHooks } from "../utils/hooked-registry.js";
 
 /**
  * Task timer tracking interface
@@ -141,7 +142,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
     "create_task",
     "Create a new task with timer initialization. Use this to explicitly create a task before starting work on it.",
     createTaskSchema.shape,
-    async (input) => {
+    withHooks("create_task", async (input) => {
       try {
         // Validate and apply defaults
         const validated = createTaskSchema.parse(input);
@@ -212,7 +213,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
   
   // ===== GET TASK =====
@@ -220,7 +221,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
     "get_task",
     "Retrieve complete information about a task including timer data",
     getTaskSchema.shape,
-    async (input) => {
+    withHooks("get_task", async (input) => {
       try {
         const { taskId } = input;
         
@@ -275,7 +276,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
   
   // ===== UPDATE TASK STATUS WITH AUTO-TIMER =====
@@ -283,7 +284,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
     "update_task_status",
     "Update task status with automatic time tracking. Starts timer on 'in-progress', stops on 'completed'",
     updateTaskStatusSchema.shape,
-    async (input) => {
+    withHooks("update_task_status", async (input) => {
       try {
         // Validate and apply defaults
         const validated = updateTaskStatusSchema.parse(input);
@@ -386,7 +387,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
   
   // ===== GET TASK TIMER INFO =====
@@ -394,7 +395,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
     "get_task_timer",
     "Get detailed timing information for a task",
     getTaskTimerSchema.shape,
-    async (input) => {
+    withHooks("get_task_timer", async (input) => {
       try {
         const timer = taskTimers.get(input.taskId);
         
@@ -443,7 +444,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
   
   // ===== LIST ALL TASKS =====
@@ -451,7 +452,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
     "list_tasks",
     "List all tasks with their current status and timing. Supports time-based sorting and aggregate statistics.",
     listTasksSchema.shape,
-    async (input) => {
+    withHooks("list_tasks", async (input) => {
       try {
         const allTasks = Array.from(taskTimers.values());
         const filteredTasks = input.status === 'all' 
@@ -554,7 +555,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
 
   // ===== PAUSE/RESUME TASK TIMER =====
@@ -562,7 +563,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
     "pause_resume_task_timer",
     "Manually pause or resume a task timer without changing status",
     pauseResumeTimerSchema.shape,
-    async (input) => {
+    withHooks("pause_resume_task_timer", async (input) => {
       try {
         const timer = taskTimers.get(input.taskId);
         
@@ -650,7 +651,7 @@ export async function registerTaskTools(server: McpServer, logger: Logger) {
           isError: true
         };
       }
-    }
+    })
   );
   
   logger.info("✓ Task tools with timer integration registered");
