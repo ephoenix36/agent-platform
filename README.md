@@ -10,6 +10,17 @@
 
 ---
 
+## 📚 Documentation Navigation
+
+- **[Complete Documentation Index](DOCUMENTATION_INDEX.md)** - Full catalog of all documentation
+- **[Quick Start Guides](docs/guides/)** - Get up and running fast
+- **[Architecture Docs](docs/architecture/)** - Technical architecture and design
+- **[Planning & Roadmaps](docs/planning/)** - Project plans and sprint documentation
+- **[Status Reports](docs/status-reports/)** - Progress updates and completion reports
+- **[Business Strategy](docs/business/)** - Revenue strategy and marketing materials
+
+---
+
 ## 🎯 What Is This?
 
 A competitive marketplace where AI agents compete on real tasks, evolve automatically, and creators earn 70% of revenue. Built with production-grade evolutionary optimization achieving **83% cost savings**.

@@ -1,20 +1,31 @@
 # Agent Platform MCP Server
 
-> **Model Context Protocol (MCP) Server** for AI Agent Platform with real AI sampling, intelligent model selection, and API integrations.
+> **Model Context Protocol (MCP) Server** for AI Agent Platform with real AI sampling, intelligent model selection, API integrations, and advanced optimization features.
 
 ## 🚀 Features
 
 ### Core Capabilities
 - ✅ **Real AI Agent Execution** - Execute agents with actual AI models (GPT-4, Claude, Gemini)
-- ✅ **MCP Sampling** - Use client's LLM for agent interactions
+- ✅ **MCP Sampling with Tool Access** - Agents can use server tools during execution
 - ✅ **Intelligent Model Selection** - Automatic model selection based on task type
 - ✅ **Model Parameter Optimization** - Get optimal temperature, top_p for any use case
 - ✅ **Multi-Agent Collaboration** - Orchestrate multiple agents on complex tasks
 - ✅ **Workflow Orchestration** - Build and execute multi-step workflows
 - ✅ **API Integrations** - Connect to any API (Zapier-like functionality)
 
+### Advanced Features ⭐ NEW
+- ✅ **Hook System** - Lifecycle hooks for validation, logging, metrics, and auth
+- ✅ **Tool Instrumentation** - All 30 tools automatically instrumented with hooks
+- ✅ **Evolutionary Optimization** - Optimize agent parameters with EvoSuite SDK
+- ✅ **Telemetry & Observability** - Real-time event monitoring and metrics
+- ✅ **Workflow Optimization** - Track and optimize multi-step workflows
+- ✅ **Performance Analytics** - Comprehensive metrics and performance tracking
+
+**📖 [Read the Advanced Features Documentation](./docs/ADVANCED_FEATURES.md)**
+
 ### Supported Integrations
-- **AI Providers:** OpenAI, Anthropic (Claude), Google AI (Gemini)
+- **AI Execution:** MCP Sampling (uses client's LLM - **no API keys required!**)
+- **AI Providers (Fallback):** OpenAI, Anthropic (Claude), Google AI (Gemini), xAI (Grok)
 - **APIs:** Stripe, GitHub, Slack, Discord
 - **Generic:** Any REST API with authentication
 - **Webhooks:** Trigger external services (Zapier, Make, n8n)
@@ -26,6 +37,7 @@
 ### Prerequisites
 - Node.js >= 18.0.0
 - pnpm (recommended) or npm
+- **No API keys required!** (Uses MCP sampling with your client's LLM)
 
 ### Setup Steps
 
@@ -35,22 +47,19 @@ cd mcp-server
 pnpm install
 ```
 
-2. **Configure environment:**
+2. **Configure environment (OPTIONAL):**
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env` and add your API keys:
-```env
-# Required for AI sampling
-OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
-GOOGLE_AI_API_KEY=...
+**Note:** API keys are **optional**. The server uses MCP sampling by default, which leverages your client's LLM (Claude, GPT, etc.). Only configure API keys if you want guaranteed fallback or specific model control.
 
-# Optional: API integrations
-STRIPE_SECRET_KEY=sk_live_...
-GITHUB_TOKEN=ghp_...
-SLACK_BOT_TOKEN=xoxb-...
+Edit `.env` only if you want API fallback:
+```env
+# OPTIONAL: Only needed for API fallback
+# ANTHROPIC_API_KEY=sk-ant-...
+# OPENAI_API_KEY=sk-...
+# GOOGLE_AI_API_KEY=...
 ```
 
 3. **Build the server:**
@@ -63,6 +72,10 @@ pnpm run build
 pnpm run inspect
 ```
 
+**See documentation:**
+- **[MCP Sampling Setup](./MCP_SAMPLING_SETUP.md)** - Initial configuration
+- **[MCP Sampling with Tool Access](./MCP_SAMPLING_WITH_TOOLS.md)** - Enable agents to use tools ⭐ NEW
+
 ---
 
 ## 🔧 Available Tools
@@ -70,7 +83,7 @@ pnpm run inspect
 ### Agent Tools
 
 #### `execute_agent`
-Execute an AI agent with full configuration control.
+Execute an AI agent with full configuration control. Agents can use server tools during execution.
 
 **Parameters:**
 - `agentId` - Agent identifier
@@ -82,6 +95,7 @@ Execute an AI agent with full configuration control.
 - `systemPrompt` - Custom system prompt
 - `context` - Conversation history
 - `documents` - Documents to include in context
+- `tools` - Array of tool names to enable (e.g., `["api_call", "create_task"]`)
 
 **Example:**
 ```json
@@ -91,6 +105,7 @@ Execute an AI agent with full configuration control.
   "model": "gpt-4-turbo-preview",
   "temperature": 0.7,
   "systemPrompt": "You are an expert web developer",
+  "tools": ["api_call", "trigger_webhook"],
   "documents": [
     {
       "id": "brand-guide",
@@ -101,8 +116,18 @@ Execute an AI agent with full configuration control.
 }
 ```
 
+**With Tool Access:**
+```json
+{
+  "agentId": "research-assistant",
+  "prompt": "Research quantum computing trends and send report to Slack",
+  "tools": ["api_call", "slack_action"],
+  "maxTokens": 8000
+}
+```
+
 #### `chat_with_agent`
-Have a conversation with an agent (maintains context).
+Have a conversation with an agent. **Tool access is enabled by default** for interactive capabilities.
 
 **Example:**
 ```json
@@ -112,6 +137,15 @@ Have a conversation with an agent (maintains context).
   "conversationId": "conv_123"
 }
 ```
+
+**Interactive Example:**
+```json
+{
+  "agentId": "code-assistant",
+  "message": "Help me debug this React component and check for similar issues in the codebase"
+}
+```
+The agent can automatically use tools like `semantic_search`, `api_call`, `create_task`, etc.
 
 #### `configure_agent`
 Create or update an agent preset.
@@ -130,7 +164,7 @@ Create or update an agent preset.
 }
 ```
 
-#### `collaborate_agents`
+#### `agent_teams`
 Orchestrate multiple agents on a complex task.
 
 **Example:**
@@ -600,22 +634,89 @@ export async function registerCustomTools(server: McpServer, logger: Logger) {
 
 ## 🚀 Next Steps
 
+### Basic Usage
 1. **Set up API keys** in `.env`
 2. **Build and test** with MCP Inspector
 3. **Integrate** with your web app
 4. **Create custom workflows** for your use cases
 5. **Monitor usage** and optimize costs
 
+### Advanced Features Quick Start
+
+**Enable Hook System:**
+```typescript
+import { initializeGlobalHooks } from './src/utils/hooked-registry.js';
+import { LoggingHook, MetricsHook } from './src/hooks/standard-hooks.js';
+
+const hookManager = initializeGlobalHooks();
+
+// Add logging
+hookManager.registerHook(new LoggingHook().getHook());
+
+// Add metrics
+const metricsHook = new MetricsHook();
+hookManager.registerHook(metricsHook.getHook());
+
+// All 30 tools now have automatic logging and metrics!
+```
+
+**Optimize Agent Parameters:**
+```typescript
+import { OptimizationService } from './src/services/OptimizationService.js';
+
+const optimizer = new OptimizationService();
+
+const result = await optimizer.optimize({
+  evaluator: (genome) => {
+    const [temperature, maxTokens] = genome;
+    // Test agent with these parameters
+    // Return fitness score
+  },
+  populationSize: 20,
+  generations: 10,
+  genomeDimension: 2,
+  genomeRange: [[0.1, 1.0], [100, 1000]]
+});
+
+console.log('Optimal temperature:', result.bestIndividual[0]);
+console.log('Optimal maxTokens:', result.bestIndividual[1]);
+```
+
+**Monitor with Telemetry:**
+```typescript
+import { TelemetryBridge } from './src/telemetry/TelemetryBridge.js';
+
+const bridge = new TelemetryBridge(optimizationService, { enabled: true });
+
+bridge.on('telemetry', (event) => {
+  console.log('Event:', event.type, event.data);
+  // Forward to Datadog, New Relic, etc.
+});
+
+bridge.start();
+```
+
+**See full examples:**
+- [Hook System Demo](./examples/hooks-demo.ts)
+- [Sampling Demo](./examples/sampling-demo.ts)
+- [Standard Hooks Usage](./examples/standard-hooks-usage.ts)
+- [Complete Optimization Workflow](./examples/optimization-workflow.ts)
+
 ---
 
 ## 📚 Resources
 
-- [MCP Specification](https://modelcontextprotocol.io)
-- [OpenAI API Docs](https://platform.openai.com/docs)
-- [Anthropic API Docs](https://docs.anthropic.com)
-- [Stripe API Docs](https://stripe.com/docs/api)
+- **Documentation:**
+  - [Advanced Features Guide](./docs/ADVANCED_FEATURES.md)
+  - [Tool Instrumentation Complete](./TOOL_INSTRUMENTATION_COMPLETE.md)
+  - [Priority 6 Completion Report](./PRIORITY_6_COMPLETE.md)
+- **MCP & APIs:**
+  - [MCP Specification](https://modelcontextprotocol.io)
+  - [OpenAI API Docs](https://platform.openai.com/docs)
+  - [Anthropic API Docs](https://docs.anthropic.com)
+  - [Stripe API Docs](https://stripe.com/docs/api)
 
----
+------
 
 ## 📄 License
 

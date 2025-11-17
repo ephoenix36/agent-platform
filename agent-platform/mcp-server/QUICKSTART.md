@@ -328,7 +328,7 @@ const reader = stream.body.getReader();
 const collaboration = await fetch('/api/mcp', {
   method: 'POST',
   body: JSON.stringify({
-    tool: 'collaborate_agents',
+    tool: 'agent_teams',
     params: {
       agents: [
         { id: 'researcher', role: 'Research' },
