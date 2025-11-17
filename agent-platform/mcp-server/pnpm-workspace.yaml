@@ -1,0 +1,2 @@
+overrides:
+  '@evosuite/sdk': link:../../../AlphaEvolve/evosuite-sdk-ts

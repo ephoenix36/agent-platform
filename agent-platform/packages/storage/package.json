@@ -1,0 +1,35 @@
+{
+  "name": "@agent-platform/storage",
+  "version": "0.1.0",
+  "description": "Storage layer for AI Agent Platform components",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "storage",
+    "components",
+    "versioning"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "zod": "^3.22.4",
+    "chokidar": "^3.5.3",
+    "yaml": "^2.3.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.14.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.5",
+    "typescript": "^5.5.0"
+  }
+}

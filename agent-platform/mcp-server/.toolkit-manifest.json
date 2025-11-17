@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "updated": "2025-11-17T15:18:32.120Z",
+  "toolkits": {
+    "core": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false,
+      "config": {
+        "description": "Always loaded - provides toolkit management"
+      }
+    },
+    "persistent-storage": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false,
+      "config": {
+        "description": "Comprehensive asset management - agents, teams, skills, tools, workflows, projects (26 tools)",
+        "storageRoot": "~/.agents",
+        "autoBackup": true,
+        "backupIntervalDays": 7,
+        "cacheEnabled": true
+      }
+    },
+    "agent-development": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false,
+      "config": {
+        "description": "AI agent execution and collaboration (6 tools including async teams)"
+      }
+    },
+    "workflow": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false,
+      "config": {
+        "description": "Workflow orchestration with agent_team node support"
+      }
+    },
+    "model-management": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false,
+      "config": {
+        "description": "AI model selection and optimization"
+      }
+    },
+    "integrations": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false,
+      "config": {
+        "description": "External service integrations (GitHub, Slack, Stripe)"
+      }
+    },
+    "task-management": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false,
+      "config": {
+        "description": "Legacy task tracking system",
+        "deprecationWarning": "Consider migrating to project-management toolkit"
+      }
+    },
+    "project-management": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false,
+      "config": {
+        "description": "Advanced project, sprint, and task management (opt-in)",
+        "defaultSprintDuration": 14,
+        "autoArchiveDays": 90
+      }
+    },
+    "project-management:projects": {
+      "enabled": false,
+      "autoLoad": false,
+      "lazyLoad": true,
+      "config": {
+        "description": "Projects only (6 tools)"
+      }
+    },
+    "project-management:tasks": {
+      "enabled": false,
+      "autoLoad": false,
+      "lazyLoad": true,
+      "config": {
+        "description": "Tasks only (10 tools, requires projects)"
+      }
+    },
+    "skills": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false
+    },
+    "collections": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false
+    },
+    "structured-output": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false
+    },
+    "widgets": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false
+    },
+    "hooks": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false
+    },
+    "mcp-config-management": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false
+    },
+    "file-operations": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false
+    },
+    "usage-analytics": {
+      "enabled": true,
+      "autoLoad": true,
+      "lazyLoad": false
+    }
+  }
+}
