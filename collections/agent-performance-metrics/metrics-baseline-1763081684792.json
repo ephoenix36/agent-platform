@@ -1,0 +1,266 @@
+[
+  {
+    "workflowId": "biz_competitor_monitor",
+    "runId": "20c6dd74-0f6a-4726-85de-0025e3899415",
+    "timestamp": "2025-11-14T00:54:44.782Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 1848,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.27,
+      "noveltyScore": 0.55
+    },
+    "evaluatorScores": {
+      "data_completeness": 0.81,
+      "normalization_accuracy": 0.76,
+      "insight_quality": 0.83,
+      "latency": 0.76
+    },
+    "overallScore": 0.796,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "biz_daily_market_intel",
+    "runId": "41dabfe2-b000-4716-9f24-03ddd71ae4e3",
+    "timestamp": "2025-11-14T00:54:44.785Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 3382,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.09,
+      "noveltyScore": 0.65
+    },
+    "evaluatorScores": {
+      "coverage": 0.58,
+      "relevance": 0.63,
+      "brevity": 0.88,
+      "timeliness": 0.59
+    },
+    "overallScore": 0.657,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "cs_email_triage_human_loop",
+    "runId": "6ce48855-9390-4936-9255-7b63d0041560",
+    "timestamp": "2025-11-14T00:54:44.786Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 1435,
+      "errorCount": 0,
+      "successRate": 0.96,
+      "humanEditDistance": 0.28,
+      "noveltyScore": 0.56
+    },
+    "evaluatorScores": {
+      "classification_accuracy": 0.8,
+      "draft_quality": 0.67,
+      "human_edit_distance": 0.67,
+      "response_latency": 0.76
+    },
+    "overallScore": 0.727,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "data_invoice_extraction",
+    "runId": "4fa35388-5581-4cd3-8f60-2bfbd832f87a",
+    "timestamp": "2025-11-14T00:54:44.786Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 3919,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.05,
+      "noveltyScore": 0.68
+    },
+    "evaluatorScores": {
+      "field_accuracy": 0.68,
+      "currency_normalization": 0.55,
+      "validation_pass_rate": 0.79,
+      "latency": 0.64
+    },
+    "overallScore": 0.668,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "eng_code_review_ai_gitlab",
+    "runId": "18581da6-a2f2-4d72-a96d-fc3577f702bd",
+    "timestamp": "2025-11-14T00:54:44.787Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 4960,
+      "errorCount": 0,
+      "successRate": 0.98,
+      "humanEditDistance": 0.24,
+      "noveltyScore": 0.56
+    },
+    "evaluatorScores": {
+      "coverage": 0.86,
+      "false_positive_rate": 0.85,
+      "actionability": 0.83,
+      "latency": 0.74
+    },
+    "overallScore": 0.82,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "mkt_content_calendar_orchestrator",
+    "runId": "acc182e5-0ddf-48e4-b331-316673c7d7c8",
+    "timestamp": "2025-11-14T00:54:44.788Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 1356,
+      "errorCount": 0,
+      "successRate": 0.99,
+      "humanEditDistance": 0.11,
+      "noveltyScore": 0.71
+    },
+    "evaluatorScores": {
+      "gap_coverage": 0.66,
+      "topic_quality": 0.62,
+      "approval_rate": 0.65,
+      "schedule_balance": 0.58
+    },
+    "overallScore": 0.63,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "mkt_social_media_post_generator",
+    "runId": "95eff62e-22c4-4333-958b-d632d470c6e0",
+    "timestamp": "2025-11-14T00:54:44.788Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 5337,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.22,
+      "noveltyScore": 0.74
+    },
+    "evaluatorScores": {
+      "relevance": 0.61,
+      "style_adherence": 0.68,
+      "engagement_prediction": 0.57,
+      "brevity_quality": 0.65
+    },
+    "overallScore": 0.624,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "research_autonomous_deep_research",
+    "runId": "b7d02f52-750d-4543-a0d4-06fa352ea606",
+    "timestamp": "2025-11-14T00:54:44.789Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 3181,
+      "errorCount": 0,
+      "successRate": 0.98,
+      "humanEditDistance": 0.17,
+      "noveltyScore": 0.87
+    },
+    "evaluatorScores": {
+      "source_diversity": 0.72,
+      "accuracy": 0.86,
+      "novelty": 0.87,
+      "clarity": 0.72
+    },
+    "overallScore": 0.806,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "research_paper_summary_categorizer",
+    "runId": "eb8f8d71-1b99-4b2a-9a42-482174c9f711",
+    "timestamp": "2025-11-14T00:54:44.790Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 3955,
+      "errorCount": 0,
+      "successRate": 0.96,
+      "humanEditDistance": 0.16,
+      "noveltyScore": 0.61
+    },
+    "evaluatorScores": {
+      "summary_quality": 0.84,
+      "category_accuracy": 0.64,
+      "novelty_precision": 0.85,
+      "latency": 0.82
+    },
+    "overallScore": 0.778,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "sales_lead_qualification_sheet",
+    "runId": "cdbb2a49-ddd2-44d4-85ee-eb50cf02493f",
+    "timestamp": "2025-11-14T00:54:44.791Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 4699,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.25,
+      "noveltyScore": 0.58
+    },
+    "evaluatorScores": {
+      "enrichment_completeness": 0.68,
+      "scoring_consistency": 0.55,
+      "crm_sync_success": 0.85,
+      "latency": 0.87
+    },
+    "overallScore": 0.713,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "vector_store_ingestion_pipeline",
+    "runId": "6d89bc99-7ec4-43ce-9ca3-3162bd8c22b3",
+    "timestamp": "2025-11-14T00:54:44.792Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 6075,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.09,
+      "noveltyScore": 0.81
+    },
+    "evaluatorScores": {
+      "chunk_quality": 0.57,
+      "embedding_density": 0.62,
+      "upsert_success": 0.67,
+      "latency": 0.56
+    },
+    "overallScore": 0.608,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  }
+]

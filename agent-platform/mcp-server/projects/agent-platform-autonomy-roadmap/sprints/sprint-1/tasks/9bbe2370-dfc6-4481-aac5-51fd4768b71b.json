@@ -1,0 +1,54 @@
+{
+  "id": "9bbe2370-dfc6-4481-aac5-51fd4768b71b",
+  "number": "TASK-016",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "75fdde2e-4d1a-425b-acfc-587171a04860",
+  "title": "Create Policy Sync CLI Tool",
+  "description": "Create CLI tool that allows administrators to trigger policy sync manually or via automation. Tool should provide clear feedback and validation before applying changes.",
+  "status": "pending",
+  "priority": "medium",
+  "type": "feature",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 3,
+    "complexity": "low"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:04:36.342Z",
+    "updated": "2025-11-16T04:04:36.382Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "cli",
+      "tools"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "CLI tool pm_sync_policies deployed",
+      "Tool supports --dry-run, --projects, --force flags",
+      "Progress reporting shows sync status",
+      "Error handling with clear messages",
+      "Tool integrated into PM toolkit"
+    ]
+  },
+  "context": {}
+}

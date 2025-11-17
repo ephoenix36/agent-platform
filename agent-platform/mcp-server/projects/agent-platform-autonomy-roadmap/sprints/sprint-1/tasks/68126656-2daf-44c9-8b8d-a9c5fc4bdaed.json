@@ -1,0 +1,54 @@
+{
+  "id": "68126656-2daf-44c9-8b8d-a9c5fc4bdaed",
+  "number": "TASK-017",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "75fdde2e-4d1a-425b-acfc-587171a04860",
+  "title": "Test Policy Sync System",
+  "description": "Create test suite validating policy sync correctness, performance, and error handling. Cover inheritance logic, conflict resolution, and edge cases.",
+  "status": "pending",
+  "priority": "high",
+  "type": "test",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 5,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:04:36.445Z",
+    "updated": "2025-11-16T04:04:36.481Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "testing",
+      "quality-assurance"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Unit tests validate policy inheritance logic >90% coverage",
+      "Integration tests cover full sync workflow",
+      "Conflict resolution tests verify correctness",
+      "Performance tests validate <2min requirement",
+      "Edge case tests for malformed policies"
+    ]
+  },
+  "context": {}
+}

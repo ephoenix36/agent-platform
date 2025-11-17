@@ -1,0 +1,26 @@
+{
+  "id": "research_paper_summary_categorizer",
+  "name": "Research Paper Summarization & Categorization",
+  "category": "research",
+  "version": "1.0.0",
+  "description": "Fetch new papers, summarize, categorize, assess novelty & store citations.",
+  "triggers": ["schedule"],
+  "valueScore": 8,
+  "complexity": "medium",
+  "status": "planned",
+  "agentsNeeded": ["literature-synthesizer"],
+  "skillsNeeded": ["summarization", "taxonomy-mapping"],
+  "dependencies": [],
+  "source": {"origin": "workflow_backlog", "attribution": "HuggingFace papers template"},
+  "steps": [
+    {"id": "discover", "type": "agent", "agentId": "web-research-automation-agent", "description": "Fetch new papers metadata", "outputs": ["paperList"]},
+    {"id": "summarize", "type": "agent", "agentId": "literature-synthesizer", "description": "Generate structured summaries", "inputs": ["paperList"], "outputs": ["summaries"]},
+    {"id": "categorize", "type": "agent", "agentId": "literature-synthesizer", "description": "Assign taxonomy categories", "inputs": ["summaries"], "outputs": ["categorizedSummaries"]},
+    {"id": "novelty_score", "type": "agent", "agentId": "data-analyzer", "description": "Compute novelty metric", "inputs": ["categorizedSummaries"], "outputs": ["scoredSummaries"]},
+    {"id": "store", "type": "transform", "description": "Persist summaries + citations", "inputs": ["scoredSummaries"], "outputs": ["storeResult"]}
+  ],
+  "evaluator": {"successCriteria": [{"name": "summary_quality", "weight": 0.3}, {"name": "category_accuracy", "weight": 0.3}, {"name": "novelty_precision", "weight": 0.2}, {"name": "latency", "weight": 0.2}]},
+  "hooks": {"beforeExecution": ["check-papers-api"], "afterExecution": ["update-taxonomy-stats"], "onError": ["log-fetch-failure"]},
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+}

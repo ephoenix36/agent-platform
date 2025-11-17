@@ -1,0 +1,57 @@
+{
+  "id": "6c14b161-3591-4724-8dfb-c0dbb6308240",
+  "slug": "widget-driven-human-collaboration",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "7bf7b087-f041-4ef4-adb2-a208ca389829",
+  "name": "Widget-Driven Human Collaboration",
+  "goal": "Extend widget toolkit with approval forms, dashboards, and control panels for supervising workflows and skills.",
+  "status": "proposed",
+  "owner": "automation-lead",
+  "priority": "medium",
+  "tags": [
+    "widgets",
+    "collaboration",
+    "ui"
+  ],
+  "overview": {
+    "summary": "Completes request for human collaboration surfaces mentioned in ENH summary.",
+    "goals": [
+      "Approval forms for workflow outputs",
+      "Dashboard widgets for KPIs",
+      "Control panel to pause/resume workflows"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Widget templates for approvals, dashboards, controls",
+      "Integration with telemetry + pm tools",
+      "Access control respecting upcoming RBAC"
+    ],
+    "nonFunctional": [
+      "Widget render <300ms",
+      "State persisted per task"
+    ]
+  },
+  "acceptance": [
+    "Widget templates stored under ui-design-mcp",
+    "Demo video for approval workflow",
+    "Docs updated with widget usage"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:12:51.119Z",
+    "updated": "2025-11-16T03:12:51.119Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\workflow-skill-orchestration\\features\\widget-driven-human-collaboration"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

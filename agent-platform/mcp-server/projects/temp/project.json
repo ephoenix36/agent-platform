@@ -1,0 +1,41 @@
+{
+  "id": "bb01ea98-cb27-45ff-9067-8e4b5ce0b218",
+  "slug": "temp",
+  "name": "temp",
+  "description": "temp",
+  "status": "active",
+  "metadata": {
+    "created": "2025-11-16T03:12:09.677Z",
+    "updated": "2025-11-16T03:18:04.490Z",
+    "owner": "x",
+    "contributors": [
+      "x"
+    ],
+    "tags": [],
+    "version": "0.1.0"
+  },
+  "settings": {
+    "sprintDuration": 14,
+    "timezone": "UTC",
+    "requireApproval": false
+  },
+  "stats": {
+    "totalSprints": 0,
+    "activeSprints": 0,
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "activeContributors": 1,
+    "totalEpics": 2,
+    "activeEpics": 0,
+    "totalFeatures": 0,
+    "completedFeatures": 0
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\temp",
+    "docs": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\temp\\docs",
+    "memory": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\temp\\memory",
+    "sprints": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\temp\\sprints",
+    "archived": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\temp\\.archived",
+    "epics": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\temp\\epics"
+  }
+}

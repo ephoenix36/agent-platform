@@ -1,0 +1,57 @@
+{
+  "id": "124a7db8-4527-4036-8d32-89575ef96698",
+  "slug": "compliance-audit-evidence-exports",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "b9af1986-471b-4bdb-a28f-f38bb61e6203",
+  "name": "Compliance & Audit Evidence Exports",
+  "goal": "Provide SOC2-ready audit trails, execution transcripts, and compliance exports in under 60 seconds.",
+  "status": "proposed",
+  "owner": "enterprise-go-to-market",
+  "priority": "high",
+  "tags": [
+    "compliance",
+    "audit",
+    "export"
+  ],
+  "overview": {
+    "summary": "Delivers audit + compliance exports requirement from enhancement summary.",
+    "goals": [
+      "Central audit log for agent/workflow/tool actions",
+      "One-click export to CSV/JSON/S3",
+      "Integration with wait tools for long-running exports"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Audit log aggregator writing to immutable storage",
+      "Export tool with filters (date, agent, severity)",
+      "Redaction rules for sensitive data"
+    ],
+    "nonFunctional": [
+      "Export under 60s for 10k events",
+      "Meets retention policies"
+    ]
+  },
+  "acceptance": [
+    "Audit log spec documented",
+    "Large export smoke test recorded",
+    "Docs describe compliance workflow"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:10:53.430Z",
+    "updated": "2025-11-16T03:10:53.430Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\enterprise-marketplace-readiness\\features\\compliance-audit-evidence-exports"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "606568af-7d7a-4e17-8a0b-33be4a6e848b",
+  "slug": "shared-context-graph-conflict-resolver",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "6022ff09-ac28-4d89-abe3-aede3685ae54",
+  "name": "Shared Context Graph & Conflict Resolver",
+  "goal": "Global knowledge graph + locking protocol so agent teams share facts safely and resolve conflicting edits.",
+  "status": "proposed",
+  "owner": "collab-systems",
+  "priority": "high",
+  "tags": [
+    "shared-context",
+    "graph",
+    "conflict-resolution"
+  ],
+  "overview": {
+    "summary": "Implements shared context management with <100ms lookups requirement from epic.",
+    "goals": [
+      "Graph store for entities/tasks/decisions",
+      "Fine-grained locking + CRDT style merges",
+      "Conflict alerts + resolution playbooks"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Context service persists graph nodes with provenance",
+      "APIs for agents to read/write with versioning",
+      "Conflict resolver suggests merges or escalation tasks"
+    ],
+    "nonFunctional": [
+      "Lookup latency <100ms",
+      "Supports at least 10 concurrent agents"
+    ]
+  },
+  "acceptance": [
+    "Graph schema documented",
+    "Load test demonstrates latency target",
+    "Conflict scenario demo recorded"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:10:04.742Z",
+    "updated": "2025-11-16T03:10:04.742Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\collaborative-autonomy-layer\\features\\shared-context-graph-conflict-resolver"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

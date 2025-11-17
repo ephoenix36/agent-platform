@@ -1,0 +1,73 @@
+{
+  "id": "ff8a739e-8d56-4604-a19e-8a3768133bad",
+  "slug": "core-app-infrastructure",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "name": "Core App Infrastructure",
+  "goal": "Establish the technical foundation with Next.js, PostgreSQL, and Whop SDK integration",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "critical",
+  "tags": [
+    "infrastructure",
+    "foundation",
+    "next-js",
+    "postgresql",
+    "whop-sdk"
+  ],
+  "overview": {
+    "summary": "Set up the foundational tech stack for the Markets platform",
+    "motivation": "Need a solid, scalable foundation that supports dual-hosting (self-hosted and managed PaaS)",
+    "goals": [
+      "Production-ready Next.js setup",
+      "Database connectivity",
+      "Whop authentication working",
+      "CI/CD pipeline"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Next.js App Router setup",
+      "PostgreSQL connection pooling",
+      "Whop SDK auth flows",
+      "Environment-based configuration"
+    ],
+    "nonFunctional": [
+      "Fast cold starts for serverless",
+      "Secure credential management",
+      "Multi-tenancy via companyId scoping"
+    ]
+  },
+  "acceptance": [
+    "Next.js 16 App Router with TypeScript",
+    "PostgreSQL database via Supabase/Neon",
+    "Whop SDK integration (@whop/react, @whop/sdk)",
+    "Vercel deployment configuration",
+    "Environment variable management",
+    "pnpm workspace setup",
+    "Biome linter/formatter config"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 5,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:24:59.926Z",
+    "updated": "2025-11-16T02:24:59.926Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp\\features\\core-app-infrastructure"
+  },
+  "relationships": {
+    "taskIds": [
+      "2253e188-8f53-4dc7-a80f-8d08d8cef1a1",
+      "1cde627e-0363-455f-8cb8-8c077579db9f",
+      "bca3e1ea-b25a-4176-9433-74c978617a5f",
+      "076ea44f-19cd-4b61-a483-2145a0b81039",
+      "76ef4252-b1ed-4e05-863b-563dfa8113ef"
+    ],
+    "relatedFeatureIds": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "0828f0ac-1d6e-475a-bf31-70acb36f3dd0",
+  "slug": "budget-rate-guardrails",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "name": "Budget & Rate Guardrails",
+  "goal": "BudgetManager and rate limiting services enforce spend, token, and call quotas before agents execute.",
+  "status": "proposed",
+  "owner": "platform-observability",
+  "priority": "high",
+  "tags": [
+    "budgets",
+    "rate-limits",
+    "governance"
+  ],
+  "overview": {
+    "summary": "Token/cost/call budgets plus burst-aware rate limiting protecting MCP workloads.",
+    "goals": [
+      "Per-agent + global budgets",
+      "Alert + block modes",
+      "Rate limiting with bursts"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "CRUD budgets via pm tools",
+      "Enforce limits before agent execution",
+      "Alert callbacks or logs when thresholds crossed",
+      "Rate limiting per minute/hour with bursts"
+    ],
+    "nonFunctional": [
+      "Budget checks <5ms",
+      "Persistent counters even after restart"
+    ]
+  },
+  "acceptance": [
+    "budget_create/update/delete/list exercised in demos",
+    "rate_limit_set/check gating tool calls",
+    "Budget enforcement documented in FEATURE_COMPLETE"
+  ],
+  "metrics": {
+    "breachPreventionRate": 0.99
+  },
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:07:13.802Z",
+    "updated": "2025-11-16T03:07:13.802Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\observability-resource-intelligence\\features\\budget-rate-guardrails"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

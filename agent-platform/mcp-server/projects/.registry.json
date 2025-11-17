@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "updated": "2025-11-16T04:00:36.887Z",
+  "projects": {
+    "demo-pm-project-1763258472187": {
+      "id": "ed418795-a018-4f99-b855-474faab4ffa8",
+      "name": "Demo PM Project 1763258472187",
+      "status": "active",
+      "path": "demo-pm-project-1763258472187",
+      "created": "2025-11-16T02:01:12.189Z",
+      "updated": "2025-11-16T02:01:12.189Z"
+    },
+    "demo-pm-project-1763258578064": {
+      "id": "b9d7955d-6320-4eef-86b7-4f1dbcba2b36",
+      "name": "Demo PM Project 1763258578064",
+      "status": "active",
+      "path": "demo-pm-project-1763258578064",
+      "created": "2025-11-16T02:02:58.065Z",
+      "updated": "2025-11-16T02:02:58.065Z"
+    },
+    "ai-agent-demo": {
+      "id": "dc4f9a04-d2fb-428e-89b4-1156435838b0",
+      "name": "AI Agent Demo",
+      "status": "active",
+      "path": "ai-agent-demo",
+      "created": "2025-11-16T02:08:24.222Z",
+      "updated": "2025-11-16T02:08:24.222Z"
+    },
+    "markets-ai-native-community-paas": {
+      "id": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+      "name": "Markets - AI-Native Community PaaS",
+      "status": "active",
+      "path": "markets-ai-native-community-paas",
+      "created": "2025-11-16T02:23:33.838Z",
+      "updated": "2025-11-16T02:26:46.325Z"
+    },
+    "agent-platform-autonomy-roadmap": {
+      "id": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+      "name": "Agent Platform Autonomy Roadmap",
+      "status": "active",
+      "path": "agent-platform-autonomy-roadmap",
+      "created": "2025-11-16T03:06:13.417Z",
+      "updated": "2025-11-16T04:00:36.876Z"
+    },
+    "temp": {
+      "id": "bb01ea98-cb27-45ff-9067-8e4b5ce0b218",
+      "name": "temp",
+      "status": "active",
+      "path": "temp",
+      "created": "2025-11-16T03:12:09.677Z",
+      "updated": "2025-11-16T03:12:09.677Z"
+    }
+  }
+}

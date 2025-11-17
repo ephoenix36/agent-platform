@@ -1,0 +1,288 @@
+[
+  {
+    "workflowId": "biz_competitor_monitor",
+    "runId": "0e90ff96-8b45-4a60-8613-16964130ca47",
+    "timestamp": "2025-11-14T01:08:38.836Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 1610,
+      "errorCount": 0,
+      "successRate": 0.99,
+      "humanEditDistance": 0.24,
+      "noveltyScore": 0.64,
+      "tokenUsage": 3197,
+      "costPerRun": 0.0064
+    },
+    "evaluatorScores": {
+      "data_completeness": 0.59,
+      "normalization_accuracy": 0.89,
+      "insight_quality": 0.65,
+      "latency": 0.63
+    },
+    "overallScore": 0.676,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "biz_daily_market_intel",
+    "runId": "0182e428-39f7-4801-a021-9994900f793f",
+    "timestamp": "2025-11-14T01:08:38.838Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 6339,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.09,
+      "noveltyScore": 0.55,
+      "tokenUsage": 2252,
+      "costPerRun": 0.0045
+    },
+    "evaluatorScores": {
+      "coverage": 0.55,
+      "relevance": 0.69,
+      "brevity": 0.78,
+      "timeliness": 0.57
+    },
+    "overallScore": 0.642,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "cs_email_triage_human_loop",
+    "runId": "ca5da1e1-fd3f-4f3c-9eee-b999d77074a9",
+    "timestamp": "2025-11-14T01:08:38.839Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 5090,
+      "errorCount": 0,
+      "successRate": 0.95,
+      "humanEditDistance": 0.18,
+      "noveltyScore": 0.73,
+      "tokenUsage": 1427,
+      "costPerRun": 0.0029
+    },
+    "evaluatorScores": {
+      "classification_accuracy": 0.64,
+      "draft_quality": 0.71,
+      "human_edit_distance": 0.85,
+      "response_latency": 0.78
+    },
+    "overallScore": 0.731,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "data_invoice_extraction",
+    "runId": "84720db7-7f06-4681-9c4d-5fe2d964ce55",
+    "timestamp": "2025-11-14T01:08:38.840Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 6135,
+      "errorCount": 0,
+      "successRate": 0.99,
+      "humanEditDistance": 0.17,
+      "noveltyScore": 0.59,
+      "tokenUsage": 1602,
+      "costPerRun": 0.0032
+    },
+    "evaluatorScores": {
+      "field_accuracy": 0.86,
+      "currency_normalization": 0.65,
+      "validation_pass_rate": 0.65,
+      "latency": 0.84
+    },
+    "overallScore": 0.772,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "eng_code_review_ai_gitlab",
+    "runId": "22fe1474-e283-493a-985d-28028044e6c4",
+    "timestamp": "2025-11-14T01:08:38.841Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 2387,
+      "errorCount": 0,
+      "successRate": 0.96,
+      "humanEditDistance": 0.26,
+      "noveltyScore": 0.76,
+      "tokenUsage": 1751,
+      "costPerRun": 0.0035
+    },
+    "evaluatorScores": {
+      "coverage": 0.74,
+      "false_positive_rate": 0.65,
+      "actionability": 0.75,
+      "latency": 0.86
+    },
+    "overallScore": 0.75,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "mkt_content_calendar_orchestrator",
+    "runId": "2bc169f4-ebc4-4c83-b2a2-046a8f69546e",
+    "timestamp": "2025-11-14T01:08:38.841Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 5079,
+      "errorCount": 0,
+      "successRate": 0.98,
+      "humanEditDistance": 0.12,
+      "noveltyScore": 0.83,
+      "tokenUsage": 2282,
+      "costPerRun": 0.0046
+    },
+    "evaluatorScores": {
+      "gap_coverage": 0.83,
+      "topic_quality": 0.71,
+      "approval_rate": 0.88,
+      "schedule_balance": 0.66
+    },
+    "overallScore": 0.77,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "mkt_social_media_post_generator",
+    "runId": "f1f0390e-ffce-4d36-b161-68641220f658",
+    "timestamp": "2025-11-14T01:08:38.842Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 6052,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.06,
+      "noveltyScore": 0.73,
+      "tokenUsage": 1923,
+      "costPerRun": 0.0038
+    },
+    "evaluatorScores": {
+      "relevance": 0.84,
+      "style_adherence": 0.77,
+      "engagement_prediction": 0.57,
+      "brevity_quality": 0.81
+    },
+    "overallScore": 0.75,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "research_autonomous_deep_research",
+    "runId": "18fc6b8b-1a13-4dae-a82c-5a57d9654d41",
+    "timestamp": "2025-11-14T01:08:38.843Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 5255,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.12,
+      "noveltyScore": 0.78,
+      "tokenUsage": 2463,
+      "costPerRun": 0.0049
+    },
+    "evaluatorScores": {
+      "source_diversity": 0.86,
+      "accuracy": 0.65,
+      "novelty": 0.58,
+      "clarity": 0.57
+    },
+    "overallScore": 0.662,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "research_paper_summary_categorizer",
+    "runId": "486551ff-df53-4917-b04b-ee1d5146ceca",
+    "timestamp": "2025-11-14T01:08:38.843Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 6856,
+      "errorCount": 0,
+      "successRate": 0.96,
+      "humanEditDistance": 0.12,
+      "noveltyScore": 0.61,
+      "tokenUsage": 3420,
+      "costPerRun": 0.0068
+    },
+    "evaluatorScores": {
+      "summary_quality": 0.79,
+      "category_accuracy": 0.88,
+      "novelty_precision": 0.81,
+      "latency": 0.7
+    },
+    "overallScore": 0.803,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "sales_lead_qualification_sheet",
+    "runId": "2e5532e7-68c3-4464-ba7a-93792620ec7f",
+    "timestamp": "2025-11-14T01:08:38.844Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 5920,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.14,
+      "noveltyScore": 0.88,
+      "tokenUsage": 3669,
+      "costPerRun": 0.0073
+    },
+    "evaluatorScores": {
+      "enrichment_completeness": 0.85,
+      "scoring_consistency": 0.58,
+      "crm_sync_success": 0.75,
+      "latency": 0.8
+    },
+    "overallScore": 0.739,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "vector_store_ingestion_pipeline",
+    "runId": "5cfac866-7e41-4864-912a-098b16ddda31",
+    "timestamp": "2025-11-14T01:08:38.845Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 4715,
+      "errorCount": 0,
+      "successRate": 0.98,
+      "humanEditDistance": 0.21,
+      "noveltyScore": 0.72,
+      "tokenUsage": 3582,
+      "costPerRun": 0.0072
+    },
+    "evaluatorScores": {
+      "chunk_quality": 0.89,
+      "embedding_density": 0.85,
+      "upsert_success": 0.62,
+      "latency": 0.65
+    },
+    "overallScore": 0.753,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  }
+]

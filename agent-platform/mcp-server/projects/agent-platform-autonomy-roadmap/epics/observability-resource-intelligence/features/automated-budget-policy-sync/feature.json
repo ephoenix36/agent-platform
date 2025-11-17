@@ -1,0 +1,63 @@
+{
+  "id": "75fdde2e-4d1a-425b-acfc-587171a04860",
+  "slug": "automated-budget-policy-sync",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "name": "Automated Budget Policy Sync",
+  "goal": "Sync budget/rate policies across projects/teams from a single source of truth, ensuring guardrails stay aligned.",
+  "status": "proposed",
+  "owner": "platform-observability",
+  "priority": "medium",
+  "tags": [
+    "budgets",
+    "policy",
+    "automation"
+  ],
+  "overview": {
+    "summary": "Automate duplication of budget configs across agents/workspaces.",
+    "goals": [
+      "Policy file defines budgets + rate limits",
+      "Sync job applies to local-storage budgets",
+      "Diff + approval flow"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Policy schema stored in repo",
+      "Sync tool updates BudgetManager state",
+      "Drift report posted to pm project"
+    ],
+    "nonFunctional": [
+      "Run under 2 min per sync",
+      "Dry-run mode"
+    ]
+  },
+  "acceptance": [
+    "Policy schema doc committed",
+    "Sync CLI run in CI pipeline",
+    "Drift report sample attached"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 5,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:12:59.819Z",
+    "updated": "2025-11-16T03:12:59.819Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\observability-resource-intelligence\\features\\automated-budget-policy-sync"
+  },
+  "relationships": {
+    "taskIds": [
+      "db19e799-ac2c-4f84-a138-355832007f8e",
+      "76bc5b4a-b737-47ec-a093-8514ce8a69ed",
+      "9bbe2370-dfc6-4481-aac5-51fd4768b71b",
+      "68126656-2daf-44c9-8b8d-a9c5fc4bdaed",
+      "a9e9ee9f-453c-4805-89ae-40586e8394da"
+    ],
+    "relatedFeatureIds": []
+  }
+}

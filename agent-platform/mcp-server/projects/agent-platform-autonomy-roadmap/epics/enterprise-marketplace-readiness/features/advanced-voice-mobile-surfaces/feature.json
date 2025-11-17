@@ -1,0 +1,57 @@
+{
+  "id": "da5c3695-af08-4cf5-abf2-fcf6c59258fe",
+  "slug": "advanced-voice-mobile-surfaces",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "b9af1986-471b-4bdb-a28f-f38bb61e6203",
+  "name": "Advanced Voice & Mobile Surfaces",
+  "goal": "Deliver advanced voice commands, LiveKit integration, and mobile companion so operators can supervise agents anywhere.",
+  "status": "proposed",
+  "owner": "community-experience",
+  "priority": "medium",
+  "tags": [
+    "voice",
+    "mobile",
+    "livekit"
+  ],
+  "overview": {
+    "summary": "From README Phase 3 advanced voice commands + mobile app items.",
+    "goals": [
+      "Extend voice-control-mcp project with new intents",
+      "Ship lightweight mobile PWA for task approvals",
+      "Integrate LiveKit voice agent into workflows"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Voice agent supports new command catalog (run workflow, approve tasks)",
+      "Mobile PWA surfaces notifications + widget approvals",
+      "LiveKit streaming integrated with workflow toolkit"
+    ],
+    "nonFunctional": [
+      "Voice round-trip <1.5s",
+      "Mobile offline caching for last 20 events"
+    ]
+  },
+  "acceptance": [
+    "Voice demo recorded",
+    "Mobile PWA published internally",
+    "Docs updated under voice-control-mcp and mobile guide"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:11:50.502Z",
+    "updated": "2025-11-16T03:11:50.502Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\enterprise-marketplace-readiness\\features\\advanced-voice-mobile-surfaces"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

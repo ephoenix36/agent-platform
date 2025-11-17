@@ -1,0 +1,72 @@
+{
+  "id": "90860406-f006-44b8-965c-2da595eeea32",
+  "slug": "phase-1-configurable-marketplace-mvp",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "name": "Phase 1: Configurable Marketplace (MVP)",
+  "objective": "Launch a best-in-class, configurable marketplace app that proves the core value and captures the 80% use case. This is the foundation for the platform.",
+  "status": "planned",
+  "owner": "ephoe",
+  "priority": "critical",
+  "tags": [
+    "phase-1",
+    "mvp",
+    "marketplace",
+    "foundation"
+  ],
+  "metrics": {
+    "launch_date_target": 90,
+    "communities_target": 10,
+    "gmv_target": 10000
+  },
+  "successCriteria": [
+    "Live on Whop App Store",
+    "Multi-category marketplace with custom fields",
+    "Full buy/sell/exchange flow",
+    "Whop payments integration",
+    "Trust & Safety (reporting/moderation)",
+    "Meilisearch for filtering",
+    "R2/S3 file storage",
+    "Production-ready on Vercel"
+  ],
+  "stats": {
+    "totalFeatures": 10,
+    "completedFeatures": 0,
+    "totalTasks": 11,
+    "completedTasks": 4
+  },
+  "timeline": {
+    "created": "2025-11-16T02:23:54.439Z",
+    "updated": "2025-11-16T02:25:00.031Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp",
+    "features": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp\\features"
+  },
+  "relationships": {
+    "featureIds": [
+      "ff8a739e-8d56-4604-a19e-8a3768133bad",
+      "8bbdbb38-f2f0-47c1-b177-bdb38d64cc59",
+      "ae149a1f-5ae6-4da7-9391-3fee532496f6",
+      "52a454a1-cd85-4357-8d35-3a1f4d441cc3",
+      "4c198b8e-00ed-4895-9871-18d5288b6d12",
+      "5901b52e-6206-40ab-9ecd-b679034413f3",
+      "a0e965f7-9c15-42b2-9d1a-5832c9a88ad8",
+      "80303e1b-85d6-4d52-b449-4540acd7fa2d",
+      "18d1b6c8-796e-4ceb-9c50-6523956c1c86",
+      "831496d8-f3f7-49cd-bb05-fbe619797457"
+    ],
+    "taskIds": [
+      "2253e188-8f53-4dc7-a80f-8d08d8cef1a1",
+      "1cde627e-0363-455f-8cb8-8c077579db9f",
+      "bca3e1ea-b25a-4176-9433-74c978617a5f",
+      "076ea44f-19cd-4b61-a483-2145a0b81039",
+      "76ef4252-b1ed-4e05-863b-563dfa8113ef",
+      "01d37101-c773-4c78-ad0f-d3c9c97ce874",
+      "3bd08472-546d-423e-92b9-8537b6475ce5",
+      "b6d85321-0732-4a08-a6ef-f4d3ed5c6531",
+      "8ee7a838-4431-46eb-81f2-6208c54ee810",
+      "daa178c5-18e2-49a6-b126-e5ffe1dd0fcc",
+      "48eec878-25fa-46db-a8e9-3b36531fd4a0"
+    ]
+  }
+}

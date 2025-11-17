@@ -1,0 +1,116 @@
+{
+  "timestamp": "2025-11-14T01:08:57.909Z",
+  "window": 5,
+  "workflows": [
+    {
+      "id": "biz_daily_market_intel",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.657,
+        0.642
+      ],
+      "rollingAvgScore": 0.649
+    },
+    {
+      "id": "vector_store_ingestion_pipeline",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.608,
+        0.753
+      ],
+      "rollingAvgScore": 0.68
+    },
+    {
+      "id": "mkt_social_media_post_generator",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.624,
+        0.75
+      ],
+      "rollingAvgScore": 0.687
+    },
+    {
+      "id": "mkt_content_calendar_orchestrator",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.63,
+        0.77
+      ],
+      "rollingAvgScore": 0.7
+    },
+    {
+      "id": "data_invoice_extraction",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.668,
+        0.772
+      ],
+      "rollingAvgScore": 0.72
+    },
+    {
+      "id": "sales_lead_qualification_sheet",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.713,
+        0.739
+      ],
+      "rollingAvgScore": 0.726
+    },
+    {
+      "id": "cs_email_triage_human_loop",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.727,
+        0.731
+      ],
+      "rollingAvgScore": 0.729
+    },
+    {
+      "id": "research_autonomous_deep_research",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.806,
+        0.662
+      ],
+      "rollingAvgScore": 0.734
+    },
+    {
+      "id": "biz_competitor_monitor",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.796,
+        0.676
+      ],
+      "rollingAvgScore": 0.736
+    },
+    {
+      "id": "eng_code_review_ai_gitlab",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.82,
+        0.75
+      ],
+      "rollingAvgScore": 0.785
+    },
+    {
+      "id": "research_paper_summary_categorizer",
+      "runs": 2,
+      "rollingWindow": 2,
+      "rollingScores": [
+        0.778,
+        0.803
+      ],
+      "rollingAvgScore": 0.79
+    }
+  ]
+}

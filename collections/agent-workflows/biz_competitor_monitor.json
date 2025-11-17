@@ -1,0 +1,26 @@
+{
+  "id": "biz_competitor_monitor",
+  "name": "Competitor Research & Profile Generator",
+  "category": "business",
+  "version": "1.0.0",
+  "description": "Fetch competitor data and generate structured profiles for strategy updates.",
+  "triggers": ["schedule"],
+  "valueScore": 9,
+  "complexity": "high",
+  "status": "planned",
+  "agentsNeeded": ["web-research-automation-agent", "project-architect"],
+  "skillsNeeded": ["research", "data-normalization"],
+  "dependencies": ["vector_store_ingestion_pipeline"],
+  "source": {"origin": "workflow_backlog", "attribution": "n8n research templates"},
+  "steps": [
+    {"id": "list_targets", "type": "transform", "description": "Load competitor target list", "outputs": ["targets"]},
+    {"id": "crawl", "type": "agent", "agentId": "web-research-automation-agent", "description": "Scrape and collect public data", "inputs": ["targets"], "outputs": ["rawData"]},
+    {"id": "normalize", "type": "transform", "description": "Clean & structure fields", "inputs": ["rawData"], "outputs": ["structuredProfiles"]},
+    {"id": "analysis", "type": "agent", "agentId": "project-architect", "description": "Strategic positioning analysis", "inputs": ["structuredProfiles"], "outputs": ["analysisReport"]},
+    {"id": "update_board", "type": "transform", "description": "Push updates to strategy board", "inputs": ["analysisReport"], "outputs": ["updateResult"]}
+  ],
+  "evaluator": {"successCriteria": [{"name": "data_completeness", "weight": 0.3}, {"name": "normalization_accuracy", "weight": 0.2}, {"name": "insight_quality", "weight": 0.3}, {"name": "latency", "weight": 0.2}]},
+  "hooks": {"beforeExecution": ["verify-target-list"], "afterExecution": ["store-profile-snapshots"], "onError": ["fallback-to-cache"]},
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+}

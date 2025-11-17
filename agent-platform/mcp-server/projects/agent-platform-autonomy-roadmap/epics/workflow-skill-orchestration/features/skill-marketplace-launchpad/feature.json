@@ -1,0 +1,57 @@
+{
+  "id": "9f2db0f6-1614-4239-9bfd-4a15538fb777",
+  "slug": "skill-marketplace-launchpad",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "7bf7b087-f041-4ef4-adb2-a208ca389829",
+  "name": "Skill Marketplace Launchpad",
+  "goal": "Package existing high-value skills and workflows into shareable bundles with docs, versioning, and distribution hooks.",
+  "status": "proposed",
+  "owner": "skill-ops",
+  "priority": "medium",
+  "tags": [
+    "skills",
+    "marketplace",
+    "distribution"
+  ],
+  "overview": {
+    "summary": "Bridge between current skills and future marketplace by adding packaging + metadata.",
+    "goals": [
+      "Skill manifest schema + generator",
+      "Distribution scripts to marketplace repo",
+      "Version badges + changelog automation"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Generator reads local-storage/skills JSON and outputs package",
+      "Docs auto-link to packages",
+      "Validation pipeline ensures compatibility"
+    ],
+    "nonFunctional": [
+      "Package build under 10s",
+      "Versioned artifacts stored in /dist"
+    ]
+  },
+  "acceptance": [
+    "Manifest schema published",
+    "Example skill package built",
+    "CI job publishes packages"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:12:40.431Z",
+    "updated": "2025-11-16T03:12:40.431Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\workflow-skill-orchestration\\features\\skill-marketplace-launchpad"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

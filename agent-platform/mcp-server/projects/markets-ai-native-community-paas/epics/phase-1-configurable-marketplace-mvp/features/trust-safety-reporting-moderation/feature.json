@@ -1,0 +1,65 @@
+{
+  "id": "a0e965f7-9c15-42b2-9d1a-5832c9a88ad8",
+  "slug": "trust-safety-reporting-moderation",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "name": "Trust & Safety (Reporting & Moderation)",
+  "goal": "Provide basic trust and safety tools for community moderation",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "high",
+  "tags": [
+    "trust-safety",
+    "moderation",
+    "reporting",
+    "community-health"
+  ],
+  "overview": {
+    "summary": "Build reporting and moderation system for community safety",
+    "motivation": "Marketplaces need trust mechanisms to prevent scams and maintain quality",
+    "goals": [
+      "Easy reporting",
+      "Efficient moderation workflow",
+      "Clear audit trail",
+      "Fair enforcement"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "reports table",
+      "Report submission API",
+      "Mod queue UI",
+      "Moderation actions API"
+    ],
+    "nonFunctional": [
+      "Privacy protection for reporters",
+      "Audit log",
+      "Rate limiting on reports"
+    ]
+  },
+  "acceptance": [
+    "Report button on listings/users",
+    "Report categories (scam, inappropriate, etc.)",
+    "Moderation queue in admin panel",
+    "Action buttons (approve, remove, ban)",
+    "Report status tracking",
+    "Email notifications for reporters"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:00.007Z",
+    "updated": "2025-11-16T02:25:00.007Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp\\features\\trust-safety-reporting-moderation"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

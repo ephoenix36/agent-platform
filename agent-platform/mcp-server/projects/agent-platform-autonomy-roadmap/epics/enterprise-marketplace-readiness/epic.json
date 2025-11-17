@@ -1,0 +1,46 @@
+{
+  "id": "b9af1986-471b-4bdb-a28f-f38bb61e6203",
+  "slug": "enterprise-marketplace-readiness",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "name": "Enterprise & Marketplace Readiness",
+  "objective": "Unlock revenue by hardening identity, compliance, billing, and marketplace distribution so enterprises can adopt autonomous agents safely.",
+  "status": "planned",
+  "owner": "enterprise-go-to-market",
+  "priority": "high",
+  "tags": [
+    "enterprise",
+    "security",
+    "marketplace",
+    "billing"
+  ],
+  "metrics": {},
+  "successCriteria": [
+    "RBAC + SSO in production",
+    "Audit + compliance exports in <60s",
+    "Marketplace packaging for agents/skills launched with billing hooks"
+  ],
+  "stats": {
+    "totalFeatures": 5,
+    "completedFeatures": 0,
+    "totalTasks": 0,
+    "completedTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:06:56.736Z",
+    "updated": "2025-11-16T03:11:50.502Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\enterprise-marketplace-readiness",
+    "features": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\enterprise-marketplace-readiness\\features"
+  },
+  "relationships": {
+    "featureIds": [
+      "3a05b770-639e-4eff-a24f-6a953734e3c4",
+      "124a7db8-4527-4036-8d32-89575ef96698",
+      "104f4f78-219f-4e18-9ddb-2e7a0a9139db",
+      "a05cf33a-73b1-4e98-9a66-ff429d2d07b7",
+      "da5c3695-af08-4cf5-abf2-fcf6c59258fe"
+    ],
+    "taskIds": []
+  }
+}

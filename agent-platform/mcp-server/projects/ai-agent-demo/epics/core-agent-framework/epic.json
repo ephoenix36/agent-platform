@@ -1,0 +1,48 @@
+{
+  "id": "41914c03-a31b-4608-8cfb-fe22420dde75",
+  "slug": "core-agent-framework",
+  "projectId": "dc4f9a04-d2fb-428e-89b4-1156435838b0",
+  "name": "Core Agent Framework",
+  "objective": "Build foundational capabilities for autonomous agents",
+  "status": "planned",
+  "owner": "demo-user",
+  "priority": "critical",
+  "tags": [
+    "architecture",
+    "core"
+  ],
+  "metrics": {
+    "targetFeatures": 5,
+    "targetCompletion": 0.8
+  },
+  "successCriteria": [
+    "Agent can self-configure tools",
+    "Agent can plan multi-step workflows",
+    "Agent can learn from feedback"
+  ],
+  "stats": {
+    "totalFeatures": 2,
+    "completedFeatures": 0,
+    "totalTasks": 3,
+    "completedTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:08:24.236Z",
+    "updated": "2025-11-16T02:08:24.259Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\ai-agent-demo\\epics\\core-agent-framework",
+    "features": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\ai-agent-demo\\epics\\core-agent-framework\\features"
+  },
+  "relationships": {
+    "featureIds": [
+      "f90408fc-1c93-4b1c-95db-98a69a08356f",
+      "458dd9be-5ed2-4bc2-8da0-c7efc66099ac"
+    ],
+    "taskIds": [
+      "be699ea9-b796-4d53-8fd4-38148d47c651",
+      "01dbdafb-be0d-40c1-a66a-0745da76cfad",
+      "d7196352-f065-4cbc-b87b-282030ef40e9"
+    ]
+  }
+}

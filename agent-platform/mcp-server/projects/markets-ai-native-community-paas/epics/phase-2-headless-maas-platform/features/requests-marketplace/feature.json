@@ -1,0 +1,66 @@
+{
+  "id": "d6943aa5-deff-49d2-ba81-018ab2a030dd",
+  "slug": "requests-marketplace",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "dd16bc63-2808-465b-bd86-889f6d996279",
+  "name": "Requests Marketplace",
+  "goal": "Enable buyer-initiated requests for items they want",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "medium",
+  "tags": [
+    "marketplace",
+    "requests",
+    "reverse-marketplace",
+    "buyer-tools"
+  ],
+  "overview": {
+    "summary": "Build requests feature where buyers post what they're looking for",
+    "motivation": "Sometimes buyers know what they want but can't find it - let them ask",
+    "goals": [
+      "Demand discovery",
+      "Reverse marketplace",
+      "Buyer empowerment",
+      "Market insights"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "requests table",
+      "Request CRUD API",
+      "Matching algorithm",
+      "Notification system"
+    ],
+    "nonFunctional": [
+      "Request visibility controls",
+      "Spam prevention",
+      "Quality scoring"
+    ]
+  },
+  "acceptance": [
+    "Request creation form",
+    "Request types (buying, seeking trades)",
+    "Budget/offer display",
+    "Request expiration",
+    "Request matching to listings",
+    "Request inbox for sellers",
+    "Accept/reject/counter flow"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:50.453Z",
+    "updated": "2025-11-16T02:25:50.453Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-2-headless-maas-platform\\features\\requests-marketplace"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

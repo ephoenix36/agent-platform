@@ -1,0 +1,66 @@
+{
+  "id": "386fa132-0436-4652-bdb8-33b9db2e8f0e",
+  "slug": "byok-bring-your-own-key-vault",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "dd16bc63-2808-465b-bd86-889f6d996279",
+  "name": "BYOK (Bring Your Own Key) Vault",
+  "goal": "Enable creators to bring their own API keys for AI services",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "critical",
+  "tags": [
+    "ai-core",
+    "security",
+    "byok",
+    "encryption"
+  ],
+  "overview": {
+    "summary": "Build secure vault for storing and managing third-party API keys",
+    "motivation": "Creators want control over AI costs and data privacy",
+    "goals": [
+      "Secure key management",
+      "Multi-provider support",
+      "Transparent usage",
+      "Easy rotation"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Encrypted storage",
+      "Key CRUD operations",
+      "Provider presets",
+      "Usage metrics"
+    ],
+    "nonFunctional": [
+      "Zero-knowledge architecture",
+      "SOC2 compliance path",
+      "Rate limiting per key"
+    ]
+  },
+  "acceptance": [
+    "Secure key storage (encrypted at rest)",
+    "Support for OpenAI, Anthropic, AWS, etc.",
+    "Key validation on save",
+    "Usage tracking per key",
+    "Key rotation support",
+    "Audit logging",
+    "Key scoping per community"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:50.396Z",
+    "updated": "2025-11-16T02:25:50.396Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-2-headless-maas-platform\\features\\byok-bring-your-own-key-vault"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

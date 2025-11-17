@@ -1,0 +1,54 @@
+{
+  "id": "102d0262-871a-4e22-9c1c-51d2c6227da7",
+  "number": "TASK-006",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "c125119b-d8e0-4d6e-8fa5-bbe4d5374b7b",
+  "title": "Test Anomaly Detection Pipeline",
+  "description": "Create comprehensive test suite covering unit, integration, and performance tests for anomaly detection system. Validate accuracy, performance, and reliability requirements.",
+  "status": "pending",
+  "priority": "high",
+  "type": "test",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 5,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:03:38.517Z",
+    "updated": "2025-11-16T04:03:38.553Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "testing",
+      "quality-assurance"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Test suite validates <5% false positive rate on historical data",
+      "Integration tests cover full pipeline (detection->alert->task)",
+      "Load tests verify <2min execution for 50K records",
+      "Chaos tests validate failure recovery",
+      "Test coverage >85% across all components"
+    ]
+  },
+  "context": {}
+}

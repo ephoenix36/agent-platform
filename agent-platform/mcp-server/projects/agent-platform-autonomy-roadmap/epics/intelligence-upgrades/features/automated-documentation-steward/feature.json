@@ -1,0 +1,57 @@
+{
+  "id": "20f130df-5a51-4bd0-af48-7c36ff61881c",
+  "slug": "automated-documentation-steward",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "4a937c34-c3c7-4e24-a467-023bdf767103",
+  "name": "Automated Documentation Steward",
+  "goal": "Keep README, roadmap, architecture, and market docs in sync with code within one hour of change.",
+  "status": "proposed",
+  "owner": "documentation-bot",
+  "priority": "high",
+  "tags": [
+    "docs",
+    "automation",
+    "llm"
+  ],
+  "overview": {
+    "summary": "LLM diff engine reads git history + pm state to regenerate docs (per README/ENH roadmap).",
+    "goals": [
+      "Watch repos for changes",
+      "Regenerate docs with templates via pm tools",
+      "Open tasks for manual review when confidence low"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Doc bot monitors git + pm events",
+      "Runs pm_generate_readme/roadmap/architecture with updated metadata",
+      "Posts diff summary to widgets/slack"
+    ],
+    "nonFunctional": [
+      "Docs regen <=15 min after change",
+      "Versioned outputs for rollback"
+    ]
+  },
+  "acceptance": [
+    "Spec doc captured",
+    "Smoke run updates README + ROADMAP for sample change",
+    "Widget surfaces doc diffs for approval"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:09:10.407Z",
+    "updated": "2025-11-16T03:09:10.407Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\intelligence-upgrades\\features\\automated-documentation-steward"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

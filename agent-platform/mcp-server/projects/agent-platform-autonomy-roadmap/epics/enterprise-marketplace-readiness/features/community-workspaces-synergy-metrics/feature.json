@@ -1,0 +1,57 @@
+{
+  "id": "a05cf33a-73b1-4e98-9a66-ff429d2d07b7",
+  "slug": "community-workspaces-synergy-metrics",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "b9af1986-471b-4bdb-a28f-f38bb61e6203",
+  "name": "Community Workspaces & Synergy Metrics",
+  "goal": "Launch collaborative workspaces with community features, shared dashboards, and synergy metrics for teams building on the platform.",
+  "status": "proposed",
+  "owner": "community-experience",
+  "priority": "medium",
+  "tags": [
+    "community",
+    "workspaces",
+    "metrics"
+  ],
+  "overview": {
+    "summary": "Delivers README Phase 3 community + synergy roadmap items.",
+    "goals": [
+      "Workspace provisioning + permissions",
+      "Community feed + template sharing",
+      "Synergy metrics measuring cross-team impact"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Workspace CRUD via pm tools/api",
+      "Content feed referencing published workflows/skills",
+      "Metrics service aggregates collaboration KPIs"
+    ],
+    "nonFunctional": [
+      "Multi-tenant isolation",
+      "Metrics updated hourly"
+    ]
+  },
+  "acceptance": [
+    "Workspace creation doc + demo",
+    "Community feed seeded with sample assets",
+    "Synergy metrics displayed in dashboard"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:11:32.693Z",
+    "updated": "2025-11-16T03:11:32.693Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\enterprise-marketplace-readiness\\features\\community-workspaces-synergy-metrics"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

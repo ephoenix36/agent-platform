@@ -1,0 +1,58 @@
+{
+  "name": "@agents/voice-agent-livekit",
+  "version": "1.0.0",
+  "description": "Real-time voice agent with LiveKit and Gemini 2.0 Flash - SOTA features including pre-buffering, streaming, MCP integration",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "voice-agent": "dist/cli.js"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "cli": "tsx src/cli.ts",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "keywords": [
+    "voice",
+    "livekit",
+    "gemini",
+    "realtime",
+    "ai-agent",
+    "mcp",
+    "streaming",
+    "multimodal"
+  ],
+  "author": "Agent Platform",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@livekit/rtc-node": "^0.10.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "winston": "^3.11.0",
+    "zod": "^3.23.8",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.14.0",
+    "@types/ws": "^8.5.10",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "jest": "^30.2.0",
+    "prettier": "^3.2.5",
+    "ts-jest": "^29.4.5",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "418f2aa4-4a84-4303-b629-a0f7c82cad37",
+  "slug": "scheduled-jobs-dashboard",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "280b8215-cdde-4cfe-a1d7-730e7ce61f4f",
+  "name": "Scheduled Jobs Dashboard",
+  "goal": "Allow creators to schedule recurring logic execution",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "medium",
+  "tags": [
+    "scheduled-jobs",
+    "automation",
+    "cron",
+    "background-tasks"
+  ],
+  "overview": {
+    "summary": "Build dashboard for creating and managing scheduled jobs",
+    "motivation": "Creators need to run periodic tasks like score calculations, cleanups, reminders",
+    "goals": [
+      "Flexible scheduling",
+      "Reliable execution",
+      "Easy management",
+      "Clear history"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Job scheduler",
+      "Cron parser",
+      "Job execution engine",
+      "Job monitoring"
+    ],
+    "nonFunctional": [
+      "Accurate timing",
+      "Failure recovery",
+      "Concurrent job limits"
+    ]
+  },
+  "acceptance": [
+    "Scheduled job creation UI",
+    "Cron syntax support",
+    "Job execution logs",
+    "Manual trigger",
+    "Job enable/disable",
+    "Job history",
+    "Timezone handling"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:26:37.188Z",
+    "updated": "2025-11-16T02:26:37.188Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-3-ai-native-paas-the-vision\\features\\scheduled-jobs-dashboard"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

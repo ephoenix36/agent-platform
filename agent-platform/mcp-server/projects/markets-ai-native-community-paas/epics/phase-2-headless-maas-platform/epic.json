@@ -1,0 +1,58 @@
+{
+  "id": "dd16bc63-2808-465b-bd86-889f6d996279",
+  "slug": "phase-2-headless-maas-platform",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "name": "Phase 2: Headless MaaS Platform",
+  "objective": "Evolve the product into a platform with AI-Core capabilities and advanced commerce features. Enable creators to customize beyond the marketplace template.",
+  "status": "planned",
+  "owner": "ephoe",
+  "priority": "high",
+  "tags": [
+    "phase-2",
+    "ai-core",
+    "headless",
+    "saas"
+  ],
+  "metrics": {
+    "ai_adoption_rate": 60,
+    "pro_plan_conversion": 20,
+    "mrr_target": 5000
+  },
+  "successCriteria": [
+    "BYOK (Bring Your Own Key) vault for AI services",
+    "AI Listing Generator (image-to-listing)",
+    "AI Messaging Agents for support",
+    "AI-Powered Rules Engine",
+    "Advanced payments (subscriptions, free listings)",
+    "Requests marketplace feature",
+    "Enhanced multi-item exchanges",
+    "Tiered SaaS pricing (Free/Pro)"
+  ],
+  "stats": {
+    "totalFeatures": 8,
+    "completedFeatures": 0,
+    "totalTasks": 0,
+    "completedTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:23:54.461Z",
+    "updated": "2025-11-16T02:25:50.466Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-2-headless-maas-platform",
+    "features": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-2-headless-maas-platform\\features"
+  },
+  "relationships": {
+    "featureIds": [
+      "386fa132-0436-4652-bdb8-33b9db2e8f0e",
+      "e22c4bca-fe16-44df-a765-15ec2e38b1a1",
+      "d57504e8-a27a-4e96-80f9-c56dbafbd193",
+      "6b34f90d-9987-44a8-83a0-1067f10442a4",
+      "289b4293-e191-44dd-8758-4e6b2f81318e",
+      "d6943aa5-deff-49d2-ba81-018ab2a030dd",
+      "cd33ebc5-ee1d-4b13-b2ad-faca3ed0aaa5",
+      "fa8f3eab-3a34-4245-b2f5-3a2e3e6551d4"
+    ],
+    "taskIds": []
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "b6d85321-0732-4a08-a6ef-f4d3ed5c6531",
+  "number": "TASK-003",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "featureId": "ae149a1f-5ae6-4da7-9391-3fee532496f6",
+  "title": "Create Listing Update API - PUT Endpoint",
+  "description": "Build listing update endpoint with ownership checks and status management.",
+  "status": "pending",
+  "priority": "high",
+  "type": "feature",
+  "assignment": {
+    "assignee": "ephoe"
+  },
+  "estimates": {
+    "hours": 2,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-17T02:15:43.835Z",
+    "updated": "2025-11-17T02:15:43.862Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": []
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "PUT /api/listings/[id] endpoint",
+      "Ownership verification (sellerId matches userId)",
+      "Partial updates supported",
+      "Status transitions validated",
+      "Returns updated listing",
+      "Audit trail via updatedAt"
+    ]
+  },
+  "context": {}
+}

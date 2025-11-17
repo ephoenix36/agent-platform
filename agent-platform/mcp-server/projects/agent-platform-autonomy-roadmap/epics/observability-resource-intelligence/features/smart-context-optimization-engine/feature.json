@@ -1,0 +1,58 @@
+{
+  "id": "d72b9d8d-2790-49c8-8f04-d226ee340a00",
+  "slug": "smart-context-optimization-engine",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "name": "Smart Context Optimization Engine",
+  "goal": "Deliver token estimation, truncation, and summarization strategies so agents stay within context limits without losing fidelity.",
+  "status": "proposed",
+  "owner": "platform-observability",
+  "priority": "high",
+  "tags": [
+    "context",
+    "token-optimization",
+    "summaries"
+  ],
+  "overview": {
+    "summary": "ContextManager strategies (efficient/balanced) analyze and shrink threads automatically.",
+    "motivation": "Need Claude-level context control noted in FEATURE_COMPLETE.",
+    "goals": [
+      "Token estimation per request",
+      "Adaptive truncation strategies",
+      "Summaries feeding back into workflows"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "context_analyze returns per-message token + importance",
+      "context_optimize supports multiple strategies",
+      "context_summarize/context_truncate integrate with workflows"
+    ],
+    "nonFunctional": [
+      "Max latency 50ms for 20-message thread",
+      "Pluggable strategy registry"
+    ]
+  },
+  "acceptance": [
+    "Context tools demoed in documentation",
+    "Regression tests cover each strategy",
+    "Optimization saves >=25% tokens on sample conversation"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:07:21.379Z",
+    "updated": "2025-11-16T03:07:21.379Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\observability-resource-intelligence\\features\\smart-context-optimization-engine"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

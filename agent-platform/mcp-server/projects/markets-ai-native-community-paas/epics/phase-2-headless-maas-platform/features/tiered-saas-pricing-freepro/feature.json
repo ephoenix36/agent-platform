@@ -1,0 +1,66 @@
+{
+  "id": "fa8f3eab-3a34-4245-b2f5-3a2e3e6551d4",
+  "slug": "tiered-saas-pricing-freepro",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "dd16bc63-2808-465b-bd86-889f6d996279",
+  "name": "Tiered SaaS Pricing (Free/Pro)",
+  "goal": "Implement tiered pricing model for SaaS monetization",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "critical",
+  "tags": [
+    "monetization",
+    "saas",
+    "pricing",
+    "business-model"
+  ],
+  "overview": {
+    "summary": "Define and implement Free and Pro pricing tiers",
+    "motivation": "Platform needs monetization strategy that aligns with creator success",
+    "goals": [
+      "Sustainable revenue",
+      "Value-based pricing",
+      "Clear upgrade path",
+      "Usage transparency"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Plan limits enforcement",
+      "Usage metering",
+      "Plan upgrade flow",
+      "Whop Plans integration"
+    ],
+    "nonFunctional": [
+      "Fair use policies",
+      "Grandfather pricing",
+      "Enterprise inquiry path"
+    ]
+  },
+  "acceptance": [
+    "Free tier definition",
+    "Pro tier benefits",
+    "Plan selection UI",
+    "Usage tracking/metering",
+    "Upgrade prompts",
+    "Billing via Whop Plans",
+    "Plan comparison page"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:50.466Z",
+    "updated": "2025-11-16T02:25:50.466Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-2-headless-maas-platform\\features\\tiered-saas-pricing-freepro"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

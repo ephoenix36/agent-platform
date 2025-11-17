@@ -1,0 +1,25 @@
+{
+  "id": "cs_email_triage_human_loop",
+  "name": "AI Draft + Human Approval Email Response",
+  "category": "support",
+  "version": "1.0.0",
+  "description": "Automated drafting and routing of customer support emails with human approval gate.",
+  "triggers": ["event"],
+  "valueScore": 9,
+  "complexity": "medium",
+  "status": "in-progress",
+  "agentsNeeded": ["email-deliverability-validator", "cold-email-reply-classifier"],
+  "skillsNeeded": ["sentiment-analysis", "compliance"],
+  "dependencies": [],
+  "source": {"origin": "workflow_backlog", "attribution": "n8n Gmail templates"},
+  "steps": [
+    {"id": "ingest", "type": "agent", "agentId": "cold-email-reply-classifier", "description": "Classify and summarize inbound email", "outputs": ["classification", "summary"]},
+    {"id": "draft", "type": "agent", "agentId": "email-deliverability-validator", "description": "Generate draft response with deliverability check", "inputs": ["summary"], "outputs": ["draftReply"]},
+    {"id": "human_review", "type": "human_gate", "description": "Human approves or edits draft", "inputs": ["draftReply"], "outputs": ["finalReply"]},
+    {"id": "send", "type": "transform", "description": "Dispatch final email and log outcome", "inputs": ["finalReply"], "outputs": ["sendResult"]}
+  ],
+  "evaluator": {"successCriteria": [{"name": "classification_accuracy", "weight": 0.3}, {"name": "draft_quality", "weight": 0.3}, {"name": "human_edit_distance", "weight": 0.2}, {"name": "response_latency", "weight": 0.2}]},
+  "hooks": {"beforeExecution": ["verify-inbox-connection"], "afterExecution": ["log-response-stats"], "onError": ["alert-support-channel"]},
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+}

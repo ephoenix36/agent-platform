@@ -1,0 +1,66 @@
+{
+  "id": "18d1b6c8-796e-4ceb-9c50-6523956c1c86",
+  "slug": "meilisearch-integration",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "name": "Meilisearch Integration",
+  "goal": "Implement dedicated search engine for fast, flexible filtering",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "high",
+  "tags": [
+    "search",
+    "meilisearch",
+    "infrastructure",
+    "performance"
+  ],
+  "overview": {
+    "summary": "Set up Meilisearch as the dedicated search engine",
+    "motivation": "PostgreSQL full-text search doesn't scale well for complex filtering on custom fields",
+    "goals": [
+      "Sub-100ms search",
+      "Custom field filtering",
+      "CQRS architecture",
+      "Scalable indexing"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Meilisearch deployment",
+      "Index creation API",
+      "Sync on listing create/update",
+      "Search API endpoint"
+    ],
+    "nonFunctional": [
+      "Async sync to avoid blocking writes",
+      "Index rebuild capability",
+      "Monitoring/alerting"
+    ]
+  },
+  "acceptance": [
+    "Meilisearch server setup",
+    "Index schema configuration",
+    "Sync pipeline (PostgreSQL → Meilisearch)",
+    "Custom field indexing",
+    "Search relevance tuning",
+    "Faceted search support",
+    "Real-time index updates"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:00.025Z",
+    "updated": "2025-11-16T02:25:00.025Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp\\features\\meilisearch-integration"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

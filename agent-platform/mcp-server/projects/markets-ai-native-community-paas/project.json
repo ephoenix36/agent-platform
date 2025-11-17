@@ -1,0 +1,49 @@
+{
+  "id": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "slug": "markets-ai-native-community-paas",
+  "name": "Markets - AI-Native Community PaaS",
+  "description": "The Roblox of Whop: An AI-Native, Headless Platform-as-a-Service for creators to build, run, and scale custom community applications. Starting with a best-in-class configurable marketplace, evolving into a full creator OS.",
+  "status": "active",
+  "metadata": {
+    "created": "2025-11-16T02:23:33.838Z",
+    "updated": "2025-11-16T02:26:46.325Z",
+    "owner": "ephoe",
+    "contributors": [
+      "ephoe"
+    ],
+    "tags": [
+      "paas",
+      "ai-native",
+      "marketplace",
+      "whop",
+      "community-apps",
+      "exchange-engine"
+    ],
+    "version": "0.1.0"
+  },
+  "settings": {
+    "sprintDuration": 14,
+    "timezone": "UTC",
+    "requireApproval": false,
+    "templateType": "typescript-react"
+  },
+  "stats": {
+    "totalSprints": 1,
+    "activeSprints": 0,
+    "totalTasks": 11,
+    "completedTasks": 0,
+    "activeContributors": 1,
+    "totalEpics": 3,
+    "activeEpics": 0,
+    "totalFeatures": 26,
+    "completedFeatures": 0
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas",
+    "docs": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\docs",
+    "memory": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\memory",
+    "sprints": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\sprints",
+    "archived": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\.archived",
+    "epics": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics"
+  }
+}

@@ -1,0 +1,310 @@
+[
+  {
+    "workflowId": "biz_competitor_monitor",
+    "runId": "78128035-266f-42a4-b00b-529f44b39e08",
+    "timestamp": "2025-11-14T01:18:33.935Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 5870,
+      "errorCount": 0,
+      "successRate": 0.96,
+      "humanEditDistance": 0.08,
+      "noveltyScore": 0.68,
+      "tokenUsage": 1886,
+      "costPerRun": 0.0038,
+      "memoryUtilizationMb": 453,
+      "retryCount": 0
+    },
+    "evaluatorScores": {
+      "data_completeness": 0.85,
+      "normalization_accuracy": 0.7,
+      "insight_quality": 0.69,
+      "latency": 0.61
+    },
+    "overallScore": 0.724,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "biz_daily_market_intel",
+    "runId": "91d42195-3ac7-426e-a11f-94a5013e4174",
+    "timestamp": "2025-11-14T01:18:33.939Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 2730,
+      "errorCount": 0,
+      "successRate": 0.99,
+      "humanEditDistance": 0.17,
+      "noveltyScore": 0.64,
+      "tokenUsage": 3427,
+      "costPerRun": 0.0069,
+      "memoryUtilizationMb": 436,
+      "retryCount": 2
+    },
+    "evaluatorScores": {
+      "coverage": 0.81,
+      "relevance": 0.65,
+      "brevity": 0.82,
+      "timeliness": 0.87
+    },
+    "overallScore": 0.776,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "cs_email_triage_human_loop",
+    "runId": "5aa8ce51-098d-41f7-a66f-acb653b90673",
+    "timestamp": "2025-11-14T01:18:33.939Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 2127,
+      "errorCount": 0,
+      "successRate": 0.98,
+      "humanEditDistance": 0.3,
+      "noveltyScore": 0.51,
+      "tokenUsage": 1210,
+      "costPerRun": 0.0024,
+      "memoryUtilizationMb": 484,
+      "retryCount": 2
+    },
+    "evaluatorScores": {
+      "classification_accuracy": 0.87,
+      "draft_quality": 0.6,
+      "human_edit_distance": 0.65,
+      "response_latency": 0.71
+    },
+    "overallScore": 0.713,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "data_invoice_extraction",
+    "runId": "ba4d4bee-72fc-461c-a285-e15b26fc37ad",
+    "timestamp": "2025-11-14T01:18:33.940Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 2558,
+      "errorCount": 0,
+      "successRate": 0.96,
+      "humanEditDistance": 0.25,
+      "noveltyScore": 0.75,
+      "tokenUsage": 3187,
+      "costPerRun": 0.0064,
+      "memoryUtilizationMb": 197,
+      "retryCount": 0
+    },
+    "evaluatorScores": {
+      "field_accuracy": 0.9,
+      "currency_normalization": 0.75,
+      "validation_pass_rate": 0.84,
+      "latency": 0.74
+    },
+    "overallScore": 0.826,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "eng_code_review_ai_gitlab",
+    "runId": "f88bbada-8b5e-4cd4-9d4c-99315dc13d1b",
+    "timestamp": "2025-11-14T01:18:33.941Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 4278,
+      "errorCount": 0,
+      "successRate": 0.99,
+      "humanEditDistance": 0.17,
+      "noveltyScore": 0.6,
+      "tokenUsage": 2802,
+      "costPerRun": 0.0056,
+      "memoryUtilizationMb": 309,
+      "retryCount": 2
+    },
+    "evaluatorScores": {
+      "coverage": 0.77,
+      "false_positive_rate": 0.66,
+      "actionability": 0.74,
+      "latency": 0.62
+    },
+    "overallScore": 0.698,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "mkt_content_calendar_orchestrator",
+    "runId": "61699802-c606-45af-86ab-0ba7f9d67868",
+    "timestamp": "2025-11-14T01:18:33.942Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 4138,
+      "errorCount": 0,
+      "successRate": 0.98,
+      "humanEditDistance": 0.29,
+      "noveltyScore": 0.78,
+      "tokenUsage": 3498,
+      "costPerRun": 0.007,
+      "memoryUtilizationMb": 392,
+      "retryCount": 1
+    },
+    "evaluatorScores": {
+      "gap_coverage": 0.82,
+      "topic_quality": 0.58,
+      "approval_rate": 0.83,
+      "schedule_balance": 0.85
+    },
+    "overallScore": 0.756,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "mkt_social_media_post_generator",
+    "runId": "cada8842-f1f6-4609-bdc2-164dfda11ec8",
+    "timestamp": "2025-11-14T01:18:33.943Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 4051,
+      "errorCount": 0,
+      "successRate": 0.98,
+      "humanEditDistance": 0.1,
+      "noveltyScore": 0.66,
+      "tokenUsage": 3289,
+      "costPerRun": 0.0066,
+      "memoryUtilizationMb": 510,
+      "retryCount": 0
+    },
+    "evaluatorScores": {
+      "relevance": 0.73,
+      "style_adherence": 0.58,
+      "engagement_prediction": 0.82,
+      "brevity_quality": 0.7
+    },
+    "overallScore": 0.71,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "research_autonomous_deep_research",
+    "runId": "a870326e-7d5b-45d2-a481-b2358da87db4",
+    "timestamp": "2025-11-14T01:18:33.944Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 2224,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.11,
+      "noveltyScore": 0.61,
+      "tokenUsage": 1495,
+      "costPerRun": 0.003,
+      "memoryUtilizationMb": 467,
+      "retryCount": 1
+    },
+    "evaluatorScores": {
+      "source_diversity": 0.88,
+      "accuracy": 0.88,
+      "novelty": 0.56,
+      "clarity": 0.78
+    },
+    "overallScore": 0.796,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "research_paper_summary_categorizer",
+    "runId": "e6503830-770d-4121-939a-f88a4790c7d0",
+    "timestamp": "2025-11-14T01:18:33.945Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 2637,
+      "errorCount": 0,
+      "successRate": 1,
+      "humanEditDistance": 0.1,
+      "noveltyScore": 0.66,
+      "tokenUsage": 1910,
+      "costPerRun": 0.0038,
+      "memoryUtilizationMb": 489,
+      "retryCount": 0
+    },
+    "evaluatorScores": {
+      "summary_quality": 0.76,
+      "category_accuracy": 0.6,
+      "novelty_precision": 0.89,
+      "latency": 0.58
+    },
+    "overallScore": 0.702,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "sales_lead_qualification_sheet",
+    "runId": "1a6951e8-a65c-4aba-abaf-f50208e49d77",
+    "timestamp": "2025-11-14T01:18:33.945Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 3740,
+      "errorCount": 0,
+      "successRate": 0.99,
+      "humanEditDistance": 0.18,
+      "noveltyScore": 0.53,
+      "tokenUsage": 1694,
+      "costPerRun": 0.0034,
+      "memoryUtilizationMb": 324,
+      "retryCount": 2
+    },
+    "evaluatorScores": {
+      "enrichment_completeness": 0.67,
+      "scoring_consistency": 0.86,
+      "crm_sync_success": 0.78,
+      "latency": 0.79
+    },
+    "overallScore": 0.773,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  },
+  {
+    "workflowId": "vector_store_ingestion_pipeline",
+    "runId": "98fdf65d-6a71-4433-8c7d-c4ef8b1b1e57",
+    "timestamp": "2025-11-14T01:18:33.947Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 2467,
+      "errorCount": 0,
+      "successRate": 0.97,
+      "humanEditDistance": 0.18,
+      "noveltyScore": 0.53,
+      "tokenUsage": 2488,
+      "costPerRun": 0.005,
+      "memoryUtilizationMb": 469,
+      "retryCount": 1
+    },
+    "evaluatorScores": {
+      "chunk_quality": 0.6,
+      "embedding_density": 0.82,
+      "upsert_success": 0.88,
+      "latency": 0.81
+    },
+    "overallScore": 0.77,
+    "annotations": [
+      "auto-baseline"
+    ],
+    "version": "1.0.0"
+  }
+]

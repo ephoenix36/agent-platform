@@ -1,0 +1,65 @@
+{
+  "id": "8bbdbb38-f2f0-47c1-b177-bdb38d64cc59",
+  "slug": "creator-admin-panel-mvp",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "name": "Creator Admin Panel (MVP)",
+  "goal": "Enable creators to configure their marketplace without code",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "critical",
+  "tags": [
+    "admin-panel",
+    "creator-tools",
+    "configuration",
+    "ui"
+  ],
+  "overview": {
+    "summary": "Build the creator-facing admin interface for marketplace configuration",
+    "motivation": "Creators need to customize their marketplace to match their community's needs without technical knowledge",
+    "goals": [
+      "Intuitive configuration UI",
+      "Real-time preview",
+      "Custom field flexibility",
+      "Brand consistency"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Category CRUD operations",
+      "Custom field schema builder",
+      "Branding/theme editor",
+      "Settings persistence"
+    ],
+    "nonFunctional": [
+      "Accessible UI (WCAG 2.1)",
+      "Mobile-responsive admin panel",
+      "Auto-save functionality"
+    ]
+  },
+  "acceptance": [
+    "Multi-category schema builder UI",
+    "Custom field creation (text, number, dropdown, checkbox)",
+    "Field validation rules",
+    "Category management",
+    "Branding customization (logo, colors, theme)",
+    "Preview mode for community settings"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:24:59.948Z",
+    "updated": "2025-11-16T02:24:59.948Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp\\features\\creator-admin-panel-mvp"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

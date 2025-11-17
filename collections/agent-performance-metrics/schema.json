@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "Performance metrics schema for workflow executions",
+  "fields": {
+    "workflowId": "string",
+    "runId": "string",
+    "timestamp": "ISO8601 string",
+    "status": "success|error|partial",
+    "metrics": {
+      "latencyMs": "number",
+      "errorCount": "number",
+      "successRate": "0-1 float",
+      "humanEditDistance": "0-1 float (optional)",
+      "noveltyScore": "0-1 float (optional)",
+      "tokenUsage": "integer (approx prompt+completion tokens)",
+      "costPerRun": "float USD (estimated)",
+      "memoryUtilizationMb": "number (approx peak memory)",
+      "retryCount": "integer (automatic retry attempts)"
+    },
+    "evaluatorScores": "Record<string, number>",
+    "overallScore": "0-1 float (weighted aggregate of evaluatorScores)",
+    "annotations": "string[]",
+    "version": "string"
+  }
+}

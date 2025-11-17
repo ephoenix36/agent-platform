@@ -1,0 +1,54 @@
+{
+  "id": "d52db19d-44a1-4907-a3c1-4d17f80c052f",
+  "number": "TASK-011",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "a47b50a8-f065-4799-9511-501cb89c072e",
+  "title": "Optimize Dashboard Performance",
+  "description": "Optimize dashboard widget and API performance to meet <2s refresh requirement. Implement caching, query optimization, and efficient rendering strategies.",
+  "status": "pending",
+  "priority": "high",
+  "type": "refactor",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 5,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:04:09.834Z",
+    "updated": "2025-11-16T04:04:09.871Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "performance",
+      "optimization"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Dashboard widget achieves <2s refresh latency",
+      "API queries optimized with proper indexing",
+      "Widget rendering uses efficient state management",
+      "Load testing validates performance with 100+ concurrent users",
+      "Caching strategy reduces redundant API calls"
+    ]
+  },
+  "context": {}
+}

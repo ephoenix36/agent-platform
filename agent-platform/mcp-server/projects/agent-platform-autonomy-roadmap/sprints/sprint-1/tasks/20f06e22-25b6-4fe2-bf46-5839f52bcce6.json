@@ -1,0 +1,76 @@
+{
+  "id": "20f06e22-25b6-4fe2-bf46-5839f52bcce6",
+  "number": "TASK-001",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "c125119b-d8e0-4d6e-8fa5-bbe4d5374b7b",
+  "title": "Design Anomaly Detection Algorithm",
+  "description": "Design and document the statistical anomaly detection algorithm for identifying cost/usage spikes. Algorithm must handle multi-dimensional data (agent, model, time) and produce confidence scores for alerts. Research existing approaches (Z-score, IQR, moving averages, forecasting) and select optimal method for our use case.",
+  "status": "completed",
+  "priority": "high",
+  "type": "research",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 5,
+    "complexity": "high"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:03:37.959Z",
+    "updated": "2025-11-16T19:15:00.000Z",
+    "completed": "2025-11-16T19:15:00.000Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "research",
+      "algorithm",
+      "anomaly-detection"
+    ]
+  },
+  "tracking": {
+    "comments": [
+      {
+        "id": "comment-001",
+        "author": "ephoe",
+        "content": "Design document has been created at mcp-server/docs/ANOMALY_DETECTION_DESIGN.md",
+        "timestamp": "2025-11-16T17:30:00.000Z"
+      },
+      {
+        "id": "comment-002",
+        "author": "ephoe",
+        "content": "Task completed. Comprehensive design document covers: 3 statistical methods (Z-score, IQR, Moving Average), anomaly scoring system (0-100), alert routing, auto-task creation, API design, performance requirements, and testing strategy. Discovered existing partial implementation in anomaly-detector.ts that can be enhanced.",
+        "timestamp": "2025-11-16T19:15:00.000Z"
+      }
+    ],
+    "changes": [],
+    "attachments": [
+      {
+        "id": "attachment-001",
+        "name": "ANOMALY_DETECTION_DESIGN.md",
+        "path": "mcp-server/docs/ANOMALY_DETECTION_DESIGN.md",
+        "type": "document",
+        "timestamp": "2025-11-16T17:30:00.000Z"
+      }
+    ]
+  },
+  "acceptance": {
+    "criteria": [
+      "Anomaly detection algorithm selected and documented (Z-score, IQR, or time-series forecasting)",
+      "Statistical thresholds defined for spike detection (e.g., 3 sigma)",
+      "Algorithm handles sparse data and cold-start scenarios",
+      "Performance benchmarks show <1s processing per 1000 data points"
+    ]
+  },
+  "context": {}
+}

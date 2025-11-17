@@ -1,0 +1,74 @@
+[
+  {
+    "simulationId": "c46cbce5-3b09-458a-80ad-10e360e04b0b",
+    "workflowId": "biz_daily_market_intel",
+    "selectedHintId": "source_diversification",
+    "predictedGain": 0.065,
+    "predictedNewScoreFormula": "newScore = currentScore + predictedGain (capped at 1.0)",
+    "stepsToApply": [
+      "Extend fetch_feeds step with new connectors",
+      "Add source reliability weighting"
+    ],
+    "additionalSteps": [
+      "Re-run evaluation",
+      "Update scoreboard",
+      "Compare rolling averages"
+    ],
+    "riskAssessment": "Low risk: additive steps; monitor latency impact",
+    "timestamp": "2025-11-14T01:18:50.607Z"
+  },
+  {
+    "simulationId": "df13e5bb-7d4d-4570-b84e-8b38c9d60e2a",
+    "workflowId": "mkt_content_calendar_orchestrator",
+    "selectedHintId": "cluster_gap_analysis",
+    "predictedGain": 0.06,
+    "predictedNewScoreFormula": "newScore = currentScore + predictedGain (capped at 1.0)",
+    "stepsToApply": [
+      "Insert clustering transform step",
+      "Add similarity threshold config"
+    ],
+    "additionalSteps": [
+      "Re-run evaluation",
+      "Update scoreboard",
+      "Compare rolling averages"
+    ],
+    "riskAssessment": "Low risk: additive steps; monitor latency impact",
+    "timestamp": "2025-11-14T01:18:50.610Z"
+  },
+  {
+    "simulationId": "63861052-5a6e-4a65-89bc-c5e8c65756dd",
+    "workflowId": "mkt_social_media_post_generator",
+    "selectedHintId": "add_engagement_model",
+    "predictedGain": 0.075,
+    "predictedNewScoreFormula": "newScore = currentScore + predictedGain (capped at 1.0)",
+    "stepsToApply": [
+      "Create agent: engagement-predictor",
+      "Add step before hitl_review for variant scoring"
+    ],
+    "additionalSteps": [
+      "Re-run evaluation",
+      "Update scoreboard",
+      "Compare rolling averages"
+    ],
+    "riskAssessment": "Low risk: additive steps; monitor latency impact",
+    "timestamp": "2025-11-14T01:18:50.611Z"
+  },
+  {
+    "simulationId": "3a3874e2-00aa-478c-9a69-974982fa9814",
+    "workflowId": "vector_store_ingestion_pipeline",
+    "selectedHintId": "adaptive_chunk_sizing",
+    "predictedGain": 0.08,
+    "predictedNewScoreFormula": "newScore = currentScore + predictedGain (capped at 1.0)",
+    "stepsToApply": [
+      "Add semantic pass to compute cohesion score",
+      "Adjust chunk boundaries"
+    ],
+    "additionalSteps": [
+      "Re-run evaluation",
+      "Update scoreboard",
+      "Compare rolling averages"
+    ],
+    "riskAssessment": "Low risk: additive steps; monitor latency impact",
+    "timestamp": "2025-11-14T01:18:50.611Z"
+  }
+]

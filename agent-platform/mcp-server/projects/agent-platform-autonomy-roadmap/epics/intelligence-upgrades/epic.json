@@ -1,0 +1,43 @@
+{
+  "id": "4a937c34-c3c7-4e24-a467-023bdf767103",
+  "slug": "intelligence-upgrades",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "name": "Intelligence Upgrades",
+  "objective": "Deliver AI-native capabilities like automated code review, documentation upkeep, and predictive planning so the platform continuously improves itself.",
+  "status": "planned",
+  "owner": "intelligence-rd",
+  "priority": "critical",
+  "tags": [
+    "ai-code-analysis",
+    "auto-refactor",
+    "predictive-planning"
+  ],
+  "metrics": {},
+  "successCriteria": [
+    "LLM-powered static analysis covers 80% of repos",
+    "Automated docs bot keeps README/roadmap current within 1 hour of change",
+    "Capacity planner forecasts delivery within +/-10% accuracy"
+  ],
+  "stats": {
+    "totalFeatures": 3,
+    "completedFeatures": 0,
+    "totalTasks": 0,
+    "completedTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:06:39.292Z",
+    "updated": "2025-11-16T03:09:31.808Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\intelligence-upgrades",
+    "features": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\intelligence-upgrades\\features"
+  },
+  "relationships": {
+    "featureIds": [
+      "6f2af8e7-48eb-412f-9e6c-ed3265138f34",
+      "20f130df-5a51-4bd0-af48-7c36ff61881c",
+      "48856bed-b69a-418f-9e41-b807e1aa8af8"
+    ],
+    "taskIds": []
+  }
+}

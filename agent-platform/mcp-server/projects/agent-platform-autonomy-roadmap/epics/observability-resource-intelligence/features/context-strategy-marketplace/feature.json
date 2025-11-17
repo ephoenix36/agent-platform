@@ -1,0 +1,58 @@
+{
+  "id": "a518d65a-a429-4eb4-b056-8c6a66a1374e",
+  "slug": "context-strategy-marketplace",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "name": "Context Strategy Marketplace",
+  "goal": "Allow teams to author, package, and share custom context strategies beyond efficient/balanced defaults.",
+  "status": "proposed",
+  "owner": "platform-observability",
+  "priority": "medium",
+  "tags": [
+    "context",
+    "strategies",
+    "marketplace"
+  ],
+  "overview": {
+    "summary": "Extend ContextManager with plugin strategy interface.",
+    "goals": [
+      "Strategy manifests + validation",
+      "Packaging + registry",
+      "UI to preview impact"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Strategy schema + loader",
+      "Registry listing with tags",
+      "Testing harness to benchmark",
+      "Docs update"
+    ],
+    "nonFunctional": [
+      "Strategy load <20ms",
+      "Sandboxed evaluation"
+    ]
+  },
+  "acceptance": [
+    "Strategy template committed",
+    "Sample strategy published",
+    "Benchmark results recorded"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:14:08.077Z",
+    "updated": "2025-11-16T03:14:08.077Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\observability-resource-intelligence\\features\\context-strategy-marketplace"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

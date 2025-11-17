@@ -1,0 +1,24 @@
+[
+  {
+    "workflowId": "mkt_social_media_post_generator",
+    "runId": "run_001",
+    "timestamp": "2025-11-13T00:00:00Z",
+    "status": "success",
+    "metrics": {
+      "latencyMs": 4820,
+      "errorCount": 0,
+      "successRate": 0.98,
+      "humanEditDistance": 0.12,
+      "noveltyScore": 0.68
+    },
+    "evaluatorScores": {
+      "relevance": 0.92,
+      "style_adherence": 0.87,
+      "engagement_prediction": 0.74,
+      "brevity_quality": 0.85
+    },
+    "overallScore": 0.85,
+    "annotations": ["baseline"],
+    "version": "1.0.0"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "id": "182b816e-a826-4683-851e-d20666076ef3",
+  "slug": "agent-to-agent-messaging-protocol-gateway",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "6022ff09-ac28-4d89-abe3-aede3685ae54",
+  "name": "Agent-to-Agent Messaging & Protocol Gateway",
+  "goal": "Define secure messaging channels, routing, and guardrails so agents negotiate tasks, share artifacts, and escalate to humans.",
+  "status": "proposed",
+  "owner": "collab-systems",
+  "priority": "medium",
+  "tags": [
+    "protocol",
+    "messaging",
+    "negotiation"
+  ],
+  "overview": {
+    "summary": "Implements agent-to-agent protocols per roadmap Phase 3.",
+    "goals": [
+      "Lightweight messaging bus with ACLs",
+      "Conversation contracts for task delegation",
+      "Human escalation + approval hooks"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Protocol gateway handles direct, broadcast, and mediated messages",
+      "Policies restrict tool access per agent role",
+      "Human approval widget for cross-team escalations"
+    ],
+    "nonFunctional": [
+      "Encryption at rest/in transit",
+      "Message audit trail for 90 days"
+    ]
+  },
+  "acceptance": [
+    "Protocol spec documented",
+    "Demo shows two agents negotiating work transfer",
+    "Audit log query surfaces conversation transcript"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:10:16.681Z",
+    "updated": "2025-11-16T03:10:16.681Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\collaborative-autonomy-layer\\features\\agent-to-agent-messaging-protocol-gateway"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

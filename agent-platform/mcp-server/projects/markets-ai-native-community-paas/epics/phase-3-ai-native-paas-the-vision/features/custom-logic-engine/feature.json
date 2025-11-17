@@ -1,0 +1,67 @@
+{
+  "id": "42b00bc0-67f5-49dc-a36e-3ba9745970ad",
+  "slug": "custom-logic-engine",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "280b8215-cdde-4cfe-a1d7-730e7ce61f4f",
+  "name": "Custom Logic Engine",
+  "goal": "Build secure serverless runtime for executing custom creator logic",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "critical",
+  "tags": [
+    "paas",
+    "serverless",
+    "custom-logic",
+    "runtime"
+  ],
+  "overview": {
+    "summary": "Implement serverless runtime for custom creator scripts",
+    "motivation": "Enable creators to write custom business logic without managing infrastructure",
+    "goals": [
+      "Secure execution",
+      "Multi-language support",
+      "Fast performance",
+      "Easy deployment"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Function deployment API",
+      "Execution environment",
+      "Context injection",
+      "External API calling"
+    ],
+    "nonFunctional": [
+      "Isolated execution",
+      "Resource quotas",
+      "Audit logging",
+      "DDoS protection"
+    ]
+  },
+  "acceptance": [
+    "Serverless function runtime (Lambda/Workers)",
+    "JavaScript/Python support",
+    "Secure execution sandbox",
+    "Resource limits (CPU, memory, timeout)",
+    "Error handling and logging",
+    "Function versioning",
+    "Cold start optimization"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:26:37.119Z",
+    "updated": "2025-11-16T02:26:37.119Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-3-ai-native-paas-the-vision\\features\\custom-logic-engine"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

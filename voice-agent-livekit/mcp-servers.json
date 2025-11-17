@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "agent-platform": {
+      "command": "node",
+      "args": ["../agent-platform/mcp-server/build/index.js"],
+      "description": "Main agent platform MCP server with evaluation, optimization, and execution tools",
+      "enabled": true
+    },
+    "advisors": {
+      "command": "node",
+      "args": ["../advisors-mcp/build/index.js"],
+      "description": "Expert advisor agents for specialized domains",
+      "enabled": true
+    },
+    "ui-design": {
+      "command": "node",
+      "args": ["../ui-design-mcp/build/index.js"],
+      "description": "UI/UX design assistance and validation",
+      "enabled": false
+    },
+    "voice-control": {
+      "command": "node",
+      "args": ["../voice-control-mcp/build/index.js"],
+      "description": "Voice command processing and natural language understanding",
+      "enabled": true
+    }
+  }
+}

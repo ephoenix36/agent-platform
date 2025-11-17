@@ -1,0 +1,46 @@
+{
+  "id": "workflow-catalog-curator",
+  "name": "Workflow Catalog Curator",
+  "description": "Meta-agent that prioritizes, updates statuses, and recommends optimization pathways for the workflow backlog.",
+  "collection": "meta-agents",
+  "subsection": "core",
+  "version": "1.0.0",
+  "systemPrompt": "# Identity\nYou are the Workflow Catalog Curator. You maintain the workflow backlog: prioritization, status updates, dependency mapping, and optimization recommendations.\n\n# Responsibilities\n1. Read current backlog (JSON + Markdown).\n2. Recalculate valueScore if new business signals provided.\n3. Suggest next 5 high-leverage workflows per category.\n4. Transition statuses: planned -> in-progress -> completed with rationale.\n5. Flag blocked workflows and list required dependencies/resources.\n6. Propose evaluator metric templates (coverage, correctness, latency, businessImpact).\n7. Recommend agent teams and skills to accelerate implementation.\n\n# Output Modes\n- update_report: summary of status transitions + priority adjustments\n- optimization_suggestions: evaluator/mutator additions\n- dependency_matrix: adjacency list of workflow dependencies\n\n# Constraints\n- Keep each workflow description stable; only improve if clarity deficient.\n- Never drop existing entries unless explicitly deprecated.\n- Ensure JSON diffs are minimal.\n\n# Evaluation Focus\nCompleteness, prioritization accuracy, low noise, strategic alignment.\n\nEND.",
+  "requiredTools": ["query_collection", "create_collection_item", "semantic_search", "list_agents", "grep_search"],
+  "optionalTools": ["agent_teams", "execute_workflow"],
+  "evaluator": {
+    "type": "llm-judge",
+    "implementation": "evaluators/workflow_curator_eval.py",
+    "successCriteria": [
+      {"name": "prioritization_quality", "description": "High-impact workflows surfaced", "weight": 0.35, "required": true},
+      {"name": "status_integrity", "description": "Valid status transitions", "weight": 0.25, "required": true},
+      {"name": "dependency_accuracy", "description": "Dependencies correctly mapped", "weight": 0.2, "required": true},
+      {"name": "clarity", "description": "Outputs concise and actionable", "weight": 0.2, "required": false}
+    ],
+    "weightedMetrics": [
+      {"name": "impact_alignment", "weight": 0.5, "aggregation": "mean"},
+      {"name": "transition_validity", "weight": 0.3, "aggregation": "mean"},
+      {"name": "dependency_precision", "weight": 0.2, "aggregation": "mean"}
+    ],
+    "description": "Ensures curated backlog updates are strategic and accurate."
+  },
+  "mutator": {
+    "strategies": ["priority_rebalancing", "dependency_consolidation"],
+    "constraints": [
+      {"name": "no_priority_flip_without_reason", "type": "content", "value": true},
+      {"name": "max_reprioritized_items", "type": "length", "value": 10}
+    ],
+    "mutationRate": 0.15,
+    "description": "Applies controlled reprioritization to maintain focus."
+  },
+  "optimizationThreshold": 0.9,
+  "currentScore": 0.0,
+  "tags": ["catalog", "prioritization", "workflow", "meta"],
+  "examples": [
+    {
+      "input": "Current backlog counts + business directive: focus on revenue workflows",
+      "output": "{\"update_report\": {\"statusChanges\": [], \"newPriorities\": [\"sales_lead_qualification_sheet\", \"mkt_social_media_post_generator\"], \"rationale\": \"Revenue impact prioritized per directive\"}}",
+      "explanation": "Produces structured update report object."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "bc1cc080-2029-4a00-94bc-5bb216a95a69",
+  "slug": "demo-epic-1763258472187",
+  "projectId": "ed418795-a018-4f99-b855-474faab4ffa8",
+  "name": "Demo Epic 1763258472187",
+  "objective": "Validate pm toolchain",
+  "status": "planned",
+  "owner": "pm-demo",
+  "priority": "high",
+  "tags": [
+    "demo"
+  ],
+  "metrics": {},
+  "successCriteria": [
+    "feature shipped"
+  ],
+  "stats": {
+    "totalFeatures": 1,
+    "completedFeatures": 0,
+    "totalTasks": 1,
+    "completedTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:01:12.206Z",
+    "updated": "2025-11-16T02:01:12.215Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\demo-pm-project-1763258472187\\epics\\demo-epic-1763258472187",
+    "features": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\demo-pm-project-1763258472187\\epics\\demo-epic-1763258472187\\features"
+  },
+  "relationships": {
+    "featureIds": [
+      "8b48c610-10cd-44b0-976a-be9f233f4287"
+    ],
+    "taskIds": [
+      "273c6c46-4ae3-421b-8876-03ff22aa248f"
+    ]
+  }
+}

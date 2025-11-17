@@ -1,0 +1,55 @@
+{
+  "id": "34de38bb-b923-41eb-b309-cc570d77f7f6",
+  "number": "TASK-009",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "a47b50a8-f065-4799-9511-501cb89c072e",
+  "title": "Build Cost Dashboard Widget Component",
+  "description": "Implement interactive dashboard widget that visualizes cost, usage, and optimization metrics. Widget should use the existing widget toolkit and fetch data from dashboard API endpoints.",
+  "status": "pending",
+  "priority": "critical",
+  "type": "feature",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 8,
+    "complexity": "high"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:04:09.661Z",
+    "updated": "2025-11-16T04:04:09.701Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "widget",
+      "ui",
+      "dashboard"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "CostDashboard widget component implemented using widget toolkit",
+      "Displays spend vs budget, token usage, context savings metrics",
+      "Supports timeframe filters (day/week/month)",
+      "Auto-refresh every 30 seconds",
+      "Responsive design works on mobile and desktop"
+    ]
+  },
+  "context": {}
+}

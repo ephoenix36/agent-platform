@@ -1,0 +1,57 @@
+{
+  "id": "3a05b770-639e-4eff-a24f-6a953734e3c4",
+  "slug": "enterprise-identity-rbac-sso",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "b9af1986-471b-4bdb-a28f-f38bb61e6203",
+  "name": "Enterprise Identity (RBAC + SSO)",
+  "goal": "Implement workspace-level RBAC, SCIM-style roles, and SSO (Okta/Auth0) so enterprises can safely adopt the platform.",
+  "status": "proposed",
+  "owner": "enterprise-go-to-market",
+  "priority": "critical",
+  "tags": [
+    "rbac",
+    "sso",
+    "security"
+  ],
+  "overview": {
+    "summary": "Delivers README Phase 3 enterprise features.",
+    "goals": [
+      "Role model for agents, toolkits, collections",
+      "SSO integration with SAML/OIDC",
+      "Audit logging for auth events"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Central identity service + role assignments",
+      "Enforce permissions across pm, workflows, collections",
+      "SSO login + token exchange flows"
+    ],
+    "nonFunctional": [
+      "Critical paths tested for SOC2",
+      "Latency impact <30ms"
+    ]
+  },
+  "acceptance": [
+    "RBAC spec + diagram in docs",
+    "SSO smoke test with Okta dev tenant",
+    "Permission enforcement demo across pm tools"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:10:32.947Z",
+    "updated": "2025-11-16T03:10:32.947Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\enterprise-marketplace-readiness\\features\\enterprise-identity-rbac-sso"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

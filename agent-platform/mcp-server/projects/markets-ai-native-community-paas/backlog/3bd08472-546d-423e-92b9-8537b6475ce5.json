@@ -1,0 +1,51 @@
+{
+  "id": "3bd08472-546d-423e-92b9-8537b6475ce5",
+  "number": "TASK-002",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "featureId": "52a454a1-cd85-4357-8d35-3a1f4d441cc3",
+  "title": "Create Listing Browse API - GET Endpoint",
+  "description": "Implement listing browse/search endpoint with filtering, pagination, and multi-tenant scoping.",
+  "status": "pending",
+  "priority": "critical",
+  "type": "feature",
+  "assignment": {
+    "assignee": "ephoe"
+  },
+  "estimates": {
+    "hours": 3,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-17T02:15:43.784Z",
+    "updated": "2025-11-17T02:15:43.807Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": []
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "GET /api/listings endpoint with filters",
+      "Query params: categoryId, status, sellerId, search",
+      "Pagination support (page, limit)",
+      "Returns listings with seller info",
+      "Community scoping enforced",
+      "Support for customFieldValues filtering"
+    ]
+  },
+  "context": {}
+}

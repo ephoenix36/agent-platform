@@ -1,0 +1,53 @@
+{
+  "id": "be699ea9-b796-4d53-8fd4-38148d47c651",
+  "number": "TASK-001",
+  "projectId": "dc4f9a04-d2fb-428e-89b4-1156435838b0",
+  "epicId": "41914c03-a31b-4608-8cfb-fe22420dde75",
+  "featureId": "f90408fc-1c93-4b1c-95db-98a69a08356f",
+  "title": "Implement toolkit registry API",
+  "description": "Create core registry class with CRUD operations for toolkits",
+  "status": "in-progress",
+  "priority": "critical",
+  "type": "feature",
+  "assignment": {
+    "assignee": "dev-alice"
+  },
+  "estimates": {
+    "points": 5,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T02:08:24.301Z",
+    "updated": "2025-11-16T02:08:24.484Z",
+    "started": "2025-11-16T02:08:24.484Z"
+  },
+  "metadata": {
+    "createdBy": "demo-user",
+    "lastModifiedBy": "demo-user",
+    "tags": [
+      "backend",
+      "api"
+    ],
+    "labels": []
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "ToolkitManager class created",
+      "Register/unregister methods work",
+      "List toolkits returns correct data",
+      "Unit tests pass"
+    ]
+  },
+  "context": {}
+}

@@ -1,0 +1,69 @@
+{
+  "id": "831496d8-f3f7-49cd-bb05-fbe619797457",
+  "slug": "file-storage-r2s3",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "name": "File Storage (R2/S3)",
+  "goal": "Set up scalable file storage for images and videos",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "high",
+  "tags": [
+    "storage",
+    "media",
+    "r2",
+    "s3",
+    "infrastructure"
+  ],
+  "overview": {
+    "summary": "Implement file storage for listing media",
+    "motivation": "Need scalable, cost-effective storage for images and videos with fast delivery",
+    "goals": [
+      "Direct client uploads",
+      "Fast delivery",
+      "Low cost",
+      "Secure access"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Presigned upload URL generation",
+      "File validation (type, size)",
+      "URL storage in database",
+      "CDN integration"
+    ],
+    "nonFunctional": [
+      "No server proxying of files",
+      "Automatic compression",
+      "Secure bucket policies"
+    ]
+  },
+  "acceptance": [
+    "R2 or S3 bucket setup",
+    "Presigned upload URLs",
+    "Image optimization pipeline",
+    "Video transcoding",
+    "CDN integration",
+    "Storage quota management",
+    "Media deletion on listing removal"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 1,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:00.031Z",
+    "updated": "2025-11-16T02:25:00.031Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp\\features\\file-storage-r2s3"
+  },
+  "relationships": {
+    "taskIds": [
+      "48eec878-25fa-46db-a8e9-3b36531fd4a0"
+    ],
+    "relatedFeatureIds": []
+  }
+}

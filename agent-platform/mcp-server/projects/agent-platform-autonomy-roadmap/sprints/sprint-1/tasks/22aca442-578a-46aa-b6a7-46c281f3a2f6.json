@@ -1,0 +1,55 @@
+{
+  "id": "22aca442-578a-46aa-b6a7-46c281f3a2f6",
+  "number": "TASK-005",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "c125119b-d8e0-4d6e-8fa5-bbe4d5374b7b",
+  "title": "Integrate Auto-Task Creation for Anomalies",
+  "description": "Integrate anomaly detection with PM tools to auto-create tasks for high-severity anomalies. Tasks should include context, diagnostic data, and suggested actions for investigation.",
+  "status": "pending",
+  "priority": "medium",
+  "type": "feature",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 3,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:03:38.436Z",
+    "updated": "2025-11-16T04:03:38.477Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "integration",
+      "pm-tools",
+      "automation"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "pm_create_task called automatically for critical anomalies",
+      "Task includes anomaly details, affected resources, and timeline",
+      "Task linked to relevant epic/feature",
+      "Task assigned to appropriate owner based on agent/team",
+      "Integration tested with mock anomalies"
+    ]
+  },
+  "context": {}
+}

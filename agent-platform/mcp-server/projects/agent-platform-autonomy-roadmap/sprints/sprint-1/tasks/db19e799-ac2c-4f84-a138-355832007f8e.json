@@ -1,0 +1,55 @@
+{
+  "id": "db19e799-ac2c-4f84-a138-355832007f8e",
+  "number": "TASK-014",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "75fdde2e-4d1a-425b-acfc-587171a04860",
+  "title": "Design Budget Policy Schema",
+  "description": "Design budget policy schema that can be applied across projects and agents. Schema should support hierarchical policies with inheritance and override capabilities.",
+  "status": "pending",
+  "priority": "high",
+  "type": "design",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 3,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:04:35.873Z",
+    "updated": "2025-11-16T04:04:35.918Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "design",
+      "schema",
+      "policy"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Policy schema defined supporting budget limits, rate limits, alert thresholds",
+      "Schema supports inheritance (org->project->agent)",
+      "Validation rules ensure policy consistency",
+      "Schema versioning for backward compatibility",
+      "Documentation includes schema examples"
+    ]
+  },
+  "context": {}
+}

@@ -1,0 +1,26 @@
+{
+  "id": "sales_lead_qualification_sheet",
+  "name": "Lead Qualification in Sheets",
+  "category": "sales",
+  "version": "1.0.0",
+  "description": "AI scoring & tagging for new spreadsheet leads to prioritize outreach.",
+  "triggers": ["event", "schedule"],
+  "valueScore": 8,
+  "complexity": "low",
+  "status": "in-progress",
+  "agentsNeeded": ["linkedin-prospect-researcher"],
+  "skillsNeeded": ["lead-qualification", "scoring"],
+  "dependencies": [],
+  "source": {"origin": "workflow_backlog", "attribution": "Google Sheets + OpenAI templates"},
+  "steps": [
+    {"id": "ingest", "type": "transform", "description": "Detect new lead rows", "outputs": ["newLeads"]},
+    {"id": "enrich", "type": "agent", "agentId": "linkedin-prospect-researcher", "description": "Enrich with company & role data", "inputs": ["newLeads"], "outputs": ["enrichedLeads"]},
+    {"id": "score", "type": "agent", "agentId": "linkedin-prospect-researcher", "description": "Apply AI qualification scoring", "inputs": ["enrichedLeads"], "outputs": ["scoredLeads"]},
+    {"id": "tag", "type": "transform", "description": "Assign tags and priority buckets", "inputs": ["scoredLeads"], "outputs": ["taggedLeads"]},
+    {"id": "sync_crm", "type": "transform", "description": "Push high priority leads to CRM", "inputs": ["taggedLeads"], "outputs": ["crmSyncResult"]}
+  ],
+  "evaluator": {"successCriteria": [{"name": "enrichment_completeness", "weight": 0.3}, {"name": "scoring_consistency", "weight": 0.3}, {"name": "crm_sync_success", "weight": 0.2}, {"name": "latency", "weight": 0.2}]},
+  "hooks": {"beforeExecution": ["validate-sheet-access"], "afterExecution": ["update-lead-stats"], "onError": ["flag-row-and-continue"]},
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+}

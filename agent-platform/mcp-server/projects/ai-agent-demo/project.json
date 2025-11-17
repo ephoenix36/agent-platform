@@ -1,0 +1,46 @@
+{
+  "id": "dc4f9a04-d2fb-428e-89b4-1156435838b0",
+  "slug": "ai-agent-demo",
+  "name": "AI Agent Demo",
+  "description": "Interactive demonstration of project management tools",
+  "status": "active",
+  "metadata": {
+    "created": "2025-11-16T02:08:24.222Z",
+    "updated": "2025-11-16T02:08:24.259Z",
+    "owner": "demo-user",
+    "contributors": [
+      "demo-user"
+    ],
+    "tags": [
+      "demo",
+      "interactive",
+      "ai-agent"
+    ],
+    "version": "0.1.0"
+  },
+  "settings": {
+    "sprintDuration": 7,
+    "timezone": "America/New_York",
+    "requireApproval": false,
+    "templateType": "nodejs"
+  },
+  "stats": {
+    "totalSprints": 0,
+    "activeSprints": 0,
+    "totalTasks": 3,
+    "completedTasks": 0,
+    "activeContributors": 1,
+    "totalEpics": 1,
+    "activeEpics": 0,
+    "totalFeatures": 2,
+    "completedFeatures": 0
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\ai-agent-demo",
+    "docs": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\ai-agent-demo\\docs",
+    "memory": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\ai-agent-demo\\memory",
+    "sprints": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\ai-agent-demo\\sprints",
+    "archived": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\ai-agent-demo\\.archived",
+    "epics": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\ai-agent-demo\\epics"
+  }
+}

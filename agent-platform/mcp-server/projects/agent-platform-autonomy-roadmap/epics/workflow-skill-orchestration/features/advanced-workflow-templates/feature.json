@@ -1,0 +1,57 @@
+{
+  "id": "ca49e883-e06f-42b6-a4b3-4431c5334ea9",
+  "slug": "advanced-workflow-templates",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "7bf7b087-f041-4ef4-adb2-a208ca389829",
+  "name": "Advanced Workflow Templates",
+  "goal": "Package the workflow toolkit, templates, and automation blueprints for support, sales, content, and analytics pipelines.",
+  "status": "proposed",
+  "owner": "automation-lead",
+  "priority": "critical",
+  "tags": [
+    "workflows",
+    "templates",
+    "automation"
+  ],
+  "overview": {
+    "summary": "execute_workflow + templates for 4 business pipelines described in HIGH_VALUE_COMPONENTS.",
+    "goals": [
+      "Reusable JSON workflow templates per domain",
+      "CLI + docs for launching pipelines",
+      "Instrumentation for each stage"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Template catalog accessible via get_workflow_templates",
+      "Workflow definitions cover triggers, agent steps, telemetry hooks",
+      "Examples for support, sales, content, analytics"
+    ],
+    "nonFunctional": [
+      "Workflows execute under 60s for typical payload",
+      "Templates versioned for safe edits"
+    ]
+  },
+  "acceptance": [
+    "Four workflows (support, sales, content, analytics) stored in docs",
+    "Workflow demo script executed successfully",
+    "Telemetry logged per step as described in doc"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:07:32.061Z",
+    "updated": "2025-11-16T03:07:32.061Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\workflow-skill-orchestration\\features\\advanced-workflow-templates"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "6f2af8e7-48eb-412f-9e6c-ed3265138f34",
+  "slug": "ai-code-analysis-auto-refactor-copilot",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "4a937c34-c3c7-4e24-a467-023bdf767103",
+  "name": "AI Code Analysis & Auto-Refactor Copilot",
+  "goal": "LLM-powered static analysis service that reviews MCP server + workspace repos, opens actionable refactor PRs, and enforces architectural guardrails.",
+  "status": "proposed",
+  "owner": "intelligence-rd",
+  "priority": "critical",
+  "tags": [
+    "code-analysis",
+    "auto-refactor",
+    "ai"
+  ],
+  "overview": {
+    "summary": "Align with roadmap 'AI-powered code analysis' from enhancement summary.",
+    "goals": [
+      "Deep scan TypeScript/Python repos",
+      "Generate findings + auto-fix patches",
+      "Integrate with pm task + widget approvals"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Background job enumerates repos and runs code-quality heuristics",
+      "LLM generates explanation + patch suggestions",
+      "Auto-submit PM tasks or git patches for high confidence issues"
+    ],
+    "nonFunctional": [
+      "Scans finish <15 min for repo",
+      "Sandboxed execution for security",
+      "Configurable severity thresholds"
+    ]
+  },
+  "acceptance": [
+    "Spec doc stored under project docs",
+    "Prototype run against mcp-server with top 5 findings",
+    "Auto-created tasks referencing code paths"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:08:58.120Z",
+    "updated": "2025-11-16T03:08:58.120Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\intelligence-upgrades\\features\\ai-code-analysis-auto-refactor-copilot"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

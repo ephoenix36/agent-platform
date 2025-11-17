@@ -1,0 +1,65 @@
+{
+  "id": "c125119b-d8e0-4d6e-8fa5-bbe4d5374b7b",
+  "slug": "cost-anomaly-detection-guardrails-vnext",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "name": "Cost Anomaly Detection & Guardrails vNext",
+  "goal": "Layer anomaly detection and alerting on top of existing usage/budget data to proactively flag regressions.",
+  "status": "proposed",
+  "owner": "platform-observability",
+  "priority": "medium",
+  "tags": [
+    "usage",
+    "anomaly",
+    "alerts"
+  ],
+  "overview": {
+    "summary": "Extend UsageTracker analytics with statistical anomaly detection and alert routes.",
+    "goals": [
+      "Detect sudden spikes per agent/model",
+      "Notify via widget/email/slack",
+      "Auto-open tasks for severe spikes"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Anomaly service consumes usage stats nightly",
+      "Alert routing configuration per project",
+      "Task auto-creation through pm tools on severity high"
+    ],
+    "nonFunctional": [
+      "False positive rate <5%",
+      "Runs under 2 minutes per daily batch"
+    ]
+  },
+  "acceptance": [
+    "Anomaly detection spec documented",
+    "Prototype pipeline runs on sample data",
+    "Alert -> task flow demoed"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 7,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:08:33.192Z",
+    "updated": "2025-11-16T03:08:33.192Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\observability-resource-intelligence\\features\\cost-anomaly-detection-guardrails-vnext"
+  },
+  "relationships": {
+    "taskIds": [
+      "20f06e22-25b6-4fe2-bf46-5839f52bcce6",
+      "0e192de1-ed7a-4c39-8771-082791f3ec4a",
+      "ff9218f2-c919-45db-8502-bb1d2640c04b",
+      "bed65f49-7745-4449-b0d9-6cde0303c927",
+      "22aca442-578a-46aa-b6a7-46c281f3a2f6",
+      "102d0262-871a-4e22-9c1c-51d2c6227da7",
+      "d5bdad1e-0a17-470a-b22b-917cefde851c"
+    ],
+    "relatedFeatureIds": []
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "104f4f78-219f-4e18-9ddb-2e7a0a9139db",
+  "slug": "agent-skill-marketplace-billing",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "b9af1986-471b-4bdb-a28f-f38bb61e6203",
+  "name": "Agent & Skill Marketplace + Billing",
+  "goal": "Enable packaging, listing, and billing of agents/skills/workflows with payment integration (Stripe/Whop).",
+  "status": "proposed",
+  "owner": "enterprise-go-to-market",
+  "priority": "high",
+  "tags": [
+    "marketplace",
+    "billing",
+    "monetization"
+  ],
+  "overview": {
+    "summary": "Aligns with README roadmap Marketplace & Payment integration.",
+    "goals": [
+      "Package agents/skills with metadata + pricing",
+      "Marketplace UI + API listing",
+      "Stripe billing hooks + payout reporting"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Packaging CLI builds distributable bundles",
+      "Marketplace JSON schema + publishing workflow",
+      "Billing service charges usage/subscription + shares revenue"
+    ],
+    "nonFunctional": [
+      "Security review for submitted bundles",
+      "Billing settlement within 48h"
+    ]
+  },
+  "acceptance": [
+    "Demo lists sample skill bundle",
+    "Test transaction recorded end-to-end",
+    "Marketplace docs published"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:11:01.783Z",
+    "updated": "2025-11-16T03:11:01.783Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\enterprise-marketplace-readiness\\features\\agent-skill-marketplace-billing"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

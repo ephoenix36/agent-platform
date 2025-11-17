@@ -1,0 +1,57 @@
+{
+  "id": "24040597-14ab-4380-b9ed-649a27a9a967",
+  "slug": "high-value-skill-meta-agent-library",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "7bf7b087-f041-4ef4-adb2-a208ca389829",
+  "name": "High-Value Skill & Meta-Agent Library",
+  "goal": "Maintain production skills (support, sales, content, analytics) plus meta-agents that design prompts and workflows.",
+  "status": "proposed",
+  "owner": "skill-ops",
+  "priority": "high",
+  "tags": [
+    "skills",
+    "meta-agents",
+    "library"
+  ],
+  "overview": {
+    "summary": "Skill JSON definitions + meta agents documented in HIGH_VALUE_COMPONENTS.",
+    "goals": [
+      "Publish >4 production skills with rules",
+      "Include 3 meta-agents (architect, workflow designer, telemetry)",
+      "Provide attachment instructions for agents/workflows"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Skill definitions stored in local-storage/skills with docs",
+      "pm tools to list/attach skills across workflows",
+      "Meta-agents accessible in meta-agents/ with prompts"
+    ],
+    "nonFunctional": [
+      "Skill validation on load",
+      "Versioning + tagging for discoverability"
+    ]
+  },
+  "acceptance": [
+    "Skills enumerated in HIGH_VALUE doc remain synced",
+    "Meta-agent prompts reviewed and committed",
+    "Demo uses create_skill/list_skills to show inventory"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:07:44.718Z",
+    "updated": "2025-11-16T03:07:44.718Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\workflow-skill-orchestration\\features\\high-value-skill-meta-agent-library"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

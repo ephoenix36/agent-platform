@@ -1,0 +1,57 @@
+{
+  "id": "1cde627e-0363-455f-8cb8-8c077579db9f",
+  "number": "TASK-002",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "sprintId": "f82e4d18-a6ea-430b-9ee6-a527100c53d9",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "featureId": "ff8a739e-8d56-4604-a19e-8a3768133bad",
+  "title": "Set Up PostgreSQL Database Connection",
+  "description": "Set up PostgreSQL database connection with proper pooling for serverless environments. Configure connection via Supabase or Neon, set up environment variables, and create a health check endpoint.",
+  "status": "complete",
+  "priority": "critical",
+  "type": "feature",
+  "assignment": {
+    "assignee": "ephoe"
+  },
+  "estimates": {
+    "hours": 6,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T02:27:16.470Z",
+    "updated": "2025-11-17T02:12:08.031Z",
+    "completed": "2025-11-17T02:12:08.031Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "database",
+      "postgresql",
+      "infrastructure"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "PostgreSQL connection established (Supabase/Neon)",
+      "Connection pooling configured for serverless",
+      "Environment variables properly set up",
+      "Database connection tested and verified",
+      "Migration framework in place",
+      "Health check endpoint for DB connectivity"
+    ]
+  },
+  "context": {}
+}

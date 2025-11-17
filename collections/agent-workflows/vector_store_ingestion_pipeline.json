@@ -1,0 +1,49 @@
+{
+  "id": "vector_store_ingestion_pipeline",
+  "name": "Notion/Drive Embedding Upsert",
+  "category": "engineering",
+  "version": "1.0.0",
+  "description": "Extract documents, chunk, embed and upsert to vector DB with version tracking.",
+  "triggers": ["schedule", "event"],
+  "valueScore": 8,
+  "complexity": "high",
+  "status": "planned",
+  "agentsNeeded": ["data-analyzer"],
+  "skillsNeeded": ["rag-preparation", "embedding-quality"],
+  "dependencies": [],
+  "source": {"origin": "workflow_backlog", "attribution": "n8n RAG templates"},
+  "steps": [
+    {"id": "discover", "type": "transform", "description": "List new/changed documents", "outputs": ["docList"]},
+    {"id": "chunk", "type": "agent", "agentId": "data-analyzer", "description": "Chunk documents context-aware", "inputs": ["docList"], "outputs": ["chunks"]},
+    {"id": "embed", "type": "agent", "agentId": "data-analyzer", "description": "Generate embeddings", "inputs": ["chunks"], "outputs": ["embeddings"]},
+    {"id": "upsert", "type": "transform", "description": "Upsert embeddings to vector DB", "inputs": ["embeddings"], "outputs": ["upsertResult"]},
+    {"id": "version_log", "type": "transform", "description": "Record version metadata", "inputs": ["upsertResult"], "outputs": ["versionRecord"]}
+  ],
+  "evaluator": {"successCriteria": [{"name": "chunk_quality", "weight": 0.3}, {"name": "embedding_density", "weight": 0.2}, {"name": "upsert_success", "weight": 0.3}, {"name": "latency", "weight": 0.2}]},
+  "hooks": {"beforeExecution": ["validate-vector-db-connection"], "afterExecution": ["update-ingestion-stats"], "onError": ["queue-retry"]},
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+  ,"optimizationHints": [
+    {
+      "id": "adaptive_chunk_sizing",
+      "description": "Implement dynamic chunk sizing based on semantic cohesion and document length distribution.",
+      "rationale": "Improve chunk_quality and embedding_density metrics (baseline overallScore ~0.61).",
+      "expectedImpact": "+0.06-0.10 overallScore",
+      "requiredChanges": ["Add semantic pass to compute cohesion score", "Adjust chunk boundaries"]
+    },
+    {
+      "id": "hierarchical_embeddings",
+      "description": "Add parent-level embeddings for sections to enable multi-resolution retrieval.",
+      "rationale": "Boost retrieval relevance and upsert_success coverage.",
+      "expectedImpact": "+0.04-0.07",
+      "requiredChanges": ["Create second pass embedding aggregator", "Store parent-child mapping"]
+    },
+    {
+      "id": "quality_audit_loop",
+      "description": "Add post-ingestion audit comparing sample queries to expected retrieval; flag low performing chunks for re-chunking.",
+      "rationale": "Systematic improvement of retrieval precision and density.",
+      "expectedImpact": "+0.05",
+      "requiredChanges": ["Add audit agent", "Add re-chunk loop step"]
+    }
+  ]
+}

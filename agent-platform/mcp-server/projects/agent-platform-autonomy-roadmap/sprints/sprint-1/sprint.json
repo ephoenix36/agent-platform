@@ -1,0 +1,47 @@
+{
+  "id": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "number": 1,
+  "name": "Sprint 1: Observability Extensions - Anomaly Detection & Dashboards",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "status": "planned",
+  "schedule": {
+    "startDate": "2025-11-15",
+    "endDate": "2025-11-29T00:00:00.000Z",
+    "duration": 14
+  },
+  "goals": {
+    "primary": [
+      "Ship cost anomaly detection pipeline with <5% false positive rate",
+      "Deploy realtime cost dashboard widget with <2s refresh",
+      "Implement automated budget policy sync across projects"
+    ],
+    "secondary": [
+      "Add comprehensive test coverage for anomaly detection algorithms",
+      "Create user documentation for dashboard configuration"
+    ],
+    "metrics": {
+      "anomaly_detection_accuracy": 95,
+      "dashboard_refresh_latency_ms": 2000,
+      "policy_sync_time_seconds": 120,
+      "test_coverage_percent": 85
+    }
+  },
+  "stats": {
+    "totalTasks": 18,
+    "completedTasks": 0,
+    "pendingTasks": 18,
+    "inProgressTasks": 0,
+    "archivedTasks": 0
+  },
+  "metadata": {
+    "created": "2025-11-16T04:00:36.876Z",
+    "updated": "2025-11-16T04:00:36.876Z",
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\sprints\\sprint-1",
+    "tasks": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\sprints\\sprint-1\\tasks",
+    "attachments": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\sprints\\sprint-1\\attachments"
+  }
+}

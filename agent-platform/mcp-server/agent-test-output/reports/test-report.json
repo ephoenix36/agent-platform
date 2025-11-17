@@ -1,0 +1,44 @@
+{
+  "report_id": "agent-test-1762816632399",
+  "timestamp": "2025-11-10T23:17:12.399Z",
+  "agent": {
+    "name": "File Operations Test Agent",
+    "version": "1.0.0",
+    "capabilities": [
+      "file_creation",
+      "directory_management",
+      "content_generation",
+      "context_analysis"
+    ]
+  },
+  "project": {
+    "name": "@agent-platform/mcp-server",
+    "version": "1.0.0",
+    "description": "MCP Server for AI Agent Platform with sampling, model selection, and API integrations"
+  },
+  "test_results": {
+    "directory_creation": {
+      "status": "success",
+      "count": 3
+    },
+    "file_creation": {
+      "status": "success",
+      "count": 2
+    },
+    "content_generation": {
+      "status": "success",
+      "size_kb": "2.5"
+    }
+  },
+  "performance": {
+    "total_time_ms": 50,
+    "operations": 5,
+    "avg_time_per_op_ms": 10
+  },
+  "conclusions": [
+    "All file operations completed successfully",
+    "Safety checks validated",
+    "Agent demonstrated autonomous capabilities",
+    "Documentation generated with proper formatting"
+  ]
+}

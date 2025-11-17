@@ -1,0 +1,66 @@
+{
+  "id": "d57504e8-a27a-4e96-80f9-c56dbafbd193",
+  "slug": "ai-messaging-agents",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "dd16bc63-2808-465b-bd86-889f6d996279",
+  "name": "AI Messaging Agents",
+  "goal": "Provide AI-powered messaging support for buyers",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "medium",
+  "tags": [
+    "ai-core",
+    "messaging",
+    "support",
+    "automation"
+  ],
+  "overview": {
+    "summary": "Deploy AI agents to handle buyer inquiries automatically",
+    "motivation": "Buyers have questions; sellers aren't always available. AI bridges the gap.",
+    "goals": [
+      "24/7 support",
+      "Instant responses",
+      "Natural conversations",
+      "Reduced seller burden"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "LLM integration",
+      "Context injection (listing details, policies)",
+      "Conversation memory",
+      "Escalation triggers"
+    ],
+    "nonFunctional": [
+      "Safe responses (no hallucinations)",
+      "GDPR compliance",
+      "Cost controls"
+    ]
+  },
+  "acceptance": [
+    "AI-powered chat support",
+    "Context-aware responses",
+    "Seller availability handling",
+    "FAQ knowledge base",
+    "Handoff to human",
+    "Multi-language support",
+    "Chat history persistence"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:50.432Z",
+    "updated": "2025-11-16T02:25:50.432Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-2-headless-maas-platform\\features\\ai-messaging-agents"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

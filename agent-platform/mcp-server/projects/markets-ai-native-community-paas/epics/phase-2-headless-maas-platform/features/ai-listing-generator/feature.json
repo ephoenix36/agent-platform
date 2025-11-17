@@ -1,0 +1,66 @@
+{
+  "id": "e22c4bca-fe16-44df-a765-15ec2e38b1a1",
+  "slug": "ai-listing-generator",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "dd16bc63-2808-465b-bd86-889f6d996279",
+  "name": "AI Listing Generator",
+  "goal": "Use AI to generate listings from images",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "high",
+  "tags": [
+    "ai-core",
+    "computer-vision",
+    "automation",
+    "seller-tools"
+  ],
+  "overview": {
+    "summary": "Implement image-to-listing pipeline using computer vision AI",
+    "motivation": "Reduce friction for sellers - let them upload photos and AI handles the details",
+    "goals": [
+      "Fast listing creation",
+      "Accurate item detection",
+      "Quality descriptions",
+      "Seller time savings"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Vision API integration (GPT-4V, Claude)",
+      "OCR for text extraction",
+      "Background removal",
+      "Quality scoring"
+    ],
+    "nonFunctional": [
+      "<5s processing time",
+      "Fallback for API failures",
+      "Cost optimization"
+    ]
+  },
+  "acceptance": [
+    "Image upload to generate listing",
+    "AI extracts item details",
+    "AI generates title/description",
+    "AI suggests categories",
+    "AI detects quality issues",
+    "Preview before publish",
+    "Edit AI suggestions"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:50.424Z",
+    "updated": "2025-11-16T02:25:50.424Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-2-headless-maas-platform\\features\\ai-listing-generator"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

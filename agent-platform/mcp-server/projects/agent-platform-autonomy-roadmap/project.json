@@ -1,0 +1,47 @@
+{
+  "id": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "slug": "agent-platform-autonomy-roadmap",
+  "name": "Agent Platform Autonomy Roadmap",
+  "description": "Master roadmap for delivering and scaling the highest leverage MCP server capabilities—observability, workflows, intelligence upgrades, collaboration, and enterprise readiness.",
+  "status": "active",
+  "metadata": {
+    "created": "2025-11-16T03:06:13.417Z",
+    "updated": "2025-11-16T04:00:36.876Z",
+    "owner": "ephoe",
+    "contributors": [
+      "ephoe"
+    ],
+    "tags": [
+      "autonomy",
+      "roadmap",
+      "mcp-server",
+      "strategy"
+    ],
+    "version": "0.1.0"
+  },
+  "settings": {
+    "sprintDuration": 14,
+    "timezone": "UTC",
+    "requireApproval": false,
+    "templateType": "nodejs"
+  },
+  "stats": {
+    "totalSprints": 1,
+    "activeSprints": 0,
+    "totalTasks": 18,
+    "completedTasks": 0,
+    "activeContributors": 1,
+    "totalEpics": 5,
+    "activeEpics": 0,
+    "totalFeatures": 26,
+    "completedFeatures": 0
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap",
+    "docs": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\docs",
+    "memory": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\memory",
+    "sprints": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\sprints",
+    "archived": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\.archived",
+    "epics": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics"
+  }
+}

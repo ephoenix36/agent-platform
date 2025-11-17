@@ -1,0 +1,57 @@
+{
+  "id": "48846f75-41c6-4bda-9cc7-5c1890dc97f0",
+  "slug": "usage-intelligence-api-sdk",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "name": "Usage Intelligence API & SDK",
+  "goal": "Expose usage/budget/context data via client SDK so downstream apps can embed cost dashboards.",
+  "status": "proposed",
+  "owner": "platform-observability",
+  "priority": "medium",
+  "tags": [
+    "sdk",
+    "api",
+    "usage"
+  ],
+  "overview": {
+    "summary": "Wraps usage services in typed client for other repos.",
+    "goals": [
+      "REST/gRPC endpoints",
+      "TypeScript + Python SDK",
+      "Samples + docs"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "API endpoints for stats/report/export",
+      "SDK wraps auth + pagination",
+      "Examples in docs + test harness"
+    ],
+    "nonFunctional": [
+      "API latency <200ms",
+      "SDK published to npm/pypi"
+    ]
+  },
+  "acceptance": [
+    "OpenAPI spec committed",
+    "SDK published alpha",
+    "Sample integration in docs"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:13:43.166Z",
+    "updated": "2025-11-16T03:13:43.166Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\observability-resource-intelligence\\features\\usage-intelligence-api-sdk"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

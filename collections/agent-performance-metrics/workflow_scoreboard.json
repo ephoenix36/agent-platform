@@ -1,0 +1,117 @@
+{
+  "timestamp": "2025-11-14T01:18:43.183Z",
+  "threshold": 0.65,
+  "workflows": [
+    {
+      "id": "biz_daily_market_intel",
+      "avgOverallScore": 0.692,
+      "avgLatencyMs": 4150,
+      "avgCostPerRun": 0.0057,
+      "avgTokenUsage": 2840,
+      "avgMemoryUtilizationMb": 436,
+      "avgRetryCount": 2,
+      "runs": 3
+    },
+    {
+      "id": "mkt_social_media_post_generator",
+      "avgOverallScore": 0.695,
+      "avgLatencyMs": 5147,
+      "avgCostPerRun": 0.0052,
+      "avgTokenUsage": 2606,
+      "avgMemoryUtilizationMb": 510,
+      "avgRetryCount": 0,
+      "runs": 3
+    },
+    {
+      "id": "vector_store_ingestion_pipeline",
+      "avgOverallScore": 0.71,
+      "avgLatencyMs": 4419,
+      "avgCostPerRun": 0.0061,
+      "avgTokenUsage": 3035,
+      "avgMemoryUtilizationMb": 469,
+      "avgRetryCount": 1,
+      "runs": 3
+    },
+    {
+      "id": "mkt_content_calendar_orchestrator",
+      "avgOverallScore": 0.719,
+      "avgLatencyMs": 3524,
+      "avgCostPerRun": 0.0058,
+      "avgTokenUsage": 2890,
+      "avgMemoryUtilizationMb": 392,
+      "avgRetryCount": 1,
+      "runs": 3
+    },
+    {
+      "id": "cs_email_triage_human_loop",
+      "avgOverallScore": 0.724,
+      "avgLatencyMs": 2884,
+      "avgCostPerRun": 0.0026,
+      "avgTokenUsage": 1319,
+      "avgMemoryUtilizationMb": 484,
+      "avgRetryCount": 2,
+      "runs": 3
+    },
+    {
+      "id": "biz_competitor_monitor",
+      "avgOverallScore": 0.732,
+      "avgLatencyMs": 3109,
+      "avgCostPerRun": 0.0051,
+      "avgTokenUsage": 2542,
+      "avgMemoryUtilizationMb": 453,
+      "avgRetryCount": 0,
+      "runs": 3
+    },
+    {
+      "id": "sales_lead_qualification_sheet",
+      "avgOverallScore": 0.742,
+      "avgLatencyMs": 4786,
+      "avgCostPerRun": 0.0053,
+      "avgTokenUsage": 2682,
+      "avgMemoryUtilizationMb": 324,
+      "avgRetryCount": 2,
+      "runs": 3
+    },
+    {
+      "id": "data_invoice_extraction",
+      "avgOverallScore": 0.755,
+      "avgLatencyMs": 4204,
+      "avgCostPerRun": 0.0048,
+      "avgTokenUsage": 2395,
+      "avgMemoryUtilizationMb": 197,
+      "avgRetryCount": 0,
+      "runs": 3
+    },
+    {
+      "id": "research_autonomous_deep_research",
+      "avgOverallScore": 0.755,
+      "avgLatencyMs": 3553,
+      "avgCostPerRun": 0.004,
+      "avgTokenUsage": 1979,
+      "avgMemoryUtilizationMb": 467,
+      "avgRetryCount": 1,
+      "runs": 3
+    },
+    {
+      "id": "eng_code_review_ai_gitlab",
+      "avgOverallScore": 0.756,
+      "avgLatencyMs": 3875,
+      "avgCostPerRun": 0.0046,
+      "avgTokenUsage": 2277,
+      "avgMemoryUtilizationMb": 309,
+      "avgRetryCount": 2,
+      "runs": 3
+    },
+    {
+      "id": "research_paper_summary_categorizer",
+      "avgOverallScore": 0.761,
+      "avgLatencyMs": 4483,
+      "avgCostPerRun": 0.0053,
+      "avgTokenUsage": 2665,
+      "avgMemoryUtilizationMb": 489,
+      "avgRetryCount": 0,
+      "runs": 3
+    }
+  ],
+  "suggestions": {}
+}

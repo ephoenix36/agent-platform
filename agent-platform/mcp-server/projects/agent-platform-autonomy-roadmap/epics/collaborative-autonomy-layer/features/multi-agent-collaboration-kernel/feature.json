@@ -1,0 +1,57 @@
+{
+  "id": "7574aa78-a47c-4064-bc98-161eb20bedbc",
+  "slug": "multi-agent-collaboration-kernel",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "6022ff09-ac28-4d89-abe3-aede3685ae54",
+  "name": "Multi-Agent Collaboration Kernel",
+  "goal": "Extend workflow + agent services so multiple agents can coordinate, share tasks, and delegate safely within a single execution.",
+  "status": "proposed",
+  "owner": "collab-systems",
+  "priority": "critical",
+  "tags": [
+    "multi-agent",
+    "orchestration",
+    "kernel"
+  ],
+  "overview": {
+    "summary": "Implements crew-like orchestration aligning with README Phase 3 collaboration goals.",
+    "goals": [
+      "Team definitions (roles, capabilities)",
+      "Shared objective + memory",
+      "Dynamic role assignment + escalation rules"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Collaboration service defines teams + protocols",
+      "Workflow toolkit supports multi-agent steps with concurrency",
+      "Conflict detection when tasks overlap"
+    ],
+    "nonFunctional": [
+      "Team run startup <5s",
+      "State persisted for audit"
+    ]
+  },
+  "acceptance": [
+    "Spec doc stored under docs/architecture",
+    "Demo workflow orchestrates >3 agents for GTM use case",
+    "Telemetry logs agent interactions for review"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:09:43.596Z",
+    "updated": "2025-11-16T03:09:43.596Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\collaborative-autonomy-layer\\features\\multi-agent-collaboration-kernel"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

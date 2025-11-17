@@ -1,0 +1,48 @@
+{
+  "id": "biz_daily_market_intel",
+  "name": "Daily Market Intelligence Aggregation",
+  "category": "business",
+  "version": "1.0.0",
+  "description": "Aggregate financial news and KPIs; produce actionable daily brief.",
+  "triggers": ["cron"],
+  "valueScore": 9,
+  "complexity": "medium",
+  "status": "planned",
+  "agentsNeeded": ["data-analyzer", "literature-synthesizer"],
+  "skillsNeeded": ["financial-analysis", "summarization"],
+  "dependencies": [],
+  "source": {"origin": "workflow_backlog", "attribution": "market news templates"},
+  "steps": [
+    {"id": "fetch_feeds", "type": "transform", "description": "Pull RSS & market APIs", "outputs": ["rawData"]},
+    {"id": "extract", "type": "agent", "agentId": "data-analyzer", "description": "Extract KPIs & significant events", "inputs": ["rawData"], "outputs": ["kpiEvents"]},
+    {"id": "summarize", "type": "agent", "agentId": "literature-synthesizer", "description": "Summarize into brief", "inputs": ["kpiEvents"], "outputs": ["dailyBrief"]},
+    {"id": "distribute", "type": "transform", "description": "Send brief to channels", "inputs": ["dailyBrief"], "outputs": ["distributionResult"]}
+  ],
+  "evaluator": {"successCriteria": [{"name": "coverage", "weight": 0.3}, {"name": "relevance", "weight": 0.3}, {"name": "brevity", "weight": 0.2}, {"name": "timeliness", "weight": 0.2}]},
+  "hooks": {"beforeExecution": ["validate-feed-sources"], "afterExecution": ["store-brief-archive"], "onError": ["notify-ops"]},
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+  ,"optimizationHints": [
+    {
+      "id": "source_diversification",
+      "description": "Add additional curated sources (regulatory filings, social sentiment indices) to boost coverage & relevance.",
+      "rationale": "Coverage and relevance scores moderate (overallScore ~0.66).",
+      "expectedImpact": "+0.05-0.08",
+      "requiredChanges": ["Extend fetch_feeds step with new connectors", "Add source reliability weighting"]
+    },
+    {
+      "id": "thematic_clustering",
+      "description": "Cluster events by theme (macroeconomic, competitive, product) before summarization.",
+      "rationale": "Improves clarity & relevance and enables targeted briefs.",
+      "expectedImpact": "+0.04-0.06",
+      "requiredChanges": ["Insert clustering transform between extract and summarize"]
+    },
+    {
+      "id": "delta_tracking",
+      "description": "Track day-over-day metric deltas to highlight changes rather than static values.",
+      "rationale": "Enhances timeliness perception and actionable insight quality.",
+      "expectedImpact": "+0.03-0.05",
+      "requiredChanges": ["Add delta computation transform before summarize"]
+    }
+  ]
+}

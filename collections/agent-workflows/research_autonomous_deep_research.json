@@ -1,0 +1,26 @@
+{
+  "id": "research_autonomous_deep_research",
+  "name": "Autonomous Deep Research Agent",
+  "category": "research",
+  "version": "1.0.0",
+  "description": "Multi-stage autonomous research with iterative querying, synthesis and citation extraction.",
+  "triggers": ["manual"],
+  "valueScore": 10,
+  "complexity": "high",
+  "status": "in-progress",
+  "agentsNeeded": ["literature-synthesizer", "data-analyzer"],
+  "skillsNeeded": ["research", "source-evaluation"],
+  "dependencies": [],
+  "source": {"origin": "workflow_backlog", "attribution": "awesome-n8n-templates + awesome-ai-apps"},
+  "steps": [
+    {"id": "scoping", "type": "agent", "agentId": "literature-synthesizer", "description": "Define scope & research plan", "outputs": ["plan", "initialQueries"]},
+    {"id": "collection", "type": "agent", "agentId": "web-research-automation-agent", "description": "Execute queries, collect sources", "inputs": ["initialQueries"], "outputs": ["rawSources"]},
+    {"id": "evaluation", "type": "agent", "agentId": "literature-synthesizer", "description": "Rank sources for quality & relevance", "inputs": ["rawSources"], "outputs": ["rankedSources"]},
+    {"id": "synthesis", "type": "agent_team", "teamAgents": ["literature-synthesizer", "data-analyzer"], "description": "Generate structured synthesis & insights", "inputs": ["rankedSources"], "outputs": ["insightReport", "citations"]},
+    {"id": "refinement", "type": "loop", "description": "Iteratively refine based on gaps", "inputs": ["insightReport"], "outputs": ["finalReport"]}
+  ],
+  "evaluator": {"successCriteria": [{"name": "source_diversity", "weight": 0.2}, {"name": "accuracy", "weight": 0.4}, {"name": "novelty", "weight": 0.2}, {"name": "clarity", "weight": 0.2}]},
+  "hooks": {"beforeExecution": ["check-query-budget"], "afterExecution": ["store-citations"], "onError": ["retry-with-simpler-query"]},
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+}

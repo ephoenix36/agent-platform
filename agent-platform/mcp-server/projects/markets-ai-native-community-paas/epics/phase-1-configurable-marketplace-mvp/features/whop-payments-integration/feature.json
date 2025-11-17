@@ -1,0 +1,66 @@
+{
+  "id": "4c198b8e-00ed-4895-9871-18d5288b6d12",
+  "slug": "whop-payments-integration",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "name": "Whop Payments Integration",
+  "goal": "Enable secure payments through Whop",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "critical",
+  "tags": [
+    "payments",
+    "whop-integration",
+    "webhooks",
+    "commerce"
+  ],
+  "overview": {
+    "summary": "Integrate Whop's payment system for marketplace transactions",
+    "motivation": "Need secure, reliable payment processing that leverages Whop's infrastructure",
+    "goals": [
+      "Seamless checkout",
+      "Webhook reliability",
+      "Clear payment status",
+      "Dispute handling"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Whop SDK checkout flow",
+      "Webhook signature verification",
+      "Idempotent payment processing",
+      "Sales record creation"
+    ],
+    "nonFunctional": [
+      "PCI compliance via Whop",
+      "Webhook retry handling",
+      "Clear error messages"
+    ]
+  },
+  "acceptance": [
+    "Whop Checkout integration",
+    "One-time payments",
+    "Payment success webhooks",
+    "Order confirmation",
+    "Payment failure handling",
+    "Transaction history",
+    "Seller payouts tracking"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:24:59.991Z",
+    "updated": "2025-11-16T02:24:59.991Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp\\features\\whop-payments-integration"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

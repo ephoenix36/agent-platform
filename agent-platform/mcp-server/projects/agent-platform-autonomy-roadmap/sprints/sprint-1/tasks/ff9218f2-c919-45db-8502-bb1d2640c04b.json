@@ -1,0 +1,54 @@
+{
+  "id": "ff9218f2-c919-45db-8502-bb1d2640c04b",
+  "number": "TASK-003",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "c125119b-d8e0-4d6e-8fa5-bbe4d5374b7b",
+  "title": "Build Daily Batch Processing Pipeline",
+  "description": "Create daily batch processing pipeline that fetches usage statistics, runs anomaly detection, and stores results. Pipeline should be idempotent, handle failures gracefully, and provide execution logs.",
+  "status": "pending",
+  "priority": "high",
+  "type": "feature",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 5,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:03:38.269Z",
+    "updated": "2025-11-16T04:03:38.318Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "pipeline",
+      "batch-processing"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Daily batch job scheduled via cron or task scheduler",
+      "Job fetches usage data from past 24 hours",
+      "Anomaly detection runs on all active agents/models",
+      "Results persisted to anomalies collection",
+      "Execution time <2 minutes for 10K records"
+    ]
+  },
+  "context": {}
+}

@@ -1,0 +1,51 @@
+{
+  "id": "8ee7a838-4431-46eb-81f2-6208c54ee810",
+  "number": "TASK-004",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "featureId": "5901b52e-6206-40ab-9ecd-b679034413f3",
+  "title": "Create Exchange Offer API - POST Endpoint",
+  "description": "Implement exchange offer creation with multi-item support and validation.",
+  "status": "pending",
+  "priority": "high",
+  "type": "feature",
+  "assignment": {
+    "assignee": "ephoe"
+  },
+  "estimates": {
+    "hours": 5,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-17T02:15:43.893Z",
+    "updated": "2025-11-17T02:15:43.926Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": []
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "POST /api/exchanges/offers endpoint",
+      "Multi-item support via exchangeOfferItems",
+      "Initiator/recipient validation",
+      "Listing availability checks",
+      "Optional message field",
+      "Returns created offer with items"
+    ]
+  },
+  "context": {}
+}

@@ -1,0 +1,54 @@
+{
+  "id": "aa8fb94a-8aeb-47ab-b9a8-04ac7cf5754b",
+  "number": "TASK-013",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "a47b50a8-f065-4799-9511-501cb89c072e",
+  "title": "Document Dashboard Widget",
+  "description": "Create user-facing documentation for cost dashboard widget covering setup, configuration, usage, and troubleshooting. Include visual examples and integration guides.",
+  "status": "pending",
+  "priority": "medium",
+  "type": "docs",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 3,
+    "complexity": "low"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:04:10.015Z",
+    "updated": "2025-11-16T04:04:10.052Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "documentation",
+      "user-guide"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Configuration guide for dashboard setup and customization",
+      "Widget integration examples for common workflows",
+      "API documentation with request/response examples",
+      "Troubleshooting guide for common issues",
+      "Screenshots and video demo of dashboard features"
+    ]
+  },
+  "context": {}
+}

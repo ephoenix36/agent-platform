@@ -1,0 +1,67 @@
+{
+  "id": "381e43c4-d6ef-4517-8b73-05af917f1835",
+  "slug": "ai-co-creator-builder-ai",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "280b8215-cdde-4cfe-a1d7-730e7ce61f4f",
+  "name": "AI Co-Creator (Builder AI)",
+  "goal": "Provide AI assistant for building apps through conversation",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "critical",
+  "tags": [
+    "ai-co-creator",
+    "builder-ai",
+    "code-generation",
+    "chat-interface"
+  ],
+  "overview": {
+    "summary": "Integrate AI chat assistant that generates schemas and logic",
+    "motivation": "Lower the barrier to creation - let creators build by describing what they want",
+    "goals": [
+      "Natural language building",
+      "Fast prototyping",
+      "Code generation",
+      "Learning assistant"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "LLM integration",
+      "Schema generation",
+      "Code generation",
+      "Context management"
+    ],
+    "nonFunctional": [
+      "Safe code generation",
+      "Cost controls",
+      "Response quality",
+      "Error handling"
+    ]
+  },
+  "acceptance": [
+    "Chat interface in admin panel",
+    "Schema generation from conversation",
+    "Logic script generation",
+    "Natural language to code",
+    "Code preview and editing",
+    "Deployment from chat",
+    "Context-aware suggestions"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:26:37.198Z",
+    "updated": "2025-11-16T02:26:37.198Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-3-ai-native-paas-the-vision\\features\\ai-co-creator-builder-ai"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

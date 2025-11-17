@@ -1,0 +1,55 @@
+{
+  "id": "458dd9be-5ed2-4bc2-8da0-c7efc66099ac",
+  "slug": "memory-context-management",
+  "projectId": "dc4f9a04-d2fb-428e-89b4-1156435838b0",
+  "epicId": "41914c03-a31b-4608-8cfb-fe22420dde75",
+  "name": "Memory & Context Management",
+  "goal": "Persistent context and learning across agent sessions",
+  "status": "proposed",
+  "owner": "demo-user",
+  "priority": "high",
+  "tags": [
+    "memory",
+    "learning"
+  ],
+  "overview": {
+    "summary": "Long-term memory system for agent knowledge retention",
+    "goals": [
+      "Store decisions",
+      "Recall patterns",
+      "Learn from feedback"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Save decisions",
+      "Query memory by tags",
+      "Export memory snapshots"
+    ],
+    "nonFunctional": [
+      "Memory persistence across restarts",
+      "Fast recall (< 50ms)"
+    ]
+  },
+  "acceptance": [
+    "Agent remembers past decisions",
+    "Memory survives restarts"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:08:24.259Z",
+    "updated": "2025-11-16T02:08:24.259Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\ai-agent-demo\\epics\\core-agent-framework\\features\\memory-context-management"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

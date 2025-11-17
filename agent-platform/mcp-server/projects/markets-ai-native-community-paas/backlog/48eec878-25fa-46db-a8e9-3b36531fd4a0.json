@@ -1,0 +1,52 @@
+{
+  "id": "48eec878-25fa-46db-a8e9-3b36531fd4a0",
+  "number": "TASK-006",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "featureId": "831496d8-f3f7-49cd-bb05-fbe619797457",
+  "title": "Create Media Upload API - Presigned URLs",
+  "description": "Implement presigned URL generation for direct client uploads to R2/S3.",
+  "status": "pending",
+  "priority": "high",
+  "type": "feature",
+  "assignment": {
+    "assignee": "ephoe"
+  },
+  "estimates": {
+    "hours": 3,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-17T02:15:44.013Z",
+    "updated": "2025-11-17T02:15:44.036Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": []
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "POST /api/upload/presigned endpoint",
+      "Returns presigned R2/S3 upload URL",
+      "File type validation (images, videos)",
+      "Size limits enforced",
+      "Community-scoped storage paths",
+      "URL expiration (15min)",
+      "Authenticated users only"
+    ]
+  },
+  "context": {}
+}

@@ -1,0 +1,64 @@
+{
+  "id": "a47b50a8-f065-4799-9511-501cb89c072e",
+  "slug": "realtime-cost-dashboard-widget",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "name": "Realtime Cost Dashboard Widget",
+  "goal": "Exposing usage/budget/context KPIs via interactive widget surfaces for agents & humans.",
+  "status": "proposed",
+  "owner": "platform-observability",
+  "priority": "medium",
+  "tags": [
+    "widgets",
+    "dashboards",
+    "usage"
+  ],
+  "overview": {
+    "summary": "Widget toolkit used to surface KPI dashboards with queries into usage/budget data.",
+    "goals": [
+      "Widget showing spend vs budget, token burn, context savings",
+      "Filter by agent/team",
+      "Drill down to execution logs"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Widget fetches usage/budget stats via new tool endpoints",
+      "Supports timeframe filters (day/week/month)",
+      "Link out to pm tasks for anomalies"
+    ],
+    "nonFunctional": [
+      "Refresh <2s",
+      "Multi-tenant safe display"
+    ]
+  },
+  "acceptance": [
+    "Widget library includes dashboard template",
+    "Demo script adds dashboard to workflow approval flow",
+    "Docs updated under widgets section"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 6,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:08:44.763Z",
+    "updated": "2025-11-16T03:08:44.763Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\observability-resource-intelligence\\features\\realtime-cost-dashboard-widget"
+  },
+  "relationships": {
+    "taskIds": [
+      "d28d73d4-3946-4f21-b914-ee7e6629f9ea",
+      "34de38bb-b923-41eb-b309-cc570d77f7f6",
+      "b6873aac-5d81-44f0-ad15-8fd749b0dd30",
+      "d52db19d-44a1-4907-a3c1-4d17f80c052f",
+      "0d9afdc6-96fd-4d4c-8843-ccb8ed8c178c",
+      "aa8fb94a-8aeb-47ab-b9a8-04ac7cf5754b"
+    ],
+    "relatedFeatureIds": []
+  }
+}

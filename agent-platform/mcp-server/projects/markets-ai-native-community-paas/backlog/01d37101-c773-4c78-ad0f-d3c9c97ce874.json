@@ -1,0 +1,52 @@
+{
+  "id": "01d37101-c773-4c78-ad0f-d3c9c97ce874",
+  "number": "TASK-001",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "featureId": "ae149a1f-5ae6-4da7-9391-3fee532496f6",
+  "title": "Create Listing CRUD API - POST Endpoint",
+  "description": "Build API endpoint to create new marketplace listings with custom field support. Includes validation, auth checks, and multi-tenant scoping.",
+  "status": "pending",
+  "priority": "critical",
+  "type": "feature",
+  "assignment": {
+    "assignee": "ephoe"
+  },
+  "estimates": {
+    "hours": 4,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-17T02:15:43.724Z",
+    "updated": "2025-11-17T02:15:43.757Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": []
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "POST /api/listings endpoint accepting multipart form data",
+      "Request validation (title, description, categoryId required)",
+      "User authentication via requireAuthorizedUser",
+      "Company scoping via community lookup",
+      "Listing creation with customFieldValues",
+      "Draft/publish workflow support",
+      "Returns created listing with UUID"
+    ]
+  },
+  "context": {}
+}

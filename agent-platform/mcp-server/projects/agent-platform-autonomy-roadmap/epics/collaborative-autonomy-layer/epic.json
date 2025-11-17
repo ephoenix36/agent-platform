@@ -1,0 +1,44 @@
+{
+  "id": "6022ff09-ac28-4d89-abe3-aede3685ae54",
+  "slug": "collaborative-autonomy-layer",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "name": "Collaborative Autonomy Layer",
+  "objective": "Enable multi-agent collaboration, shared context, and conflict resolution so agent teams can handle entire business processes with human-level coordination.",
+  "status": "planned",
+  "owner": "collab-systems",
+  "priority": "high",
+  "tags": [
+    "multi-agent",
+    "shared-context",
+    "collaboration",
+    "protocol"
+  ],
+  "metrics": {},
+  "successCriteria": [
+    "Shared context graph keeps <100ms lookup latency",
+    "Conflict resolver handles 95% contention without human help",
+    "Workflow designer can compose >3 agents per playbook"
+  ],
+  "stats": {
+    "totalFeatures": 3,
+    "completedFeatures": 0,
+    "totalTasks": 0,
+    "completedTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:06:46.211Z",
+    "updated": "2025-11-16T03:10:16.681Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\collaborative-autonomy-layer",
+    "features": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\collaborative-autonomy-layer\\features"
+  },
+  "relationships": {
+    "featureIds": [
+      "7574aa78-a47c-4064-bc98-161eb20bedbc",
+      "606568af-7d7a-4e17-8a0b-33be4a6e848b",
+      "182b816e-a826-4683-851e-d20666076ef3"
+    ],
+    "taskIds": []
+  }
+}

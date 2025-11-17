@@ -1,0 +1,57 @@
+{
+  "id": "bca3e1ea-b25a-4176-9433-74c978617a5f",
+  "number": "TASK-003",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "sprintId": "f82e4d18-a6ea-430b-9ee6-a527100c53d9",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "featureId": "ff8a739e-8d56-4604-a19e-8a3768133bad",
+  "title": "Integrate Whop SDK Authentication",
+  "description": "Integrate Whop SDK for authentication. Set up both server-side (authorizedUserOn) and client-side (useUser) auth flows. Implement webhook signature verification. Create test routes to verify auth is working.",
+  "status": "complete",
+  "priority": "critical",
+  "type": "feature",
+  "assignment": {
+    "assignee": "ephoe"
+  },
+  "estimates": {
+    "hours": 8,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T02:27:16.521Z",
+    "updated": "2025-11-17T02:12:08.049Z",
+    "completed": "2025-11-17T02:12:08.049Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "auth",
+      "whop-sdk",
+      "integration"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "@whop/react and @whop/sdk installed",
+      "Whop SDK initialized in lib/whop-sdk.ts",
+      "Server-side auth (authorizedUserOn) working",
+      "Client-side auth (useUser hook) working",
+      "Webhook signature verification tested",
+      "Test API route with Whop auth protection"
+    ]
+  },
+  "context": {}
+}

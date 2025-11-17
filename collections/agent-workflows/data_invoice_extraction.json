@@ -1,0 +1,26 @@
+{
+  "id": "data_invoice_extraction",
+  "name": "Invoice Parsing & Normalization",
+  "category": "finance",
+  "version": "1.0.0",
+  "description": "Extract structured invoice data, validate fields, and push to ledger.",
+  "triggers": ["event"],
+  "valueScore": 8,
+  "complexity": "medium",
+  "status": "planned",
+  "agentsNeeded": ["invoice-extraction-agent"],
+  "skillsNeeded": ["document-parsing", "financial-normalization"],
+  "dependencies": [],
+  "source": {"origin": "workflow_backlog", "attribution": "n8n PDF & invoice templates"},
+  "steps": [
+    {"id": "ingest", "type": "transform", "description": "Detect new invoice file", "outputs": ["invoiceFile"]},
+    {"id": "parse", "type": "agent", "agentId": "invoice-extraction-agent", "description": "Extract fields & amounts", "inputs": ["invoiceFile"], "outputs": ["rawFields"]},
+    {"id": "normalize", "type": "transform", "description": "Standardize field names & currency", "inputs": ["rawFields"], "outputs": ["normalizedFields"]},
+    {"id": "validate", "type": "agent", "agentId": "invoice-extraction-agent", "description": "Check compliance & missing data", "inputs": ["normalizedFields"], "outputs": ["validatedInvoice"]},
+    {"id": "publish", "type": "transform", "description": "Send structured invoice to ledger API", "inputs": ["validatedInvoice"], "outputs": ["publishResult"]}
+  ],
+  "evaluator": {"successCriteria": [{"name": "field_accuracy", "weight": 0.4}, {"name": "currency_normalization", "weight": 0.2}, {"name": "validation_pass_rate", "weight": 0.2}, {"name": "latency", "weight": 0.2}]},
+  "hooks": {"beforeExecution": ["verify-ledger-connection"], "afterExecution": ["store-invoice-stats"], "onError": ["queue-for-manual-review"]},
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+}

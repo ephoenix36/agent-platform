@@ -1,0 +1,47 @@
+{
+  "id": "7bf7b087-f041-4ef4-adb2-a208ca389829",
+  "slug": "workflow-skill-orchestration",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "name": "Workflow & Skill Orchestration",
+  "objective": "Productize the advanced workflow engine, high-value skills, and telemetry loops that turn individual agents into end-to-end automation factories.",
+  "status": "planned",
+  "owner": "automation-lead",
+  "priority": "high",
+  "tags": [
+    "workflows",
+    "skills",
+    "meta-agents",
+    "telemetry"
+  ],
+  "metrics": {},
+  "successCriteria": [
+    "Workflow templates cover support, sales, content, analytics",
+    "Skill catalog includes >8 production skills",
+    "Telemetry hooks drive at least 2 closed-loop optimizations per sprint"
+  ],
+  "stats": {
+    "totalFeatures": 6,
+    "completedFeatures": 0,
+    "totalTasks": 0,
+    "completedTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:06:30.915Z",
+    "updated": "2025-11-16T03:12:51.119Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\workflow-skill-orchestration",
+    "features": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\workflow-skill-orchestration\\features"
+  },
+  "relationships": {
+    "featureIds": [
+      "ca49e883-e06f-42b6-a4b3-4431c5334ea9",
+      "24040597-14ab-4380-b9ed-649a27a9a967",
+      "708c2063-ffe7-40a8-bdcf-803b6edf15cd",
+      "9a48447f-c22a-4860-a48a-4f37f0ead2dd",
+      "9f2db0f6-1614-4239-9bfd-4a15538fb777",
+      "6c14b161-3591-4724-8dfb-c0dbb6308240"
+    ],
+    "taskIds": []
+  }
+}

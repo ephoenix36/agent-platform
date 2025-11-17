@@ -1,0 +1,47 @@
+{
+  "id": "f82e4d18-a6ea-430b-9ee6-a527100c53d9",
+  "number": 1,
+  "name": "Sprint 1: Foundation & Infrastructure",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "status": "planned",
+  "schedule": {
+    "startDate": "2025-11-16T00:00:00Z",
+    "endDate": "2025-11-30T00:00:00.000Z",
+    "duration": 14
+  },
+  "goals": {
+    "primary": [
+      "Complete core infrastructure setup",
+      "PostgreSQL database connected and operational",
+      "Whop SDK authentication working end-to-end",
+      "Development environment fully configured"
+    ],
+    "secondary": [
+      "Begin schema design for core tables",
+      "Create initial project documentation"
+    ],
+    "metrics": {
+      "deployment_success_rate": 100,
+      "test_coverage_target": 80,
+      "whop_auth_success_rate": 100
+    }
+  },
+  "stats": {
+    "totalTasks": 5,
+    "completedTasks": 4,
+    "pendingTasks": 0,
+    "inProgressTasks": 1,
+    "archivedTasks": 0
+  },
+  "metadata": {
+    "created": "2025-11-16T02:26:46.325Z",
+    "updated": "2025-11-16T02:26:46.325Z",
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\sprints\\sprint-1",
+    "tasks": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\sprints\\sprint-1\\tasks",
+    "attachments": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\sprints\\sprint-1\\attachments"
+  }
+}

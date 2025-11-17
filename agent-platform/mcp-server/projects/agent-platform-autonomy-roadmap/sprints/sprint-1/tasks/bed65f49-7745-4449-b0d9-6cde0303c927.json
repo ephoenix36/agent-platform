@@ -1,0 +1,55 @@
+{
+  "id": "bed65f49-7745-4449-b0d9-6cde0303c927",
+  "number": "TASK-004",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "c125119b-d8e0-4d6e-8fa5-bbe4d5374b7b",
+  "title": "Implement Alert Routing System",
+  "description": "Implement alert routing system that sends anomaly notifications through multiple channels based on severity and configuration. Support templated messages with anomaly details and actionable links.",
+  "status": "pending",
+  "priority": "high",
+  "type": "feature",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 5,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:03:38.364Z",
+    "updated": "2025-11-16T04:03:38.402Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "alerts",
+      "notifications",
+      "routing"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "AlertRouter class supports widget, email, and Slack channels",
+      "Per-project routing configuration via JSON/YAML",
+      "Severity-based routing (info->widget, high->email, critical->all)",
+      "Alert templates support dynamic data injection",
+      "Rate limiting prevents alert storms (max 10/hour per channel)"
+    ]
+  },
+  "context": {}
+}

@@ -1,0 +1,66 @@
+{
+  "id": "289b4293-e191-44dd-8758-4e6b2f81318e",
+  "slug": "advanced-payments-subscriptions-free",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "dd16bc63-2808-465b-bd86-889f6d996279",
+  "name": "Advanced Payments (Subscriptions & Free)",
+  "goal": "Support advanced payment types beyond one-time purchases",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "high",
+  "tags": [
+    "payments",
+    "subscriptions",
+    "monetization",
+    "whop-integration"
+  ],
+  "overview": {
+    "summary": "Extend payment system with subscriptions and free listing support",
+    "motivation": "Communities want subscriptions for memberships and ability to offer free items",
+    "goals": [
+      "Flexible monetization",
+      "Subscription support",
+      "Creator-funded listings",
+      "Revenue optimization"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Whop subscription webhooks",
+      "Free listing flag",
+      "Subscription status tracking",
+      "Cancellation flow"
+    ],
+    "nonFunctional": [
+      "Dunning management",
+      "Proration support",
+      "Tax compliance"
+    ]
+  },
+  "acceptance": [
+    "Subscription products",
+    "Recurring billing",
+    "Free listings (creator absorbs costs)",
+    "Trial periods",
+    "Plan upgrades/downgrades",
+    "Payment method management",
+    "Refund handling"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:50.445Z",
+    "updated": "2025-11-16T02:25:50.445Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-2-headless-maas-platform\\features\\advanced-payments-subscriptions-free"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "48856bed-b69a-418f-9e41-b807e1aa8af8",
+  "slug": "predictive-delivery-capacity-forecaster",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "4a937c34-c3c7-4e24-a467-023bdf767103",
+  "name": "Predictive Delivery & Capacity Forecaster",
+  "goal": "Use project + usage telemetry to forecast delivery timelines, sprint capacity, and risk to roadmap commitments.",
+  "status": "proposed",
+  "owner": "intelligence-rd",
+  "priority": "high",
+  "tags": [
+    "forecasting",
+    "capacity",
+    "planning"
+  ],
+  "overview": {
+    "summary": "From enhancement 'Predictive project planning'.",
+    "goals": [
+      "Ingest pm tasks, task metrics, usage data",
+      "Generate sprint velocity predictions",
+      "Surface risk alerts in roadmap docs"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Forecast service pulls stats from pm files + telemetry",
+      "Outputs JSON/CSV + widget view",
+      "Creates tasks when forecast deviates >10%"
+    ],
+    "nonFunctional": [
+      "Runs daily <5 min",
+      "Confidence scoring to gate autop actions"
+    ]
+  },
+  "acceptance": [
+    "Forecast spec documented",
+    "Sample project forecast stored in docs",
+    "Roadmap doc auto-updated with forecast summary"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:09:31.808Z",
+    "updated": "2025-11-16T03:09:31.808Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\intelligence-upgrades\\features\\predictive-delivery-capacity-forecaster"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

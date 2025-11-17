@@ -1,0 +1,42 @@
+{
+  "id": "mkt_content_calendar_orchestrator",
+  "name": "Content Calendar Auto-Fill & Gap Analysis",
+  "category": "marketing",
+  "version": "1.0.0",
+  "description": "Suggest topics, fill schedule gaps, and optimize distribution cadence.",
+  "triggers": ["schedule"],
+  "valueScore": 9,
+  "complexity": "high",
+  "status": "planned",
+  "agentsNeeded": ["ui-ux-strategist", "project-architect"],
+  "skillsNeeded": ["planning", "seo"],
+  "dependencies": ["mkt_social_media_post_generator"],
+  "source": {"origin": "workflow_backlog", "attribution": "marketing calendar patterns"},
+  "steps": [
+    {"id": "collect_metrics", "type": "transform", "description": "Fetch recent performance KPIs", "outputs": ["performanceData"]},
+    {"id": "gap_analysis", "type": "agent", "agentId": "project-architect", "description": "Identify schedule gaps & underperforming themes", "inputs": ["performanceData"], "outputs": ["gapReport"]},
+    {"id": "topic_generation", "type": "agent", "agentId": "ui-ux-strategist", "description": "Generate candidate topics & formats", "inputs": ["gapReport"], "outputs": ["topicList"]},
+    {"id": "calendar_fill", "type": "transform", "description": "Assign topics to calendar slots", "inputs": ["topicList"], "outputs": ["calendarDraft"]},
+    {"id": "review_loop", "type": "human_gate", "description": "Marketing review & approval", "inputs": ["calendarDraft"], "outputs": ["approvedCalendar"]}
+  ],
+  "evaluator": {"successCriteria": [{"name": "gap_coverage", "weight": 0.3}, {"name": "topic_quality", "weight": 0.3}, {"name": "approval_rate", "weight": 0.2}, {"name": "schedule_balance", "weight": 0.2}]},
+  "hooks": {"beforeExecution": ["validate-kpi-source"], "afterExecution": ["publish-calendar-export"], "onError": ["notify-marketing-lead"]},
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+  ,"optimizationHints": [
+    {
+      "id": "cluster_gap_analysis",
+      "description": "Apply semantic clustering to performanceData before gap_analysis to refine gap detection granularity.",
+      "rationale": "Baseline overallScore below threshold; improves gap_coverage & topic_quality.",
+      "expectedImpact": "+0.05-0.07",
+      "requiredChanges": ["Insert clustering transform step", "Add similarity threshold config"]
+    },
+    {
+      "id": "kpi_weighting_model",
+      "description": "Introduce KPI weighting based on historical engagement correlation to prioritize high-impact topics.",
+      "rationale": "Raises approval_rate and schedule_balance.",
+      "expectedImpact": "+0.04-0.06",
+      "requiredChanges": ["Add weighting agent pre topic_generation", "Persist weights for trend tracking"]
+    }
+  ]
+}

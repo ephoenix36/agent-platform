@@ -1,0 +1,59 @@
+{
+  "id": "mkt_social_media_post_generator",
+  "name": "URL to Multi-Platform Social Post",
+  "category": "marketing",
+  "version": "1.0.0",
+  "description": "Convert a source URL into optimized Twitter & LinkedIn posts with human-in-loop review.",
+  "triggers": ["manual", "event"],
+  "valueScore": 10,
+  "complexity": "medium",
+  "status": "in-progress",
+  "agentsNeeded": ["social-media-agent", "content-style-refiner"],
+  "skillsNeeded": ["copywriting", "seo", "tone-adjustment"],
+  "dependencies": [],
+  "source": {"origin": "workflow_backlog", "attribution": "langchain-ai/social-media-agent"},
+  "steps": [
+    {"id": "ingest", "type": "agent", "agentId": "social-media-agent", "description": "Fetch and summarize source content", "outputs": ["rawSummary", "keyPoints"]},
+    {"id": "style_refine", "type": "agent", "agentId": "content-style-refiner", "description": "Apply brand voice and platform style", "inputs": ["rawSummary"], "outputs": ["styledDrafts"]},
+    {"id": "hitl_review", "type": "human_gate", "description": "Present drafts for accept/edit/reject", "inputs": ["styledDrafts"], "outputs": ["approvedPosts"]},
+    {"id": "schedule", "type": "transform", "description": "Queue posts for scheduled publishing", "inputs": ["approvedPosts"], "outputs": ["scheduledItems"]}
+  ],
+  "evaluator": {
+    "successCriteria": [
+      {"name": "relevance", "weight": 0.35},
+      {"name": "style_adherence", "weight": 0.25},
+      {"name": "engagement_prediction", "weight": 0.25},
+      {"name": "brevity_quality", "weight": 0.15}
+    ]
+  },
+  "hooks": {
+    "beforeExecution": ["validate-url-format"],
+    "afterExecution": ["log-performance-metrics"],
+    "onError": ["capture-error-context"]
+  },
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+  ,"optimizationHints": [
+    {
+      "id": "add_engagement_model",
+      "description": "Introduce engagement prediction agent to generate variant scores and select top-performing draft.",
+      "rationale": "Low engagement_prediction score in baseline metrics (overallScore ~0.62).",
+      "expectedImpact": "+0.05-0.10 overallScore",
+      "requiredChanges": ["Create agent: engagement-predictor", "Add step before hitl_review for variant scoring"]
+    },
+    {
+      "id": "expand_style_examples",
+      "description": "Augment few-shot style examples with high-performing historical posts (5-8 examples).",
+      "rationale": "Improve style_adherence and relevance consistency.",
+      "expectedImpact": "+0.03-0.06",
+      "requiredChanges": ["Update prompts examples.ts", "Add style calibration pre-step"]
+    },
+    {
+      "id": "automatic_ab_test",
+      "description": "Generate 2-3 post variants and schedule staggered release; capture engagement for retraining.",
+      "rationale": "Closed feedback loop raises engagement_prediction metric.",
+      "expectedImpact": "+0.05",
+      "requiredChanges": ["Add schedule variant step", "Add metrics ingestion hook"]
+    }
+  ]
+}

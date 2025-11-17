@@ -1,0 +1,50 @@
+{
+  "id": "c731919d-5a68-4444-a378-1557e9b0963a",
+  "number": "TASK-001",
+  "projectId": "b9d7955d-6320-4eef-86b7-4f1dbcba2b36",
+  "epicId": "708cf08a-92a5-4575-8adb-5fba805b7722",
+  "featureId": "e9efe761-d979-4001-95fe-152c57164b32",
+  "title": "Implement smoke-test task",
+  "description": "Linking task to newly created feature",
+  "status": "pending",
+  "priority": "medium",
+  "type": "feature",
+  "assignment": {
+    "assignee": "pm-demo-assignee"
+  },
+  "estimates": {
+    "points": 3,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T02:02:58.098Z",
+    "updated": "2025-11-16T02:02:58.107Z"
+  },
+  "metadata": {
+    "createdBy": "pm-demo",
+    "lastModifiedBy": "pm-demo",
+    "tags": [
+      "demo"
+    ],
+    "labels": [
+      "automation"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Task linked to feature"
+    ]
+  },
+  "context": {}
+}

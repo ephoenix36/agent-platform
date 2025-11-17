@@ -1,0 +1,51 @@
+{
+  "id": "daa178c5-18e2-49a6-b126-e5ffe1dd0fcc",
+  "number": "TASK-005",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "featureId": "5901b52e-6206-40ab-9ecd-b679034413f3",
+  "title": "Create Exchange Response API - PUT Endpoint",
+  "description": "Build exchange offer response handler with action validation and atomic updates.",
+  "status": "pending",
+  "priority": "high",
+  "type": "feature",
+  "assignment": {
+    "assignee": "ephoe"
+  },
+  "estimates": {
+    "hours": 4,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-17T02:15:43.957Z",
+    "updated": "2025-11-17T02:15:43.985Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": []
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "PUT /api/exchanges/offers/[id] endpoint",
+      "Actions: accept, decline, counter, cancel",
+      "Recipient authorization for accept/decline",
+      "Initiator authorization for cancel",
+      "Atomic status updates",
+      "completedAt timestamp on accept"
+    ]
+  },
+  "context": {}
+}

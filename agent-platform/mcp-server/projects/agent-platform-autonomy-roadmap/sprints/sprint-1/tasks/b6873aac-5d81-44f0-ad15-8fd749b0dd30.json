@@ -1,0 +1,55 @@
+{
+  "id": "b6873aac-5d81-44f0-ad15-8fd749b0dd30",
+  "number": "TASK-010",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "a47b50a8-f065-4799-9511-501cb89c072e",
+  "title": "Implement Dashboard Drill-Down Navigation",
+  "description": "Implement drill-down navigation from dashboard metrics to detailed views and related PM tasks. Enable users to investigate anomalies and track follow-up actions directly from dashboard.",
+  "status": "pending",
+  "priority": "medium",
+  "type": "feature",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 3,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:04:09.748Z",
+    "updated": "2025-11-16T04:04:09.788Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "widget",
+      "navigation",
+      "ux"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Drill-down from dashboard metrics to execution logs",
+      "Click on anomaly/spike links to filtered task list",
+      "Agent/team filters persist across navigation",
+      "Links open in new widget or external view",
+      "Navigation tested across all dashboard views"
+    ]
+  },
+  "context": {}
+}

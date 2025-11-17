@@ -1,0 +1,25 @@
+{
+  "name": "agent-migration-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for migrating and consolidating agent definitions",
+  "type": "module",
+  "scripts": {
+    "validate": "tsx validate-collection-agents.ts",
+    "enhance": "tsx enhance-agents.ts",
+    "migrate-marketplace": "tsx migrate-marketplace-agents.ts",
+    "migrate-meta": "tsx migrate-meta-agents.ts",
+    "create-skills": "tsx create-skills.ts",
+    "create-teams": "tsx create-teams.ts",
+    "create-workflows": "tsx create-workflows.ts",
+    "separate-metrics": "tsx separate-performance-data.ts",
+    "test-all": "tsx test-unified-system.ts"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

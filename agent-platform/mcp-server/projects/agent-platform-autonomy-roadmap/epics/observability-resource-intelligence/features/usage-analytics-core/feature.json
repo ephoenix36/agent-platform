@@ -1,0 +1,61 @@
+{
+  "id": "a6d1773a-e509-4a64-bd5b-5cf72e871853",
+  "slug": "usage-analytics-core",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "name": "Usage Analytics Core",
+  "goal": "Instrument every agent/tool execution with cost, token, and success telemetry plus exportable reports.",
+  "status": "proposed",
+  "owner": "platform-observability",
+  "priority": "critical",
+  "tags": [
+    "usage",
+    "telemetry",
+    "reports"
+  ],
+  "overview": {
+    "summary": "UsageTracker service + analytics pipeline capture per-call metrics and model pricing.",
+    "motivation": "Need provable cost governance for autonomous agents compared to Claude Code.",
+    "goals": [
+      "Cover all tool + agent executions",
+      "Expose JSON/CSV exports",
+      "Power per-agent dashboards"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Track prompt/completion tokens, duration, model, success flag",
+      "Aggregate stats by agent/model/time bucket",
+      "CLI + tool endpoints for reports and exports"
+    ],
+    "nonFunctional": [
+      "<3ms overhead per execution",
+      "Data retention configurable by project"
+    ]
+  },
+  "acceptance": [
+    "Usage data written for 100% MCP tool invocations",
+    "usage_get_stats and usage_get_report match parity doc use cases",
+    "usage_export produces JSON+CSV verified in docs"
+  ],
+  "metrics": {
+    "coverage": 0.95,
+    "avgOverheadMs": 3
+  },
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:07:05.250Z",
+    "updated": "2025-11-16T03:07:05.250Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\observability-resource-intelligence\\features\\usage-analytics-core"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

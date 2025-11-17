@@ -1,0 +1,66 @@
+{
+  "id": "6b34f90d-9987-44a8-83a0-1067f10442a4",
+  "slug": "ai-powered-rules-engine",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "dd16bc63-2808-465b-bd86-889f6d996279",
+  "name": "AI-Powered Rules Engine",
+  "goal": "Enable automated moderation through AI-powered rules",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "high",
+  "tags": [
+    "ai-core",
+    "moderation",
+    "automation",
+    "rules-engine"
+  ],
+  "overview": {
+    "summary": "Build rule engine with AI assistance for content moderation",
+    "motivation": "Creators need to enforce policies at scale without manual review of every listing",
+    "goals": [
+      "Automated moderation",
+      "Custom enforcement",
+      "Proactive quality",
+      "Reduced manual work"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Rule DSL/JSON schema",
+      "Event triggers",
+      "AI classification",
+      "Audit trail"
+    ],
+    "nonFunctional": [
+      "Real-time processing",
+      "False positive tracking",
+      "Appeal workflow"
+    ]
+  },
+  "acceptance": [
+    "Rule builder UI",
+    "Condition types (price, keywords, custom fields)",
+    "Action types (flag, auto-remove, notify)",
+    "AI-suggested rules",
+    "Rule testing/preview",
+    "Rule analytics",
+    "Rule versioning"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:50.438Z",
+    "updated": "2025-11-16T02:25:50.438Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-2-headless-maas-platform\\features\\ai-powered-rules-engine"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

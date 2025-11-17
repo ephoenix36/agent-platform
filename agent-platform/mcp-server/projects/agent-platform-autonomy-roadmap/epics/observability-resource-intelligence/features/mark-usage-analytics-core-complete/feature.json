@@ -1,0 +1,37 @@
+{
+  "id": "d2f27a29-b090-4a12-8b70-624fbed325f7",
+  "slug": "mark-usage-analytics-core-complete",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "name": "Mark usage analytics core complete",
+  "goal": "Set status",
+  "status": "proposed",
+  "priority": "medium",
+  "tags": [],
+  "overview": {
+    "summary": "Set status",
+    "goals": []
+  },
+  "requirements": {
+    "functional": [],
+    "nonFunctional": []
+  },
+  "acceptance": [],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:15:51.183Z",
+    "updated": "2025-11-16T03:15:51.183Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\agent-platform-autonomy-roadmap\\epics\\observability-resource-intelligence\\features\\mark-usage-analytics-core-complete"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

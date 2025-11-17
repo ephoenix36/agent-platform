@@ -1,0 +1,31 @@
+{
+  "id": "e2a67b56-040b-4e9a-b18d-c7218d1418f8",
+  "slug": "x",
+  "projectId": "bb01ea98-cb27-45ff-9067-8e4b5ce0b218",
+  "name": "x",
+  "objective": "x",
+  "status": "planned",
+  "owner": "x",
+  "priority": "low",
+  "tags": [],
+  "metrics": {},
+  "successCriteria": [],
+  "stats": {
+    "totalFeatures": 0,
+    "completedFeatures": 0,
+    "totalTasks": 0,
+    "completedTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T03:17:30.029Z",
+    "updated": "2025-11-16T03:17:30.029Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\temp\\epics\\x",
+    "features": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\temp\\epics\\x\\features"
+  },
+  "relationships": {
+    "featureIds": [],
+    "taskIds": []
+  }
+}

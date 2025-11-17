@@ -1,0 +1,66 @@
+{
+  "id": "cd33ebc5-ee1d-4b13-b2ad-faca3ed0aaa5",
+  "slug": "enhanced-multi-item-exchanges",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "dd16bc63-2808-465b-bd86-889f6d996279",
+  "name": "Enhanced Multi-Item Exchanges",
+  "goal": "Extend exchange system with creator-defined rules and advanced mechanics",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "high",
+  "tags": [
+    "exchanges",
+    "rules-engine",
+    "economy",
+    "customization"
+  ],
+  "overview": {
+    "summary": "Enhance exchange system with flexible, creator-defined rules",
+    "motivation": "Different communities have different exchange norms - enable customization",
+    "goals": [
+      "Custom exchange logic",
+      "Community-specific rules",
+      "Fair trade enforcement",
+      "Economic creativity"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "exchange_rules JSONB schema",
+      "Rule interpreter",
+      "Multi-party support",
+      "Auction mechanics"
+    ],
+    "nonFunctional": [
+      "Atomic execution",
+      "Rule performance",
+      "Clear error messages"
+    ]
+  },
+  "acceptance": [
+    "Creator-defined exchange rules (JSONB)",
+    "Rule validation engine",
+    "Complex multi-item exchanges",
+    "Auction-style exchanges",
+    "Exchange rule templates",
+    "Rule preview/testing",
+    "Exchange analytics"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:50.460Z",
+    "updated": "2025-11-16T02:25:50.460Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-2-headless-maas-platform\\features\\enhanced-multi-item-exchanges"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

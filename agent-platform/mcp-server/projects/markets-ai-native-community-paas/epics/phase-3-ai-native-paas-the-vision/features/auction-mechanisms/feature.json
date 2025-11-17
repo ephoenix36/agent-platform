@@ -1,0 +1,66 @@
+{
+  "id": "f54d1077-e2a7-44b4-88e3-0ed6bc86b656",
+  "slug": "auction-mechanisms",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "280b8215-cdde-4cfe-a1d7-730e7ce61f4f",
+  "name": "Auction Mechanisms",
+  "goal": "Enable auction-based exchange mechanisms",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "medium",
+  "tags": [
+    "auctions",
+    "pricing",
+    "exchanges",
+    "bidding"
+  ],
+  "overview": {
+    "summary": "Implement auction system for item exchanges",
+    "motivation": "Auctions are a powerful price discovery mechanism for rare items",
+    "goals": [
+      "Dynamic pricing",
+      "Competitive bidding",
+      "Fair auctions",
+      "Price discovery"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Auction types (English, Dutch, sealed-bid)",
+      "Bid tracking",
+      "Winner selection",
+      "Payment processing"
+    ],
+    "nonFunctional": [
+      "Real-time updates",
+      "Bid validation",
+      "Anti-sniping"
+    ]
+  },
+  "acceptance": [
+    "Auction creation",
+    "Bid submission",
+    "Automatic bid increments",
+    "Reserve price",
+    "Buy-it-now option",
+    "Auction timer",
+    "Winner determination"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:26:37.227Z",
+    "updated": "2025-11-16T02:26:37.227Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-3-ai-native-paas-the-vision\\features\\auction-mechanisms"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

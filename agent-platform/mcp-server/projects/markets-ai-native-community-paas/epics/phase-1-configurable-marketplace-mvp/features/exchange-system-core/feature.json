@@ -1,0 +1,69 @@
+{
+  "id": "5901b52e-6206-40ab-9ecd-b679034413f3",
+  "slug": "exchange-system-core",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "name": "Exchange System (Core)",
+  "goal": "Enable item exchanges between community members",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "high",
+  "tags": [
+    "exchanges",
+    "trading",
+    "core-feature",
+    "economy"
+  ],
+  "overview": {
+    "summary": "Build the foundational exchange/trade system (terminology: 'exchange' not 'swap')",
+    "motivation": "Many communities want barter/trade functionality alongside traditional sales",
+    "goals": [
+      "Flexible exchange types",
+      "Clear offer management",
+      "Safe transaction flow",
+      "Future-proof for Phase 2 enhancements"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "exchange_offers table",
+      "exchange_offer_items junction table",
+      "API routes for offer/respond",
+      "Exchange inbox UI"
+    ],
+    "nonFunctional": [
+      "Atomic transactions",
+      "Clear state management",
+      "Mobile-friendly interface"
+    ]
+  },
+  "acceptance": [
+    "One-to-one exchange offers",
+    "Multi-item exchange support",
+    "Exchange status (pending, accepted, declined)",
+    "Exchange inbox for users",
+    "Notification system",
+    "Exchange history",
+    "Counter-offer functionality"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 2,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:24:59.998Z",
+    "updated": "2025-11-16T02:24:59.998Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp\\features\\exchange-system-core"
+  },
+  "relationships": {
+    "taskIds": [
+      "8ee7a838-4431-46eb-81f2-6208c54ee810",
+      "daa178c5-18e2-49a6-b126-e5ffe1dd0fcc"
+    ],
+    "relatedFeatureIds": []
+  }
+}

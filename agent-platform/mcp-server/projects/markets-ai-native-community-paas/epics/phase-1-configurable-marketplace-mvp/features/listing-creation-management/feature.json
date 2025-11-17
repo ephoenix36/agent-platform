@@ -1,0 +1,70 @@
+{
+  "id": "ae149a1f-5ae6-4da7-9391-3fee532496f6",
+  "slug": "listing-creation-management",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "name": "Listing Creation & Management",
+  "goal": "Allow members to create and manage marketplace listings",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "critical",
+  "tags": [
+    "marketplace",
+    "listings",
+    "seller-tools",
+    "media-upload"
+  ],
+  "overview": {
+    "summary": "Build the seller experience for creating and managing listings",
+    "motivation": "Core marketplace functionality - sellers need to list items with rich details and media",
+    "goals": [
+      "Easy listing creation",
+      "Rich media support",
+      "Flexible pricing",
+      "Seller control"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "Form with dynamic custom fields",
+      "Presigned upload flow (client→R2/S3)",
+      "Draft/publish workflow",
+      "Media optimization"
+    ],
+    "nonFunctional": [
+      "Fast upload experience",
+      "Image compression",
+      "Validation for required fields",
+      "Mobile-friendly listing creation"
+    ]
+  },
+  "acceptance": [
+    "Listing creation with custom fields",
+    "Image/video upload to R2/S3",
+    "Listing types (sale, exchange, sale_or_exchange)",
+    "Price setting (support $0 for exchange-only)",
+    "Listing status management",
+    "Seller dashboard",
+    "Edit/delist functionality"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 2,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:24:59.973Z",
+    "updated": "2025-11-16T02:24:59.973Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp\\features\\listing-creation-management"
+  },
+  "relationships": {
+    "taskIds": [
+      "01d37101-c773-4c78-ad0f-d3c9c97ce874",
+      "b6d85321-0732-4a08-a6ef-f4d3ed5c6531"
+    ],
+    "relatedFeatureIds": []
+  }
+}

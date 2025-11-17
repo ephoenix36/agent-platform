@@ -1,0 +1,54 @@
+{
+  "id": "d5bdad1e-0a17-470a-b22b-917cefde851c",
+  "number": "TASK-007",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "c125119b-d8e0-4d6e-8fa5-bbe4d5374b7b",
+  "title": "Document Anomaly Detection System",
+  "description": "Create comprehensive documentation for anomaly detection system covering architecture, configuration, usage, and troubleshooting. Include diagrams and examples.",
+  "status": "pending",
+  "priority": "medium",
+  "type": "docs",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 3,
+    "complexity": "low"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:03:38.598Z",
+    "updated": "2025-11-16T04:03:38.636Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "documentation",
+      "user-guide"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Architecture document describes system components and data flow",
+      "Configuration guide covers alert routing setup",
+      "Runbook for troubleshooting common issues",
+      "API documentation for anomaly detection tools",
+      "Example configurations for common use cases"
+    ]
+  },
+  "context": {}
+}

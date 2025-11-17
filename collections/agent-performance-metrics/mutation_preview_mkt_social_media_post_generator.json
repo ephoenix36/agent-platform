@@ -1,0 +1,17 @@
+{
+  "workflowId": "mkt_social_media_post_generator",
+  "selectedHintId": "add_engagement_model",
+  "proposedChanges": [
+    "Create agent: engagement-predictor",
+    "Add step before hitl_review for variant scoring"
+  ],
+  "rationale": "Low engagement_prediction score in baseline metrics (overallScore ~0.62).",
+  "expectedImpact": "+0.05-0.10 overallScore",
+  "predictedNewScoreRange": "+0.05-0.10 overallScore",
+  "stepsToApply": [
+    "Confirm current baseline metrics",
+    "Implement requiredChanges sequentially",
+    "Run workflow:evaluate to capture new metrics",
+    "Run workflow:optimize to update scoreboard"
+  ]
+}

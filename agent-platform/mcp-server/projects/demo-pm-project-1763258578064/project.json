@@ -1,0 +1,45 @@
+{
+  "id": "b9d7955d-6320-4eef-86b7-4f1dbcba2b36",
+  "slug": "demo-pm-project-1763258578064",
+  "name": "Demo PM Project 1763258578064",
+  "description": "Smoke-test project for pm toolkit",
+  "status": "active",
+  "metadata": {
+    "created": "2025-11-16T02:02:58.065Z",
+    "updated": "2025-11-16T02:02:58.090Z",
+    "owner": "pm-demo",
+    "contributors": [
+      "pm-demo"
+    ],
+    "tags": [
+      "demo",
+      "automation"
+    ],
+    "version": "0.1.0"
+  },
+  "settings": {
+    "sprintDuration": 14,
+    "timezone": "UTC",
+    "requireApproval": false,
+    "templateType": "nodejs"
+  },
+  "stats": {
+    "totalSprints": 0,
+    "activeSprints": 0,
+    "totalTasks": 1,
+    "completedTasks": 0,
+    "activeContributors": 1,
+    "totalEpics": 1,
+    "activeEpics": 0,
+    "totalFeatures": 1,
+    "completedFeatures": 0
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\demo-pm-project-1763258578064",
+    "docs": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\demo-pm-project-1763258578064\\docs",
+    "memory": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\demo-pm-project-1763258578064\\memory",
+    "sprints": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\demo-pm-project-1763258578064\\sprints",
+    "archived": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\demo-pm-project-1763258578064\\.archived",
+    "epics": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\demo-pm-project-1763258578064\\epics"
+  }
+}

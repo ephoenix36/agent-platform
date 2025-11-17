@@ -1,0 +1,26 @@
+{
+  "id": "eng_code_review_ai_gitlab",
+  "name": "Automated Merge Request Code Review",
+  "category": "engineering",
+  "version": "1.0.0",
+  "description": "Analyze MR diff for quality, performance, security & propose improvements.",
+  "triggers": ["event"],
+  "valueScore": 9,
+  "complexity": "high",
+  "status": "in-progress",
+  "agentsNeeded": ["agent-genesis-architect", "security-analysis-agent"],
+  "skillsNeeded": ["code-review", "security-best-practices"],
+  "dependencies": [],
+  "source": {"origin": "workflow_backlog", "attribution": "GitLab code review template"},
+  "steps": [
+    {"id": "fetch_diff", "type": "transform", "description": "Retrieve MR diff & metadata", "outputs": ["diff", "metadata"]},
+    {"id": "analysis_quality", "type": "agent", "agentId": "agent-genesis-architect", "description": "Quality & style analysis", "inputs": ["diff"], "outputs": ["qualityFindings"]},
+    {"id": "analysis_security", "type": "agent", "agentId": "security-analysis-agent", "description": "Security & dependency analysis", "inputs": ["diff"], "outputs": ["securityFindings"]},
+    {"id": "aggregate", "type": "transform", "description": "Merge findings & rank severities", "inputs": ["qualityFindings", "securityFindings"], "outputs": ["reviewReport"]},
+    {"id": "recommend", "type": "agent", "agentId": "agent-genesis-architect", "description": "Generate actionable improvement recommendations", "inputs": ["reviewReport"], "outputs": ["improvementSuggestions"]}
+  ],
+  "evaluator": {"successCriteria": [{"name": "coverage", "weight": 0.25}, {"name": "false_positive_rate", "weight": 0.25}, {"name": "actionability", "weight": 0.25}, {"name": "latency", "weight": 0.25}]},
+  "hooks": {"beforeExecution": ["validate-mr-access"], "afterExecution": ["post-comment-to-mr"], "onError": ["report-failure-to-ci"]},
+  "createdAt": "2025-11-13T00:00:00Z",
+  "updatedAt": "2025-11-13T00:00:00Z"
+}

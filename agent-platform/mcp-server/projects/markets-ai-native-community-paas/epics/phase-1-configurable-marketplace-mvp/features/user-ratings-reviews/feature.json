@@ -1,0 +1,66 @@
+{
+  "id": "80303e1b-85d6-4d52-b449-4540acd7fa2d",
+  "slug": "user-ratings-reviews",
+  "projectId": "f2af6d5b-14d3-4f89-a085-9f52f775b148",
+  "epicId": "90860406-f006-44b8-965c-2da595eeea32",
+  "name": "User Ratings & Reviews",
+  "goal": "Build reputation system through user ratings and reviews",
+  "status": "proposed",
+  "owner": "ephoe",
+  "priority": "medium",
+  "tags": [
+    "ratings",
+    "reviews",
+    "reputation",
+    "trust"
+  ],
+  "overview": {
+    "summary": "Implement user reputation system with ratings and reviews",
+    "motivation": "Trust is critical in peer-to-peer marketplaces - ratings help buyers make informed decisions",
+    "goals": [
+      "Transparent reputation",
+      "Prevent manipulation",
+      "Encourage quality",
+      "Build trust"
+    ]
+  },
+  "requirements": {
+    "functional": [
+      "ratings table",
+      "Review submission after sale/exchange",
+      "Rating display on profiles",
+      "Review moderation tools"
+    ],
+    "nonFunctional": [
+      "Prevent review bombing",
+      "Only verified transactions can review",
+      "Fair dispute resolution"
+    ]
+  },
+  "acceptance": [
+    "User rating system (1-5 stars)",
+    "Written reviews",
+    "Rating display on profiles",
+    "Review moderation",
+    "Rating aggregation",
+    "Verified purchase badges",
+    "Response to reviews"
+  ],
+  "metrics": {},
+  "stats": {
+    "totalTasks": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0
+  },
+  "timeline": {
+    "created": "2025-11-16T02:25:00.017Z",
+    "updated": "2025-11-16T02:25:00.017Z"
+  },
+  "paths": {
+    "root": "C:\\Users\\ephoe\\Documents\\Coding_Projects\\Agents\\agent-platform\\mcp-server\\projects\\markets-ai-native-community-paas\\epics\\phase-1-configurable-marketplace-mvp\\features\\user-ratings-reviews"
+  },
+  "relationships": {
+    "taskIds": [],
+    "relatedFeatureIds": []
+  }
+}

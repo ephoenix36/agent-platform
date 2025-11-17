@@ -1,0 +1,54 @@
+{
+  "id": "0e192de1-ed7a-4c39-8771-082791f3ec4a",
+  "number": "TASK-002",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "c125119b-d8e0-4d6e-8fa5-bbe4d5374b7b",
+  "title": "Implement Anomaly Detection Service",
+  "description": "Implement the anomaly detection service that analyzes usage statistics and identifies outliers. Service should consume data from UsageTracker, apply statistical algorithms, and output anomaly records with scores and metadata.",
+  "status": "pending",
+  "priority": "critical",
+  "type": "feature",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 8,
+    "complexity": "high"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:03:38.175Z",
+    "updated": "2025-11-16T04:03:38.231Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "implementation",
+      "core-service"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "AnomalyDetector class implemented with detect() method",
+      "Supports per-agent and per-model anomaly detection",
+      "Returns anomaly score (0-100) and confidence level",
+      "Unit tests achieve >90% coverage",
+      "Performance meets <1s per 1000 records benchmark"
+    ]
+  },
+  "context": {}
+}

@@ -1,0 +1,54 @@
+{
+  "id": "a9e9ee9f-453c-4805-89ae-40586e8394da",
+  "number": "TASK-018",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "75fdde2e-4d1a-425b-acfc-587171a04860",
+  "title": "Document Policy Sync System",
+  "description": "Create documentation for budget policy management covering schema, CLI tool usage, best practices, and troubleshooting.",
+  "status": "pending",
+  "priority": "medium",
+  "type": "docs",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 2,
+    "complexity": "low"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:04:36.552Z",
+    "updated": "2025-11-16T04:04:36.592Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "documentation",
+      "admin-guide"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Policy schema documentation with examples",
+      "Administrator guide for policy management",
+      "CLI tool usage guide",
+      "Troubleshooting runbook",
+      "Best practices for policy organization"
+    ]
+  },
+  "context": {}
+}

@@ -1,0 +1,54 @@
+{
+  "id": "0d9afdc6-96fd-4d4c-8843-ccb8ed8c178c",
+  "number": "TASK-012",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "a47b50a8-f065-4799-9511-501cb89c072e",
+  "title": "Test Dashboard Widget System",
+  "description": "Create comprehensive test suite for dashboard widget covering API, widget components, navigation, and performance. Ensure quality gates are met before production deployment.",
+  "status": "pending",
+  "priority": "high",
+  "type": "test",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 5,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:04:09.926Z",
+    "updated": "2025-11-16T04:04:09.961Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "testing",
+      "quality-assurance"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Unit tests for API endpoints achieve >85% coverage",
+      "Integration tests validate widget lifecycle",
+      "E2E tests cover all dashboard interactions",
+      "Visual regression tests prevent UI breaks",
+      "Performance tests validate latency requirements"
+    ]
+  },
+  "context": {}
+}

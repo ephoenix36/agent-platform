@@ -1,0 +1,55 @@
+{
+  "id": "d28d73d4-3946-4f21-b914-ee7e6629f9ea",
+  "number": "TASK-008",
+  "projectId": "c91f53ff-8823-4eaf-babb-0626ab52e390",
+  "sprintId": "4eda4474-2391-4cee-accc-dc1913bfa7f4",
+  "epicId": "ad409268-6590-464c-8343-c6843d5e03e9",
+  "featureId": "a47b50a8-f065-4799-9511-501cb89c072e",
+  "title": "Create Dashboard Data API",
+  "description": "Design and implement backend API endpoints that provide aggregated usage, budget, and context optimization data for dashboard widgets. API should support flexible filtering and deliver data in widget-friendly format.",
+  "status": "pending",
+  "priority": "critical",
+  "type": "feature",
+  "assignment": {
+    "assignee": "platform-observability"
+  },
+  "estimates": {
+    "points": 5,
+    "complexity": "medium"
+  },
+  "relationships": {
+    "children": [],
+    "dependencies": [],
+    "blocks": [],
+    "relatedTo": []
+  },
+  "timeline": {
+    "created": "2025-11-16T04:04:09.578Z",
+    "updated": "2025-11-16T04:04:09.618Z"
+  },
+  "metadata": {
+    "createdBy": "ephoe",
+    "lastModifiedBy": "ephoe",
+    "tags": [],
+    "labels": [
+      "api",
+      "backend",
+      "dashboard"
+    ]
+  },
+  "tracking": {
+    "comments": [],
+    "changes": [],
+    "attachments": []
+  },
+  "acceptance": {
+    "criteria": [
+      "Widget data API designed with endpoints for usage, budget, and context stats",
+      "API supports filtering by agent, team, timeframe (day/week/month)",
+      "Response format optimized for dashboard rendering (<50KB typical)",
+      "API documentation includes request/response schemas",
+      "Performance benchmarks show <500ms p95 latency"
+    ]
+  },
+  "context": {}
+}
