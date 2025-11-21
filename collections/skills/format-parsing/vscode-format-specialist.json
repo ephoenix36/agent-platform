@@ -1,0 +1,32 @@
+{
+  "id": "vscode-format-specialist",
+  "name": "VSCode Format Specialist",
+  "version": "1.0.0",
+  "description": "Expert skill for parsing and generating VSCode agent formats (.agent.md, .instructions.md, .prompt.md)",
+  "toolkits": ["file-operations"],
+  "systemInstructions": "# VSCode Format Specialist Skill\n\n## Purpose\n\nThis skill provides expertise in working with VSCode's custom agent formats, including parsing, validation, and generation.\n\n## Supported Formats\n\n### 1. .agent.md Format\n\n**Structure:**\n```markdown\n---\nname: Agent Name\ndescription: Agent description\nmodel: claude-4.5-sonnet\ntemperature: 0.7\nmaxTokens: 4000\ntools: [tool1, tool2]\n---\n\n# Agent Instructions\n\n[Markdown content]\n```\n\n**Key Features:**\n- YAML frontmatter with metadata\n- Markdown body for instructions\n- Tool and model configuration\n- Optional systemInstructions flag\n\n### 2. .instructions.md Format\n\n**Structure:**\n```markdown\n---\ndescription: Instructions description\nappliesTo: **/*.{ts,tsx,js,jsx}\n---\n\n[Instructions content]\n```\n\n**Key Features:**\n- Simpler frontmatter\n- Pattern-based activation (appliesTo)\n- Used for file-specific instructions\n\n### 3. .prompt.md Format\n\n**Structure:**\n```markdown\n---\nname: Prompt Name\ndescription: Prompt description\ntools: [tool1, tool2]\n---\n\n[Prompt template with {parameters}]\n```\n\n**Key Features:**\n- Parameterized templates\n- Reusable prompts\n- Can include tool specifications\n\n## Parsing Rules\n\n1. **Frontmatter Extraction:**\n   - Split on `---` delimiters\n   - Parse YAML between first two delimiters\n   - Remaining content is body\n\n2. **Field Mapping:**\n   - `name` → agent name\n   - `description` → agent description\n   - `model` → AI model to use\n   - `temperature`, `maxTokens`, `topP` → model parameters\n   - `tools` → tool array\n   - `systemInstructions` → use body as system prompt\n\n3. **Body Processing:**\n   - For .agent.md: full markdown as system prompt\n   - For .instructions.md: extract title from first h1\n   - For .prompt.md: treat as user prompt template\n\n## Generation Rules\n\n1. **Frontmatter:**\n   - Use YAML format\n   - Include all non-null fields\n   - Use proper YAML types (arrays, numbers, booleans)\n\n2. **Body:**\n   - Preserve markdown formatting\n   - Maintain heading hierarchy\n   - Include code blocks with proper fencing\n\n3. **Validation:**\n   - Ensure frontmatter is valid YAML\n   - Check required fields are present\n   - Validate markdown structure\n\n## Common Patterns\n\n**Pattern 1: Agent with Tools**\n```markdown\n---\nname: Code Reviewer\nmodel: claude-4.5-sonnet\ntools: [read_file, list_dir, grep_search]\n---\n\nReview code for best practices and issues.\n```\n\n**Pattern 2: Instructions with Patterns**\n```markdown\n---\nappliesTo: **/*.test.ts\n---\n\nWrite comprehensive unit tests.\n```\n\n**Pattern 3: Parameterized Prompt**\n```markdown\n---\nname: Generate Component\n---\n\nGenerate a {framework} component named {name}.\n```\n\n## Error Handling\n\n- **Missing frontmatter:** Treat entire content as body\n- **Invalid YAML:** Report specific parse errors\n- **Missing required fields:** Use sensible defaults\n- **Malformed markdown:** Preserve as-is with warnings",
+  "rules": [
+    "Always validate YAML frontmatter before processing",
+    "Preserve original markdown formatting when parsing",
+    "Use --- delimiters exactly (three dashes, no spaces)",
+    "Tools array must be valid JSON array in YAML",
+    "For .instructions.md, extract title from first heading if present",
+    "Generate proper YAML types (not all strings)",
+    "Include lineWidth: -1 in YAML dump to prevent wrapping"
+  ],
+  "documents": [],
+  "collections": [],
+  "databases": [],
+  "agents": ["agent-ingestion-architect"],
+  "teams": [],
+  "projects": [],
+  "evaluationRules": {},
+  "mutationRules": {},
+  "metadata": {
+    "category": "format-parsing",
+    "complexity": "intermediate",
+    "lastUpdated": "2025-11-19"
+  },
+  "createdAt": "2025-11-19T00:00:00Z",
+  "updatedAt": "2025-11-19T00:00:00Z"
+}

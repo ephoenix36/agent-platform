@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agents Platform - Interactive Architecture Diagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .control-btn {
+            padding: 12px 24px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .control-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .diagram-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .diagram {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .project-group {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-group::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-group:hover::before {
+            left: 100%;
+        }
+
+        .project-group:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .project-group.core {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .project-group.mcp {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .project-group.ui {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .project-group.tools {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+
+        .project-group.archived {
+            opacity: 0.6;
+            filter: grayscale(50%);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .project-icon {
+            font-size: 2em;
+        }
+
+        .project-title {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .project-description {
+            margin-bottom: 15px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .stat-badge {
+            background: rgba(255,255,255,0.3);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-group.core .stat-badge,
+        .project-group.mcp .stat-badge,
+        .project-group.ui .stat-badge,
+        .project-group.tools .stat-badge {
+            background: rgba(255,255,255,0.25);
+        }
+
+        .sub-projects {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .sub-project-item {
+            padding: 10px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .sub-project-item:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateX(5px);
+        }
+
+        .connections-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+        }
+
+        .info-panel {
+            position: fixed;
+            top: 50%;
+            right: -400px;
+            transform: translateY(-50%);
+            width: 380px;
+            background: white;
+            border-radius: 15px 0 0 15px;
+            padding: 25px;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.3);
+            transition: right 0.4s ease;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .info-panel.active {
+            right: 0;
+        }
+
+        .info-panel-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .search-bar {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #667eea;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .tech-stack {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-badge {
+            background: rgba(0,0,0,0.1);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        .status-active { background: #43e97b; }
+        .status-development { background: #4facfe; }
+        .status-archived { background: #999; animation: none; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Agents Platform Architecture</h1>
+            <p>Interactive visualization of the complete agent ecosystem</p>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search projects, technologies, or components..." id="searchInput">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn active" data-filter="all">All Projects</button>
+            <button class="control-btn" data-filter="core">Core Platform</button>
+            <button class="control-btn" data-filter="mcp">MCP Servers</button>
+            <button class="control-btn" data-filter="ui">UI/Frontend</button>
+            <button class="control-btn" data-filter="tools">Tools & Utils</button>
+            <button class="control-btn" data-filter="archived">Archived</button>
+        </div>
+
+        <div class="diagram-container">
+            <div class="diagram" id="diagram">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <span>Core Platform</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <span>MCP Servers</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <span>UI/Frontend</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                    <span>Tools & Utils</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel" id="infoPanel">
+            <button class="info-panel-close" id="closePanel">×</button>
+            <div id="infoPanelContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const projectsData = [
+            {
+                id: 'agent-platform',
+                category: 'core',
+                icon: '🏗️',
+                title: 'Agent Platform',
+                description: 'Monorepo with Turbo - Core marketplace infrastructure with web UI and API',
+                status: 'active',
+                stats: {
+                    'Apps': 2,
+                    'Packages': 5,
+                    'Status': 'Production'
+                },
+                tech: ['TypeScript', 'Turbo', 'FastAPI', 'Python', 'React'],
+                subProjects: [
+                    'apps/web - Next.js marketplace UI',
+                    'apps/api - FastAPI backend',
+                    'packages/extension-system - Plugin architecture',
+                    'packages/mcp-streaming - Real-time MCP',
+                    'packages/storage - Data persistence',
+                    'packages/widget-bridge - UI widget system',
+                    'packages/workflow-engine - Task orchestration'
+                ],
+                details: {
+                    purpose: 'Central platform for agent marketplace with competitive evaluation',
+                    keyFeatures: [
+                        'Turborepo monorepo structure',
+                        'Multi-app architecture (web + api)',
+                        'Shared packages across services',
+                        'Docker compose orchestration'
+                    ],
+                    dependencies: ['Node 20+', 'Python 3.10+', 'Docker'],
+                    scripts: {
+                        'dev': 'turbo run dev',
+                        'dev:web': 'turbo run dev --filter=web',
+                        'dev:api': 'uvicorn app.main:app --reload'
+                    }
+                }
+            },
+            {
+                id: 'marketplace-ui',
+                category: 'ui',
+                icon: '🎨',
+                title: 'Marketplace UI',
+                description: 'Next.js frontend with modern UI components and real-time features',
+                status: 'active',
+                stats: {
+                    'Framework': 'Next.js',
+                    'Styling': 'Tailwind',
+                    'Status': 'Active'
+                },
+                tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+                subProjects: [
+                    'app/ - Next.js 14 App Router',
+                    'components/ - Reusable UI components',
+                    'lib/ - Utilities and helpers',
+                    'public/ - Static assets'
+                ],
+                details: {
+                    purpose: 'Modern, responsive UI for agent marketplace',
+                    keyFeatures: [
+                        'Server and client components',
+                        'Real-time updates',
+                        'Responsive design system',
+                        'Component library'
+                    ]
+                }
+            },
+            {
+                id: 'root-agents',
+                category: 'core',
+                icon: '🧬',
+                title: 'Agents (Root)',
+                description: 'Core evolutionary optimization system with MCP integration and CLI tools',
+                status: 'active',
+                stats: {
+                    'Agents': '45+',
+                    'Optimization': '83% savings',
+                    'Status': 'Production'
+                },
+                tech: ['TypeScript', 'Python', 'MCP', 'Evosuite', 'Vitest'],
+                subProjects: [
+                    'src/ - Core TypeScript library',
+                    'optimization/ - Python evolution engine',
+                    'config/ - Agent definitions',
+                    'collections/ - Agent collections',
+                    'scripts/ - Automation & migration',
+                    'tests/ - Test suites'
+                ],
+                details: {
+                    purpose: 'Central agent library with evolutionary optimization',
+                    keyFeatures: [
+                        'Multi-island evolution',
+                        'Cascade evaluation (83% cost reduction)',
+                        'MCP server integration',
+                        'CLI for agent management',
+                        'Persistent storage system'
+                    ],
+                    binaries: {
+                        'agents': 'CLI tool',
+                        'agents-mcp': 'MCP server'
+                    }
+                }
+            },
+            {
+                id: 'advisors-mcp',
+                category: 'mcp',
+                icon: '💡',
+                title: 'Advisors MCP',
+                description: 'Expert advisory agents providing specialized guidance across domains',
+                status: 'active',
+                stats: {
+                    'Type': 'MCP Server',
+                    'Domain': 'Advisory'
+                },
+                tech: ['TypeScript', 'MCP SDK'],
+                subProjects: [],
+                details: {
+                    purpose: 'Specialized advisory AI agents accessible via MCP',
+                    keyFeatures: [
+                        'Domain expertise',
+                        'Contextual recommendations',
+                        'MCP protocol compliance'
+                    ]
+                }
+            },
+            {
+                id: 'ui-design-mcp',
+                category: 'mcp',
+                icon: '🎨',
+                title: 'UI Design MCP',
+                description: 'Design system and UI generation capabilities via MCP protocol',
+                status: 'active',
+                stats: {
+                    'Type': 'MCP Server',
+                    'Domain': 'Design'
+                },
+                tech: ['TypeScript', 'MCP SDK', 'Design Systems'],
+                subProjects: [],
+                details: {
+                    purpose: 'AI-powered UI/UX design assistance',
+                    keyFeatures: [
+                        'Component generation',
+                        'Design system management',
+                        'Layout suggestions'
+                    ]
+                }
+            },
+            {
+                id: 'voice-control-mcp',
+                category: 'mcp',
+                icon: '🎤',
+                title: 'Voice Control MCP',
+                description: 'Voice interface and control system for agent interactions',
+                status: 'active',
+                stats: {
+                    'Type': 'MCP Server',
+                    'Domain': 'Voice'
+                },
+                tech: ['TypeScript', 'MCP SDK', 'WebRTC'],
+                subProjects: [],
+                details: {
+                    purpose: 'Voice-based agent interaction',
+                    keyFeatures: [
+                        'Speech recognition',
+                        'Natural language processing',
+                        'Voice commands'
+                    ]
+                }
+            },
+            {
+                id: 'voice-agent-livekit',
+                category: 'ui',
+                icon: '📞',
+                title: 'Voice Agent LiveKit',
+                description: 'Real-time voice communication using LiveKit infrastructure',
+                status: 'development',
+                stats: {
+                    'Framework': 'LiveKit',
+                    'Type': 'Voice UI'
+                },
+                tech: ['LiveKit', 'WebRTC', 'TypeScript'],
+                subProjects: [],
+                details: {
+                    purpose: 'Production-grade real-time voice interactions',
+                    keyFeatures: [
+                        'Low latency audio',
+                        'Multi-participant support',
+                        'LiveKit integration'
+                    ]
+                }
+            },
+            {
+                id: 'landing-page',
+                category: 'ui',
+                icon: '🚀',
+                title: 'Landing Page',
+                description: 'Marketing and onboarding site for the platform',
+                status: 'active',
+                stats: {
+                    'Type': 'Marketing'
+                },
+                tech: ['HTML', 'CSS', 'JavaScript'],
+                subProjects: [],
+                details: {
+                    purpose: 'Public-facing marketing site',
+                    keyFeatures: [
+                        'Product showcase',
+                        'User onboarding',
+                        'Documentation links'
+                    ]
+                }
+            },
+            {
+                id: 'openai-agentkit',
+                category: 'tools',
+                icon: '🛠️',
+                title: 'OpenAI AgentKit',
+                description: 'Integration layer for OpenAI models and agent capabilities',
+                status: 'active',
+                stats: {
+                    'Integration': 'OpenAI'
+                },
+                tech: ['TypeScript', 'OpenAI API'],
+                subProjects: [],
+                details: {
+                    purpose: 'OpenAI-specific agent tooling',
+                    keyFeatures: [
+                        'Model integration',
+                        'Function calling',
+                        'Streaming support'
+                    ]
+                }
+            },
+            {
+                id: 'optimization',
+                category: 'core',
+                icon: '⚡',
+                title: 'Optimization',
+                description: 'Evolutionary algorithms and cost optimization systems',
+                status: 'active',
+                stats: {
+                    'Savings': '83%',
+                    'Method': 'Cascade + Islands'
+                },
+                tech: ['Python', 'NumPy', 'Evosuite'],
+                subProjects: [
+                    'runner.py - Optimization orchestration',
+                    'island_evolution.py - Multi-island GA',
+                    'cascade_evaluation.py - Cost optimization'
+                ],
+                details: {
+                    purpose: 'Agent performance optimization and cost reduction',
+                    keyFeatures: [
+                        'Multi-island genetic algorithms',
+                        'Cascade evaluation strategy',
+                        'Real-time fitness tracking',
+                        '83% cost savings achieved'
+                    ]
+                }
+            },
+            {
+                id: 'evaluators',
+                category: 'core',
+                icon: '📊',
+                title: 'Evaluators',
+                description: 'Agent evaluation frameworks and scoring systems',
+                status: 'active',
+                stats: {
+                    'Type': 'Evaluation'
+                },
+                tech: ['Python', 'TypeScript'],
+                subProjects: [],
+                details: {
+                    purpose: 'Multi-objective agent assessment',
+                    keyFeatures: [
+                        'Quality scoring',
+                        'Performance metrics',
+                        'Competitive ranking'
+                    ]
+                }
+            },
+            {
+                id: 'mutators',
+                category: 'tools',
+                icon: '🧪',
+                title: 'Mutators',
+                description: 'Genetic operators for agent evolution and variation',
+                status: 'active',
+                stats: {
+                    'Type': 'Evolution'
+                },
+                tech: ['Python'],
+                subProjects: [],
+                details: {
+                    purpose: 'Agent mutation and crossover operations',
+                    keyFeatures: [
+                        'Instruction mutation',
+                        'Parameter tuning',
+                        'Crossover strategies'
+                    ]
+                }
+            },
+            {
+                id: 'collections',
+                category: 'core',
+                icon: '📦',
+                title: 'Collections',
+                description: 'Curated sets of agents organized by category and use case',
+                status: 'active',
+                stats: {
+                    'Categories': 'Multiple'
+                },
+                tech: ['JSON'],
+                subProjects: [],
+                details: {
+                    purpose: 'Organized agent libraries',
+                    keyFeatures: [
+                        'Category-based organization',
+                        'Version management',
+                        'Metadata tracking'
+                    ]
+                }
+            },
+            {
+                id: 'research',
+                category: 'tools',
+                icon: '🔬',
+                title: 'Research',
+                description: 'Experimental features and research prototypes',
+                status: 'development',
+                stats: {
+                    'Status': 'Experimental'
+                },
+                tech: ['Various'],
+                subProjects: [],
+                details: {
+                    purpose: 'Innovation and experimentation',
+                    keyFeatures: [
+                        'Prototype testing',
+                        'New algorithm research',
+                        'Performance experiments'
+                    ]
+                }
+            },
+            {
+                id: 'docs',
+                category: 'tools',
+                icon: '📚',
+                title: 'Documentation',
+                description: 'Comprehensive guides, API docs, and architecture documentation',
+                status: 'active',
+                stats: {
+                    'Guides': 'Multiple',
+                    'Status': 'Complete'
+                },
+                tech: ['Markdown'],
+                subProjects: [
+                    'guides/ - Quick start guides',
+                    'architecture/ - Technical design',
+                    'planning/ - Project roadmaps',
+                    'status-reports/ - Progress tracking',
+                    'business/ - Revenue strategy'
+                ],
+                details: {
+                    purpose: 'Complete platform documentation',
+                    keyFeatures: [
+                        'API references',
+                        'Architecture diagrams',
+                        'Tutorial content',
+                        'Business documentation'
+                    ]
+                }
+            },
+            {
+                id: 'archive',
+                category: 'archived',
+                icon: '📦',
+                title: 'Archive',
+                description: 'Deprecated code and historical implementations',
+                status: 'archived',
+                stats: {
+                    'Status': 'Archived'
+                },
+                tech: ['Various'],
+                subProjects: [],
+                details: {
+                    purpose: 'Historical reference and backup',
+                    keyFeatures: [
+                        'Old implementations',
+                        'Deprecated features',
+                        'Migration history'
+                    ]
+                }
+            }
+        ];
+
+        let currentFilter = 'all';
+        let searchQuery = '';
+
+        function renderProjects() {
+            const diagram = document.getElementById('diagram');
+            diagram.innerHTML = '';
+
+            const filtered = projectsData.filter(project => {
+                const matchesFilter = currentFilter === 'all' || project.category === currentFilter;
+                const matchesSearch = !searchQuery || 
+                    project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    project.tech.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
+                return matchesFilter && matchesSearch;
+            });
+
+            filtered.forEach((project, index) => {
+                const projectEl = document.createElement('div');
+                projectEl.className = `project-group ${project.category}`;
+                if (project.status === 'archived') {
+                    projectEl.classList.add('archived');
+                }
+                projectEl.style.animationDelay = `${index * 0.1}s`;
+
+                const statusClass = `status-${project.status}`;
+                const statusLabel = project.status.charAt(0).toUpperCase() + project.status.slice(1);
+
+                let statsHTML = '';
+                for (const [key, value] of Object.entries(project.stats)) {
+                    statsHTML += `<span class="stat-badge">${key}: ${value}</span>`;
+                }
+
+                let techHTML = '';
+                project.tech.forEach(tech => {
+                    techHTML += `<span class="tech-badge">${tech}</span>`;
+                });
+
+                let subProjectsHTML = '';
+                if (project.subProjects.length > 0) {
+                    subProjectsHTML = '<div class="sub-projects">';
+                    project.subProjects.forEach(sub => {
+                        subProjectsHTML += `<div class="sub-project-item">📁 ${sub}</div>`;
+                    });
+                    subProjectsHTML += '</div>';
+                }
+
+                projectEl.innerHTML = `
+                    <div class="project-header">
+                        <span class="project-icon">${project.icon}</span>
+                        <span class="project-title">${project.title}</span>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <span class="status-indicator ${statusClass}"></span>
+                        <span style="font-size: 0.85em; font-weight: 600;">${statusLabel}</span>
+                    </div>
+                    <div class="project-description">${project.description}</div>
+                    <div class="project-stats">${statsHTML}</div>
+                    <div class="tech-stack">${techHTML}</div>
+                    ${subProjectsHTML}
+                `;
+
+                projectEl.addEventListener('click', () => showInfo(project));
+                diagram.appendChild(projectEl);
+            });
+        }
+
+        function showInfo(project) {
+            const panel = document.getElementById('infoPanel');
+            const content = document.getElementById('infoPanelContent');
+
+            let detailsHTML = `
+                <h2>${project.icon} ${project.title}</h2>
+                <p style="margin: 15px 0; color: #666; line-height: 1.6;">${project.description}</p>
+                <div style="margin: 20px 0;">
+                    <h3 style="margin-bottom: 10px;">Purpose</h3>
+                    <p style="color: #666; line-height: 1.6;">${project.details.purpose}</p>
+                </div>
+                <div style="margin: 20px 0;">
+                    <h3 style="margin-bottom: 10px;">Key Features</h3>
+                    <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+            `;
+
+            project.details.keyFeatures.forEach(feature => {
+                detailsHTML += `<li>${feature}</li>`;
+            });
+
+            detailsHTML += `</ul></div>`;
+
+            if (project.details.dependencies) {
+                detailsHTML += `
+                    <div style="margin: 20px 0;">
+                        <h3 style="margin-bottom: 10px;">Dependencies</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                `;
+                project.details.dependencies.forEach(dep => {
+                    detailsHTML += `<span style="background: #f0f0f0; padding: 6px 12px; border-radius: 15px; font-size: 0.85em;">${dep}</span>`;
+                });
+                detailsHTML += `</div></div>`;
+            }
+
+            if (project.details.scripts) {
+                detailsHTML += `
+                    <div style="margin: 20px 0;">
+                        <h3 style="margin-bottom: 10px;">Common Scripts</h3>
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 0.85em;">
+                `;
+                for (const [cmd, desc] of Object.entries(project.details.scripts)) {
+                    detailsHTML += `<div style="margin: 8px 0;"><strong>${cmd}</strong><br/><span style="color: #666;">${desc}</span></div>`;
+                }
+                detailsHTML += `</div></div>`;
+            }
+
+            if (project.details.binaries) {
+                detailsHTML += `
+                    <div style="margin: 20px 0;">
+                        <h3 style="margin-bottom: 10px;">CLI Tools</h3>
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                `;
+                for (const [bin, desc] of Object.entries(project.details.binaries)) {
+                    detailsHTML += `<div style="margin: 8px 0;"><code style="background: #667eea; color: white; padding: 4px 8px; border-radius: 4px;">${bin}</code> - ${desc}</div>`;
+                }
+                detailsHTML += `</div></div>`;
+            }
+
+            content.innerHTML = detailsHTML;
+            panel.classList.add('active');
+        }
+
+        // Event Listeners
+        document.querySelectorAll('.control-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.control-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderProjects();
+            });
+        });
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderProjects();
+        });
+
+        document.getElementById('closePanel').addEventListener('click', () => {
+            document.getElementById('infoPanel').classList.remove('active');
+        });
+
+        // Initial render
+        renderProjects();
+
+        // Auto-refresh data (simulated live updates)
+        setInterval(() => {
+            // In a real implementation, this would fetch fresh data
+            console.log('Checking for updates...');
+        }, 30000);
+    </script>
+</body>
+</html>

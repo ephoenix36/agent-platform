@@ -17,6 +17,21 @@
 
 ---
 
+## 🆕 Agent Ingestion System
+
+### **Want to import agents from other platforms?** → [AGENT_INGESTION_GUIDE.md](./docs/AGENT_INGESTION_GUIDE.md)
+### **Need quick ingestion commands?** → [AGENT_INGESTION_QUICK_REFERENCE.md](./docs/AGENT_INGESTION_QUICK_REFERENCE.md)
+### **Implementation overview?** → [AGENT_INGESTION_SUMMARY.md](./docs/AGENT_INGESTION_SUMMARY.md)
+
+**NEW: Universal Agent Format Conversion**
+- Import agents from VSCode, CrewAI, LangChain, AutoGPT, and 16+ formats
+- Export agents to any platform with migration guides
+- Automatic tool mapping and format detection
+- Batch import/export operations
+- Intelligent enhancement with platform patterns
+
+---
+
 ## 📚 All Documents
 
 ### 🎯 Start Here (Pick Based on Your Goal)

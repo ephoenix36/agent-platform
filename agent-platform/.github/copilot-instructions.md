@@ -27,7 +27,7 @@ The AI Agent Platform is a **collaborative marketplace** for building, sharing, 
        │                   ├──────────▶ RabbitMQ (Queue)
        │                   └──────────▶ MinIO (Storage)
        │
-       └─────────▶ MCP Server (Task Tools, Workflow Orchestration)
+       └─────────▶ MCP Server (Task Tools, Workflow Orchestration, ...)
 ```
 
 ---

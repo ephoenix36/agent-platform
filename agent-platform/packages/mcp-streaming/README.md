@@ -77,7 +77,7 @@ await bus.send({
   toAgentId: 'agent-2',
   type: AgentMessageType.STRUCTURED_INPUT,
   data: { query: 'results', count: 42 },
-  bypassContext: true  // 🔑 Key innovation
+  bypassContext: true  // 🔑 Writes to working memory only - data stays out of LLM prompt/context to save tokens
 })
 ```
 
